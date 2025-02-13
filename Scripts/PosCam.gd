@@ -3,9 +3,9 @@ extends Node3D
 
 @export_group("Location Settings")
 # A slot of the pos_list takes from the same numbered slot from the rot_list 
-@export var pos_list = []
+@export var pos_list: PackedVector3Array = []
 # Make sure the rot_list entries are in the same order as the pos_list
-@export var rot_list = []
+@export var rot_list: PackedVector3Array = []
 # Starting section for camera, will default to 0 if chosen section is beyond scope
 @export var camera_start_section = 0
 
