@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dthmuqgmadjpn"]
+
+[ext_resource type="PackedScene" uid="uid://duo07ra8l725q" path="res://Scenes/waterPlane.tscn" id="1_63n3l"]
+[ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_a60jw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gmtx5"]
+
+[node name="DevRoom1" type="Node3D"]
+
+[node name="WaterPlane" parent="." instance=ExtResource("1_63n3l")]
+transform = Transform3D(35.3081, 0, 0, 0, 4.44154, 0, 0, 0, 65.5485, -0.0105524, -1.19209e-07, 0.000969827)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614899, 0)
+mesh = SubResource("CylinderMesh_gmtx5")
+
+[node name="Boat1" parent="." instance=ExtResource("2_a60jw")]

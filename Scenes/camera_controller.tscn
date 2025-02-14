@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1g0rhhf4361n"]
+
+[ext_resource type="Script" path="res://Scripts/camera_controller.gd" id="1_yggcv"]
+
+[node name="cameraController" type="Node3D"]
+script = ExtResource("1_yggcv")
+
+[node name="Pivot_Stern" type="Node3D" parent="."]
+transform = Transform3D(1, 1.50294e-10, -7.27596e-12, 1.50294e-10, 1, 0, 7.27596e-12, 1.86265e-09, 1, 8.19411, 3.25859, 2.08572)
+
+[node name="Camera3D_Stern" type="Camera3D" parent="Pivot_Stern"]
+transform = Transform3D(0.5, -3.15367e-10, 0.866026, -1.86265e-09, 1, 9.31323e-10, -0.866025, 0, 0.5, 0, 0, 0)
+current = true
+size = 5.676
+
+[node name="Pivot_Kitchen" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050062, 2.38033, 1.0546)
+
+[node name="Camera3D_Kitchen" type="Camera3D" parent="Pivot_Kitchen"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Pivot_Engine" type="Node3D" parent="."]
+transform = Transform3D(1, 1.48248e-10, -8.73115e-11, 1.48702e-10, 1, 0, 8.73115e-11, 2.23517e-08, 1, 0.50285, -0.127603, 1.05738)
+
+[node name="Camera3D_Engine" type="Camera3D" parent="Pivot_Engine"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866026, 0, 0.5, 0, 0, 0)
+size = 5.676
+
+[node name="Pivot_Bow" type="Node3D" parent="."]
+transform = Transform3D(1, 1.49385e-10, -4.36557e-11, 1.49612e-10, 1, 0, 4.36557e-11, 1.11759e-08, 1, -0.807706, 4.45574, 2.69023)
+
+[node name="Camera3D_Bow" type="Camera3D" parent="Pivot_Bow"]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 0, 0, 0)
+size = 5.676
+
+[node name="Pivot_Helm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815026, 4.10904, 1.53704)
+
+[node name="Camera3D_Helm" type="Camera3D" parent="Pivot_Helm"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Pivot_Bedroom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32299, 1.40102, 1.88157)
+
+[node name="Camera3D_Bedroom" type="Camera3D" parent="Pivot_Bedroom"]
+transform = Transform3D(0.852019, 1.08162e-09, -0.52351, 0, 1, -1.86265e-09, 0.52351, 1.86265e-09, 0.852019, 0, 0, 0)

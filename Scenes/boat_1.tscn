@@ -1,0 +1,543 @@
+[gd_scene load_steps=36 format=3 uid="uid://djh66mlci57qj"]
+
+[ext_resource type="Script" path="res://Scripts/boat_1.gd" id="1_ge6wi"]
+[ext_resource type="Material" uid="uid://dxuss7yrrfkat" path="res://Resources/Materials/M_DarkPurple.tres" id="2_m6xgg"]
+[ext_resource type="Material" uid="uid://bbllsegw0ygtt" path="res://Resources/Materials/M_Purple.tres" id="2_y5rog"]
+[ext_resource type="Material" uid="uid://y4dtrhtcty5v" path="res://Resources/Materials/M_TanWoodPlanks.tres" id="3_leush"]
+[ext_resource type="Material" uid="uid://dt4rl3duciu3d" path="res://Resources/Materials/M_LightPurpleWoodPlanks.tres" id="4_pey38"]
+[ext_resource type="Material" uid="uid://betvqo1i0kdnt" path="res://Resources/Materials/M_Green.tres" id="6_3qo3t"]
+[ext_resource type="Material" uid="uid://dsjg3mbj11v3n" path="res://Resources/Materials/M_SmuggedGlass.tres" id="7_8hxqg"]
+[ext_resource type="Material" uid="uid://cchrf56isss8x" path="res://Resources/Materials/M_PurpleMetal.tres" id="9_gu8b6"]
+[ext_resource type="Material" uid="uid://dfy4yflrrduf0" path="res://Resources/Materials/M_Pink.tres" id="9_rntxu"]
+[ext_resource type="Material" uid="uid://b18rx00lvx2be" path="res://Resources/Materials/M_GreenFabric1.tres" id="10_1qhld"]
+[ext_resource type="Material" uid="uid://qc5pmlkkbejt" path="res://Resources/Materials/M_TanWoodPlanks_b.tres" id="11_55iyk"]
+[ext_resource type="Material" uid="uid://b43vs2i1nlm16" path="res://Resources/Materials/M_Emissive1.tres" id="11_f1lh3"]
+[ext_resource type="Material" uid="uid://vw5vcea70qmd" path="res://Resources/Materials/M_RedFabric.tres" id="12_arn7q"]
+[ext_resource type="Material" uid="uid://d1y3bx2agv0pq" path="res://Resources/Materials/M_Grey.tres" id="12_qapwe"]
+[ext_resource type="AudioStream" uid="uid://bbhqiymrpgcrk" path="res://Resources/Sounds/ambience/fluorescent.wav" id="16_sra5r"]
+[ext_resource type="PackedScene" uid="uid://d1g0rhhf4361n" path="res://Scenes/camera_controller.tscn" id="18_e6oi3"]
+[ext_resource type="AudioStream" uid="uid://dtklyn2ffvpqs" path="res://Resources/Sounds/ambience/CreakyWoodenFloor.wav" id="20_xw8yl"]
+[ext_resource type="Material" uid="uid://cv3p54e1twhiv" path="res://Resources/Materials/M_Red.tres" id="21_33mjs"]
+[ext_resource type="Material" uid="uid://ca14s460rwyfg" path="res://Resources/Materials/M_LightPurple.tres" id="23_h8d6i"]
+[ext_resource type="Texture2D" uid="uid://co64ytynqw2vt" path="res://Resources/Textures/Sprites/Wire.png" id="23_xnwe6"]
+[ext_resource type="Material" uid="uid://c02t6qo5s28jd" path="res://Resources/Materials/M_Yellow.tres" id="24_o1lva"]
+[ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="24_y5pvy"]
+[ext_resource type="AudioStream" uid="uid://ce3l3vhx6xsox" path="res://Resources/Sounds/ambience/BoatRockLoop1.wav" id="26_a2f3f"]
+[ext_resource type="Texture2D" uid="uid://ch13jgioemu4j" path="res://Resources/Textures/Sprites/reagan ronald.jpg" id="28_b8fd5"]
+[ext_resource type="Texture2D" uid="uid://bs5sl1tfnu15v" path="res://Resources/Textures/Sprites/Curtain1_a1.png" id="28_lni1y"]
+[ext_resource type="Texture2D" uid="uid://qu7k465j6q2q" path="res://Resources/Textures/Sprites/Curtain2_a1.png" id="29_7od5w"]
+[ext_resource type="Texture2D" uid="uid://bp86olg05lmx5" path="res://Resources/Textures/Sprites/WallFish1_a1.png" id="29_7sxht"]
+[ext_resource type="Texture2D" uid="uid://bu3hi8753d2ry" path="res://Resources/Textures/Sprites/Curtain3_a1.png" id="30_3navf"]
+[ext_resource type="Texture2D" uid="uid://diwsn7yn5aeuv" path="res://Resources/Textures/Sprites/Painting1_a1.png" id="31_e6gux"]
+[ext_resource type="Texture2D" uid="uid://dk2ql1fpyh33d" path="res://Resources/Textures/Sprites/Painting2_a1.png" id="32_d33lc"]
+[ext_resource type="Texture2D" uid="uid://qrv30leq2f64" path="res://Resources/Textures/Sprites/Painting3_a1.png" id="33_i52wy"]
+[ext_resource type="PackedScene" uid="uid://dugyhpr0lnsom" path="res://Resources/Models/EmptyBoat1_a4_GD.glb" id="37_igsp8"]
+
+[sub_resource type="Animation" id="Animation_0lqpf"]
+resource_name = "Anim_BoatSway"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(-0.02, -2, 0, 2, 0, 0.02, -2, 0, 2, 0, -0.02, -2, 0, 2, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, -1, 0, 1, 0, 0, -1, 0, 1, 0, 0, -1, 0, 1, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3, 3, 3),
+"points": PackedFloat32Array(0, -0.1, -0.001, 0.1, 0.001, 0.01, -1.25, 0, 1.25, 0, 0, -0.1, 0.001, 0.1, -0.001, -0.01, -1.25, 0, 1.25, 0, 0, -0.1, -0.001, 0.1, 0.001),
+"times": PackedFloat32Array(0, 2.5, 5, 7.5, 10)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Painting2:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3, 3, 3),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0, 0.05, -1.25, 0, 1.25, 0, 0, -0.1, 0, 0.1, 0, -0.05, -1.25, 0, 1.25, 0, 0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 2.5, 5, 7.5, 10)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Painting1:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(-0.05, -1.5, 0, 1.5, 0, 0.05, -1.5, 0, 1.5, 0, -0.05, -1.5, 0, 1.5, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Painting3:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0, 0.05, -1.25, 0, 1.25, 0, 0, -0.1, 0, 0.1, 0, -0.05, -1.25, 0, 1.25, 0, 0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 2.5, 5, 7.5, 10)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EmptyBoat1_a4_GD/Pot:rotation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.05, -1.5, 0, 1.5, 0, 0.05, -1.5, 0, 1.5, 0, -0.05, -1.5, 0, 1.5, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+
+[sub_resource type="Animation" id="Animation_1a7qf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Painting1:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Painting3:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Painting2:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EmptyBoat1_a4_GD/Pot:rotation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drqiq"]
+_data = {
+"Anim_BoatSway": SubResource("Animation_0lqpf"),
+"RESET": SubResource("Animation_1a7qf")
+}
+
+[node name="Boat1" type="Node3D"]
+script = ExtResource("1_ge6wi")
+
+[node name="cameraController" parent="." instance=ExtResource("18_e6oi3")]
+
+[node name="Camera3D_Stern" parent="cameraController/Pivot_Stern" index="0"]
+transform = Transform3D(0.642787, 0, 0.766045, 0, 1, 0, -0.766044, 0, 0.642788, 0, 0, 0)
+
+[node name="Pivot_Helm" parent="cameraController" index="4"]
+transform = Transform3D(0.996835, 0, -0.079503, 0, 1, 0, 0.079503, 0, 0.996835, -0.760246, 4.19552, 1.62821)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_drqiq")
+}
+autoplay = "Anim_BoatSway"
+speed_scale = 2.0
+
+[node name="EmptyBoat1_a4_GD" parent="." instance=ExtResource("37_igsp8")]
+
+[node name="Boat_Door1" parent="EmptyBoat1_a4_GD" index="0"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+surface_material_override/1 = ExtResource("7_8hxqg")
+surface_material_override/2 = ExtResource("2_y5rog")
+
+[node name="Boat_Body" parent="EmptyBoat1_a4_GD" index="1"]
+surface_material_override/0 = ExtResource("3_leush")
+surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/2 = ExtResource("4_pey38")
+surface_material_override/3 = ExtResource("7_8hxqg")
+surface_material_override/5 = ExtResource("6_3qo3t")
+surface_material_override/6 = ExtResource("9_gu8b6")
+surface_material_override/7 = ExtResource("11_55iyk")
+surface_material_override/8 = ExtResource("12_qapwe")
+
+[node name="Boat_Door2" parent="EmptyBoat1_a4_GD" index="2"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+surface_material_override/1 = ExtResource("7_8hxqg")
+surface_material_override/2 = ExtResource("23_h8d6i")
+
+[node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="3"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("10_1qhld")
+surface_material_override/2 = ExtResource("12_qapwe")
+
+[node name="KitchenFurnature" parent="EmptyBoat1_a4_GD" index="4"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("10_1qhld")
+surface_material_override/2 = ExtResource("9_rntxu")
+surface_material_override/3 = ExtResource("2_m6xgg")
+surface_material_override/4 = ExtResource("12_qapwe")
+surface_material_override/5 = ExtResource("2_m6xgg")
+surface_material_override/6 = ExtResource("7_8hxqg")
+
+[node name="BunkBed" parent="EmptyBoat1_a4_GD" index="5"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("9_rntxu")
+surface_material_override/2 = ExtResource("10_1qhld")
+surface_material_override/3 = ExtResource("3_leush")
+
+[node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="6"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("23_h8d6i")
+
+[node name="Chest" parent="EmptyBoat1_a4_GD" index="7"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/2 = ExtResource("24_y5pvy")
+
+[node name="Barrel" parent="EmptyBoat1_a4_GD" index="8"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="Barrel_001" parent="EmptyBoat1_a4_GD" index="9"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="LightBulb1" parent="EmptyBoat1_a4_GD" index="10"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("9_rntxu")
+
+[node name="TrapDoor" parent="EmptyBoat1_a4_GD" index="11"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="BowLadder" parent="EmptyBoat1_a4_GD" index="12"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="LightBulb2" parent="EmptyBoat1_a4_GD" index="13"]
+cast_shadow = 0
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("11_f1lh3")
+
+[node name="Chest_001" parent="EmptyBoat1_a4_GD" index="14"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/2 = ExtResource("24_y5pvy")
+
+[node name="Books1" parent="EmptyBoat1_a4_GD" index="15"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("12_qapwe")
+
+[node name="Wheel" parent="EmptyBoat1_a4_GD" index="17"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="Pan" parent="EmptyBoat1_a4_GD" index="18"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="TackleBox" parent="EmptyBoat1_a4_GD" index="19"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="Cups" parent="EmptyBoat1_a4_GD" index="20"]
+surface_material_override/0 = ExtResource("9_rntxu")
+
+[node name="ScrewDriver" parent="EmptyBoat1_a4_GD" index="21"]
+surface_material_override/0 = ExtResource("24_o1lva")
+surface_material_override/1 = ExtResource("12_qapwe")
+
+[node name="Thingy" parent="EmptyBoat1_a4_GD" index="22"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+
+[node name="FishingRod1" parent="EmptyBoat1_a4_GD" index="23"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("9_rntxu")
+
+[node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="24"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="Welcome Mat" parent="EmptyBoat1_a4_GD" index="25"]
+surface_material_override/0 = ExtResource("12_arn7q")
+
+[node name="Toaster" parent="EmptyBoat1_a4_GD" index="26"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="Paddle" parent="EmptyBoat1_a4_GD" index="27"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+
+[node name="Books2" parent="EmptyBoat1_a4_GD" index="28"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("24_y5pvy")
+surface_material_override/2 = ExtResource("2_m6xgg")
+surface_material_override/3 = ExtResource("12_qapwe")
+
+[node name="Paddle2" parent="EmptyBoat1_a4_GD" index="29"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+
+[node name="Books3" parent="EmptyBoat1_a4_GD" index="30"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("24_y5pvy")
+surface_material_override/2 = ExtResource("23_h8d6i")
+surface_material_override/3 = ExtResource("21_33mjs")
+
+[node name="Pot" parent="EmptyBoat1_a4_GD" index="31"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="CoffeeMaker" parent="EmptyBoat1_a4_GD" index="32"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("12_qapwe")
+surface_material_override/2 = ExtResource("2_m6xgg")
+
+[node name="Books4" parent="EmptyBoat1_a4_GD" index="33"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("21_33mjs")
+
+[node name="FishingRod2" parent="EmptyBoat1_a4_GD" index="34"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="GuitarCase" parent="EmptyBoat1_a4_GD" index="35"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+surface_material_override/1 = ExtResource("2_y5rog")
+surface_material_override/2 = ExtResource("12_arn7q")
+
+[node name="BoomBox" parent="EmptyBoat1_a4_GD" index="36"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="37"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/2 = ExtResource("9_rntxu")
+
+[node name="Bag1" parent="EmptyBoat1_a4_GD" index="38"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="Bag2" parent="EmptyBoat1_a4_GD" index="39"]
+surface_material_override/0 = ExtResource("12_arn7q")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="Buoy" parent="EmptyBoat1_a4_GD" index="40"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="BeachChair1" parent="EmptyBoat1_a4_GD" index="41"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("21_33mjs")
+surface_material_override/2 = ExtResource("24_y5pvy")
+
+[node name="Buoy2" parent="EmptyBoat1_a4_GD" index="42"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="Bucket" parent="EmptyBoat1_a4_GD" index="43"]
+surface_material_override/0 = ExtResource("2_y5rog")
+
+[node name="Carpet" parent="EmptyBoat1_a4_GD" index="44"]
+visible = false
+surface_material_override/0 = ExtResource("10_1qhld")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85704, 2.48576, 1.02177)
+light_color = Color(0.748153, 0.629115, 0.586203, 1)
+shadow_enabled = true
+shadow_opacity = 0.4
+shadow_blur = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20353, 1.93419, 0.0243201)
+light_color = Color(0.688564, 0.601491, 0.507328, 1)
+light_energy = 0.125
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28646, 4.24917, 1.14835)
+light_color = Color(0.748153, 0.629115, 0.586203, 1)
+light_energy = 0.75
+shadow_enabled = true
+shadow_opacity = 0.4
+shadow_blur = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78802, 2.38473, 0.694145)
+light_color = Color(0.748153, 0.629115, 0.586203, 1)
+light_energy = 0.6
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+omni_range = 3.53133
+
+[node name="FluorescentLightAmbience1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, -1.08184e-09, -7.27595e-12, 1.08184e-09, 1, -7.45058e-09, 7.27596e-12, 7.45058e-09, 1, -3.22042, 1.89331, 0.0375486)
+stream = ExtResource("16_sra5r")
+volume_db = -5.0
+unit_size = 2.5
+autoplay = true
+max_distance = 5.0
+
+[node name="BoatCreakingAmbience1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83628, 5.17083, 0.277005)
+stream = ExtResource("20_xw8yl")
+volume_db = -20.0
+pitch_scale = 0.7
+autoplay = true
+attenuation_filter_cutoff_hz = 800.0
+
+[node name="BoatRockingAmbience1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92327, 0.657084, -0.188656)
+stream = ExtResource("26_a2f3f")
+volume_db = -10.0
+pitch_scale = 0.9
+autoplay = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0874382, -0.00378213, 0, 0.00752838, 0.0439275, 0, 0, 0, 1, 3.44908, 4.47419, 0.0305632)
+shaded = true
+texture_filter = 0
+texture = ExtResource("23_xnwe6")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.0970446, 0, 0, 0, 0.0618634, 0, 0, 0, 1, -2.27317, 2.38156, 0.0350494)
+shaded = true
+texture_filter = 0
+texture = ExtResource("23_xnwe6")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.956186, 0, -0.5, 0, 1.17095, 0, 0.552055, 0, 0.866025, -2.81321, 1.09211, -0.404371)
+shaded = true
+texture_filter = 0
+texture = ExtResource("28_b8fd5")
+
+[node name="Curtain1" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0.569486, 2.83555, -2.66378)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("28_lni1y")
+
+[node name="Curtain2" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 2.62671, 3.38017, -1.65623)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("29_7od5w")
+
+[node name="Curtain2_1" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 2.61971, 3.38017, 1.65317)
+shaded = true
+texture_filter = 0
+texture = ExtResource("29_7od5w")
+
+[node name="Curtain3" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, -1.35788, 5.02392, -1.65552)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("30_3navf")
+
+[node name="WallFish" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.54885, 4.20093, -1.69828)
+shaded = true
+texture_filter = 0
+texture = ExtResource("29_7sxht")
+
+[node name="Painting1" type="Sprite3D" parent="."]
+transform = Transform3D(-1.31134e-08, 1.33356e-16, -0.3, 0, 0.3, 1.33356e-16, 0.3, 5.82918e-24, -1.31134e-08, -0.542108, 1.65091, 0.906752)
+offset = Vector2(-4.05, -108.065)
+shaded = true
+texture_filter = 0
+texture = ExtResource("31_e6gux")
+
+[node name="Painting2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.19252, 5.44905, -1.69828)
+offset = Vector2(-4.05, -108.065)
+shaded = true
+texture_filter = 0
+texture = ExtResource("32_d33lc")
+
+[node name="Painting3" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.20347, 1.16673, -2.18646)
+offset = Vector2(-4.05, -39.89)
+shaded = true
+texture_filter = 0
+texture = ExtResource("33_i52wy")
+
+[editable path="cameraController"]
+[editable path="EmptyBoat1_a4_GD"]
