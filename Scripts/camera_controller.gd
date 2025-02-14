@@ -31,10 +31,10 @@ func _process(_delta: float) -> void:
 	
 	if enableCamWobble:
 		keepCam_Upright()
-	if Input.is_action_just_pressed("section_back"):
+	if Input.is_action_just_pressed("num_1"): #if Input.is_action_just_pressed("section_back") <- re-add this once you setup the keys in settings
 		if(cur_cam_sec - 1 <= 0) change_cam_Section(max_cams)
 		else change_cam_section(cur_cam_sec - 1)
-	if Input.is_action_just_pressed("section_next"):
+	if Input.is_action_just_pressed("num_2"): #if Input.is_action_just_pressed("section_next") <- re-add this once you setup the keys in settings
 		if(cur_cam_sec + 1 > max_cams) change_cam_Section(1)
 		else change_cam_section(cur_cam_sec + 1)
 		
