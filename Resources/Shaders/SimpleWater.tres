@@ -1,0 +1,419 @@
+[gd_resource type="VisualShader" load_steps=28 format=3 uid="uid://05on84ca3bkg"]
+
+[ext_resource type="Texture2D" uid="uid://c4xsp2m35s3lh" path="res://Resources/Textures/bumpMaps/Cellular_noise_texture_2d.tres" id="1_v5d14"]
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_22wv0"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_nb1sf"]
+texture = ExtResource("1_v5d14")
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_55ajw"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(1.25, 1.25, 1.25, 1.25)]
+op_type = 2
+operator = 5
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_cqoqp"]
+texture = ExtResource("1_v5d14")
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_ekt3b"]
+parameter_name = "albedo2"
+default_value_enabled = true
+default_value = Color(0.298039, 0.505882, 0.509804, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_4tjtt"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_uj4hy"]
+parameter_name = "Alpha"
+hint = 1
+default_value_enabled = true
+default_value = 0.8
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_erc3i"]
+parameter_name = "Metallic"
+hint = 1
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_4qyow"]
+parameter_name = "Roughness"
+hint = 1
+default_value_enabled = true
+default_value = 0.2
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_rv0wc"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+expanded_output_ports = [0]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_5ja52"]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_ograv"]
+parameter_name = "fresnel_amount"
+default_value_enabled = true
+default_value = 5.0
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_vj5he"]
+output_port_for_preview = 0
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_dvrpe"]
+parameter_name = "albedo"
+default_value_enabled = true
+default_value = Color(0.168627, 0.352941, 0.411765, 1)
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_isesc"]
+size = Vector2(740, 380)
+expression = "// time calculations for wave normal map movement
+vec2 time = (TIME * wave_direction1) * time_scale;	// movement rate of first wave
+vec2 time2 = (TIME * wave_direction2) * time_scale;	// movement rate of second wave
+
+// Blend the two normal maps
+normal_blend = mix(texture(texture_normal, world_pos.xz + time).rgb, texture(texture_normal2, world_pos.xz + time2).rgb, 0.5);"
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_pjf86"]
+size = Vector2(880, 440)
+expression = "// Depth variables and calc
+float depth_texture = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth_texture);
+vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0); 
+view.xyz /= view.w;
+float depth_blend = exp((-view.z+VERTEX.z + depth_offset) * -beers_law);
+depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
+float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
+	
+// Retreving depth color and applying the deep and shallow colors
+vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
+vec3 depth_color = mix(color_shallow.rgb, color_deep.rgb, depth_blend_power);
+color = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);"
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_3tg32"]
+output_port_for_preview = 0
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.75, 0.75, 0.75)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_p5308"]
+parameter_name = "color_deep"
+default_value_enabled = true
+default_value = Color(0.168627, 0.352941, 0.411765, 1)
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_tjhqu"]
+parameter_name = "color_shallow"
+default_value_enabled = true
+default_value = Color(0.298039, 0.505882, 0.509804, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_2i56u"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_s002r"]
+
+[sub_resource type="VisualShaderNodeGlobalExpression" id="VisualShaderNodeGlobalExpression_28gx1"]
+size = Vector2(840, 760)
+expression = "//uniform vec3 albedo : source_color;
+//uniform vec3 albedo2 : source_color;
+//uniform float metallic : hint_range(0.0, 1.0) = 0;
+//uniform float roughness : hint_range(0.0, 1.0) = 0.02;
+//uniform float fresnel_amount = 5.0;
+uniform sampler2D wave;
+uniform sampler2D texture_normal;
+uniform sampler2D texture_normal2;
+uniform vec2 wave_direction1 = vec2(2.0,0.0);
+uniform vec2 wave_direction2 = vec2(0.0,1.0);
+uniform float time_scale : hint_range(0.0, 0.2, 0.005) = 0.025;
+uniform float noise_scale = 10.0;
+uniform float height_scale = 0.15;
+
+uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, filter_linear_mipmap;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+//uniform vec4 color_deep : source_color;	// Deep depth color
+//uniform vec4 color_shallow : source_color;	// Shallow depth color
+uniform float beers_law = 2.0; // Attenuation of light
+uniform float depth_offset = -0.75;	// Offset
+
+//uniform vec3 edge_color : source_color;
+//uniform float edge_scale = 0.1;
+//uniform float near = 1.0;
+//uniform float far = 100.0;
+
+// varying variables
+varying float height;
+varying vec3 world_pos; "
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_la4nk"]
+size = Vector2(676.759, 323.455)
+expression = "world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+height = texture(wave, world_pos.xz / noise_scale + TIME * time_scale).r;
+output = height * height_scale;"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_onabr"]
+expanded_output_ports = [0]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_3c0sg"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_6r17w"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 color_deep : source_color = vec4(0.168627, 0.352941, 0.411765, 1.000000);
+uniform vec4 color_shallow : source_color = vec4(0.298039, 0.505882, 0.509804, 1.000000);
+uniform float Metallic : hint_range(0, 1) = 0;
+uniform float Roughness : hint_range(0, 1) = 0.20000000298023;
+
+
+// GlobalExpression:0
+	//uniform vec3 albedo : source_color;
+	//uniform vec3 albedo2 : source_color;
+	//uniform float metallic : hint_range(0.0, 1.0) = 0;
+	//uniform float roughness : hint_range(0.0, 1.0) = 0.02;
+	//uniform float fresnel_amount = 5.0;
+	uniform sampler2D wave;
+	uniform sampler2D texture_normal;
+	uniform sampler2D texture_normal2;
+	uniform vec2 wave_direction1 = vec2(2.0,0.0);
+	uniform vec2 wave_direction2 = vec2(0.0,1.0);
+	uniform float time_scale : hint_range(0.0, 0.2, 0.005) = 0.025;
+	uniform float noise_scale = 10.0;
+	uniform float height_scale = 0.15;
+	
+	uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, filter_linear_mipmap;
+	uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+	
+	//uniform vec4 color_deep : source_color;	// Deep depth color
+	//uniform vec4 color_shallow : source_color;	// Shallow depth color
+	uniform float beers_law = 2.0; // Attenuation of light
+	uniform float depth_offset = -0.75;	// Offset
+	
+	//uniform vec3 edge_color : source_color;
+	//uniform float edge_scale = 0.1;
+	//uniform float near = 1.0;
+	//uniform float far = 100.0;
+	
+	// varying variables
+	varying float height;
+	varying vec3 world_pos; 
+
+void vertex() {
+// Input:29
+	vec3 n_out29p0 = VERTEX;
+	float n_out29p1 = n_out29p0.r;
+	float n_out29p2 = n_out29p0.g;
+	float n_out29p3 = n_out29p0.b;
+
+
+	float n_out28p0;
+// Expression:28
+	n_out28p0 = 0.0;
+	{
+		world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+		height = texture(wave, world_pos.xz / noise_scale + TIME * time_scale).r;
+		n_out28p0 = height * height_scale;
+	}
+
+
+// FloatOp:30
+	float n_out30p0 = n_out28p0 + n_out29p2;
+
+
+// VectorCompose:34
+	vec3 n_out34p0 = vec3(n_out29p1, n_out30p0, n_out29p3);
+
+
+// Output:0
+	VERTEX = n_out34p0;
+
+
+}
+
+void fragment() {
+// ColorParameter:56
+	vec4 n_out56p0 = color_deep;
+
+
+// ColorParameter:57
+	vec4 n_out57p0 = color_shallow;
+
+
+	vec3 n_out54p0;
+// Expression:54
+	n_out54p0 = vec3(0.0, 0.0, 0.0);
+	{
+		// Depth variables and calc
+		float depth_texture = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+		vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth_texture);
+		vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0); 
+		view.xyz /= view.w;
+		float depth_blend = exp((-view.z+VERTEX.z + depth_offset) * -beers_law);
+		depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
+		float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
+			
+		// Retreving depth n_out54p0 and applying the deep and shallow colors
+		vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
+		vec3 depth_color = mix(vec3(n_out57p0.xyz).rgb, vec3(n_out56p0.xyz).rgb, depth_blend_power);
+		n_out54p0 = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);
+	}
+
+
+// Mix:55
+	vec3 n_in55p0 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_in55p2 = vec3(0.75000, 0.75000, 0.75000);
+	vec3 n_out55p0 = mix(n_in55p0, n_out54p0, n_in55p2);
+
+
+// FloatParameter:37
+	float n_out37p0 = Metallic;
+
+
+// FloatParameter:38
+	float n_out38p0 = Roughness;
+
+
+	vec3 n_out53p0;
+// Expression:53
+	n_out53p0 = vec3(0.0, 0.0, 0.0);
+	{
+		// time calculations for wave normal map movement
+		vec2 time = (TIME * wave_direction1) * time_scale;	// movement rate of first wave
+		vec2 time2 = (TIME * wave_direction2) * time_scale;	// movement rate of second wave
+		
+		// Blend the two normal maps
+		n_out53p0 = mix(texture(texture_normal, world_pos.xz + time).rgb, texture(texture_normal2, world_pos.xz + time2).rgb, 0.5);
+	}
+
+
+// Output:0
+	ALBEDO = n_out55p0;
+	METALLIC = n_out37p0;
+	ROUGHNESS = n_out38p0;
+	NORMAL_MAP = n_out53p0;
+
+
+}
+"
+nodes/vertex/0/position = Vector2(667.762, 136.117)
+nodes/vertex/26/node = SubResource("VisualShaderNodeGlobalExpression_28gx1")
+nodes/vertex/26/position = Vector2(-2280, -1000)
+nodes/vertex/26/size = Vector2(840, 760)
+nodes/vertex/26/input_ports = ""
+nodes/vertex/26/output_ports = ""
+nodes/vertex/26/expression = "//uniform vec3 albedo : source_color;
+//uniform vec3 albedo2 : source_color;
+//uniform float metallic : hint_range(0.0, 1.0) = 0;
+//uniform float roughness : hint_range(0.0, 1.0) = 0.02;
+//uniform float fresnel_amount = 5.0;
+uniform sampler2D wave;
+uniform sampler2D texture_normal;
+uniform sampler2D texture_normal2;
+uniform vec2 wave_direction1 = vec2(2.0,0.0);
+uniform vec2 wave_direction2 = vec2(0.0,1.0);
+uniform float time_scale : hint_range(0.0, 0.2, 0.005) = 0.025;
+uniform float noise_scale = 10.0;
+uniform float height_scale = 0.15;
+
+uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, filter_linear_mipmap;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+//uniform vec4 color_deep : source_color;	// Deep depth color
+//uniform vec4 color_shallow : source_color;	// Shallow depth color
+uniform float beers_law = 2.0; // Attenuation of light
+uniform float depth_offset = -0.75;	// Offset
+
+//uniform vec3 edge_color : source_color;
+//uniform float edge_scale = 0.1;
+//uniform float near = 1.0;
+//uniform float far = 100.0;
+
+// varying variables
+varying float height;
+varying vec3 world_pos; "
+nodes/vertex/28/node = SubResource("VisualShaderNodeExpression_la4nk")
+nodes/vertex/28/position = Vector2(-578.577, -241.25)
+nodes/vertex/28/size = Vector2(676.759, 323.455)
+nodes/vertex/28/input_ports = ""
+nodes/vertex/28/output_ports = "0,0,output;"
+nodes/vertex/28/expression = "world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+height = texture(wave, world_pos.xz / noise_scale + TIME * time_scale).r;
+output = height * height_scale;"
+nodes/vertex/29/node = SubResource("VisualShaderNodeInput_onabr")
+nodes/vertex/29/position = Vector2(-119.654, 123.295)
+nodes/vertex/30/node = SubResource("VisualShaderNodeFloatOp_3c0sg")
+nodes/vertex/30/position = Vector2(200.986, 51.93)
+nodes/vertex/34/node = SubResource("VisualShaderNodeVectorCompose_6r17w")
+nodes/vertex/34/position = Vector2(416.249, 116.854)
+nodes/vertex/connections = PackedInt32Array(29, 2, 30, 1, 34, 0, 0, 0, 30, 0, 34, 1, 29, 1, 34, 0, 29, 3, 34, 2, 28, 0, 30, 0)
+nodes/fragment/0/position = Vector2(640, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_cqoqp")
+nodes/fragment/2/position = Vector2(-2400, -60)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_rv0wc")
+nodes/fragment/4/position = Vector2(-1360, -180)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorParameter_dvrpe")
+nodes/fragment/5/position = Vector2(-508.112, -578.829)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorOp_2i56u")
+nodes/fragment/7/position = Vector2(-2140, 80)
+nodes/fragment/8/node = SubResource("VisualShaderNodeUVFunc_s002r")
+nodes/fragment/8/position = Vector2(-2700, 40)
+nodes/fragment/10/node = SubResource("VisualShaderNodeUVFunc_22wv0")
+nodes/fragment/10/position = Vector2(-2700, 320)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_nb1sf")
+nodes/fragment/12/position = Vector2(-2400, 220)
+nodes/fragment/18/node = SubResource("VisualShaderNodeVectorOp_55ajw")
+nodes/fragment/18/position = Vector2(-1900, 80)
+nodes/fragment/23/node = SubResource("VisualShaderNodeColorParameter_ekt3b")
+nodes/fragment/23/position = Vector2(-508.82, -373.178)
+nodes/fragment/24/node = SubResource("VisualShaderNodeVectorOp_4tjtt")
+nodes/fragment/24/position = Vector2(-1600, 40)
+nodes/fragment/36/node = SubResource("VisualShaderNodeFloatParameter_uj4hy")
+nodes/fragment/36/position = Vector2(-440, 560)
+nodes/fragment/37/node = SubResource("VisualShaderNodeFloatParameter_erc3i")
+nodes/fragment/37/position = Vector2(-200, 640)
+nodes/fragment/38/node = SubResource("VisualShaderNodeFloatParameter_4qyow")
+nodes/fragment/38/position = Vector2(40, 720)
+nodes/fragment/40/node = SubResource("VisualShaderNodeFresnel_5ja52")
+nodes/fragment/40/position = Vector2(-520, -160)
+nodes/fragment/41/node = SubResource("VisualShaderNodeFloatParameter_ograv")
+nodes/fragment/41/position = Vector2(-840, -60)
+nodes/fragment/46/node = SubResource("VisualShaderNodeMix_vj5he")
+nodes/fragment/46/position = Vector2(-60, -480)
+nodes/fragment/53/node = SubResource("VisualShaderNodeExpression_isesc")
+nodes/fragment/53/position = Vector2(-360, 1060)
+nodes/fragment/53/size = Vector2(740, 380)
+nodes/fragment/53/input_ports = ""
+nodes/fragment/53/output_ports = "0,4,normal_blend;"
+nodes/fragment/53/expression = "// time calculations for wave normal map movement
+vec2 time = (TIME * wave_direction1) * time_scale;	// movement rate of first wave
+vec2 time2 = (TIME * wave_direction2) * time_scale;	// movement rate of second wave
+
+// Blend the two normal maps
+normal_blend = mix(texture(texture_normal, world_pos.xz + time).rgb, texture(texture_normal2, world_pos.xz + time2).rgb, 0.5);"
+nodes/fragment/54/node = SubResource("VisualShaderNodeExpression_pjf86")
+nodes/fragment/54/position = Vector2(-780, -1040)
+nodes/fragment/54/size = Vector2(880, 440)
+nodes/fragment/54/input_ports = "0,4,color_deep;1,4,color_shallow;"
+nodes/fragment/54/output_ports = "0,4,color;"
+nodes/fragment/54/expression = "// Depth variables and calc
+float depth_texture = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth_texture);
+vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0); 
+view.xyz /= view.w;
+float depth_blend = exp((-view.z+VERTEX.z + depth_offset) * -beers_law);
+depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
+float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
+	
+// Retreving depth color and applying the deep and shallow colors
+vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
+vec3 depth_color = mix(color_shallow.rgb, color_deep.rgb, depth_blend_power);
+color = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);"
+nodes/fragment/55/node = SubResource("VisualShaderNodeMix_3tg32")
+nodes/fragment/55/position = Vector2(280, -500)
+nodes/fragment/56/node = SubResource("VisualShaderNodeColorParameter_p5308")
+nodes/fragment/56/position = Vector2(-1280, -1020)
+nodes/fragment/57/node = SubResource("VisualShaderNodeColorParameter_tjhqu")
+nodes/fragment/57/position = Vector2(-1280, -800)
+nodes/fragment/connections = PackedInt32Array(2, 0, 7, 0, 12, 0, 7, 1, 7, 0, 18, 0, 24, 0, 4, 1, 18, 0, 24, 1, 10, 0, 12, 0, 8, 0, 2, 0, 40, 0, 46, 2, 23, 0, 46, 1, 5, 0, 46, 0, 38, 0, 0, 3, 37, 0, 0, 2, 41, 0, 40, 3, 53, 0, 0, 9, 54, 0, 55, 1, 55, 0, 0, 0, 56, 0, 54, 0, 57, 0, 54, 1)
