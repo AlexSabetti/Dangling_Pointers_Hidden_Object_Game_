@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://db5bih3n4t7lr"]
+
+[ext_resource type="Texture2D" uid="uid://cjfyxy8kkpey0" path="res://Resources/Textures/EB_LightRedWoodTexture_a1.png" id="1_bkifx"]
+[ext_resource type="Texture2D" uid="uid://cvqqibhftsryw" path="res://Resources/Textures/normalMaps/everytexture.com-stock-pavement-texture-00062-normal-1024.jpg" id="2_vptbw"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_bkifx")
+normal_scale = 0.5
+normal_texture = ExtResource("2_vptbw")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

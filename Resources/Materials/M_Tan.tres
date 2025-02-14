@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bq0nux2vqt3ja"]
+
+[ext_resource type="Texture2D" uid="uid://ma84p86of2j0" path="res://Resources/Textures/EB_TanWoodTexture_a1.png" id="1_sakwa"]
+[ext_resource type="Texture2D" uid="uid://w7n3pngd4j0g" path="res://Resources/Textures/normalMaps/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg" id="2_ldq6g"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_sakwa")
+normal_texture = ExtResource("2_ldq6g")
+rim = 0.0
+uv1_scale = Vector3(5, 5, 5)

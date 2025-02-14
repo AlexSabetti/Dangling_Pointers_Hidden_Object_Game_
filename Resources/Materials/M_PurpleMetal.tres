@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cchrf56isss8x"]
+
+[ext_resource type="Texture2D" uid="uid://dl4qddir3ney1" path="res://Resources/Textures/EB_PurpleWoodTexture_a1.png" id="1_baqoq"]
+[ext_resource type="Texture2D" uid="uid://66dj4tak81gx" path="res://Resources/Textures/normalMaps/everytexture.com-stock-metal-texture-00124-normal-1024.jpg" id="2_4evl8"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_baqoq")
+normal_texture = ExtResource("2_4evl8")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true

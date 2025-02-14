@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://vw5vcea70qmd"]
+
+[ext_resource type="Texture2D" uid="uid://b6ilwyi3mqmja" path="res://Resources/Textures/EB_RedWoodTexture_a1.png" id="1_jrlpm"]
+[ext_resource type="Texture2D" uid="uid://cjeyrhjbct1ks" path="res://Resources/Textures/normalMaps/everytexture.com-stock-fabric-texture-00026-normal-1024.jpg" id="2_8uvr2"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_jrlpm")
+normal_scale = 0.5
+normal_texture = ExtResource("2_8uvr2")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true

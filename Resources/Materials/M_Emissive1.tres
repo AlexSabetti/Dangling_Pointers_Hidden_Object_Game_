@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b43vs2i1nlm16"]
+
+[ext_resource type="Texture2D" uid="uid://drquq6r1cofwt" path="res://Resources/Textures/EB_LightTanWoodTexture_a1.png" id="1_r7eor"]
+
+[resource]
+diffuse_mode = 1
+specular_mode = 1
+albedo_texture = ExtResource("1_r7eor")
+emission_enabled = true
+emission_texture = ExtResource("1_r7eor")
+uv1_scale = Vector3(2, 2, 2)

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c3f0vd65xkcr7"]
+
+[ext_resource type="Texture2D" uid="uid://qlv4qg6t8iba" path="res://Resources/Textures/EB_GreenWoodTexture_a1.png" id="1_ngg0x"]
+[ext_resource type="Texture2D" uid="uid://66dj4tak81gx" path="res://Resources/Textures/normalMaps/everytexture.com-stock-metal-texture-00124-normal-1024.jpg" id="2_cx7uu"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_ngg0x")
+normal_texture = ExtResource("2_cx7uu")
+uv1_scale = Vector3(4, 4, 4)
