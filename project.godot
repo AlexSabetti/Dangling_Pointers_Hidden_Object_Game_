@@ -27,6 +27,10 @@ window/stretch/aspect="keep_width"
 mouse_cursor/custom_image="res://Resources/Textures/PointerArrow1.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 8)
 
+[dotnet]
+
+project/assembly_name="Dangling_Pointers_Hidden_Object_Game"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -64,7 +68,3 @@ num_5={
 
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=1
-
-[dotnet]
-
-project/assembly_name="Dangling_Pointers_Hidden_Object_Game"

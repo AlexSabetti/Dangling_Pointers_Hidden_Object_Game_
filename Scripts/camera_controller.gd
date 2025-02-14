@@ -17,10 +17,10 @@ var max_cams: int = 4
 
 @export_group("Camera Section")
 # camera section selector, as of now, 1 is Camera Stern, 2 is Camera Kitchen, 3 is Camera helm, and 4 is Camera Bedroom. Do not select anything at or below 0.
-@export cur_cam_sec: int = 1
+@export var cur_cam_sec: int = 1
 @export_group("Camera Control Toggles")
 # Whether or not the camera controls cam be used at the moment, should start as true so the main menu and / or pause menu isn't interupted
-@export controls_disabled: bool = true
+@export var controls_disabled: bool = true
 
 var signal_manager: SignalBus = Bus
 
@@ -35,11 +35,11 @@ func _process(_delta: float) -> void:
 	if enableCamWobble:
 		keepCam_Upright()
 	if Input.is_action_just_pressed("num_1") and !controls_disabled: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
-		if(cur_cam_sec - 1 <= 0) change_cam_Section(max_cams)
-		else change_cam_section(cur_cam_sec - 1)
+		if(cur_cam_sec - 1 <= 0): change_cam_section(max_cams)
+		else: change_cam_section(cur_cam_sec - 1)
 	if Input.is_action_just_pressed("num_2") and !controls_disabled: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
-		if(cur_cam_sec + 1 > max_cams) change_cam_Section(1)
-		else change_cam_section(cur_cam_sec + 1)
+		if(cur_cam_sec + 1 > max_cams): change_cam_section(1)
+		else: change_cam_section(cur_cam_sec + 1)
 		
 
 # smoothly moves the active camera towards staying upright

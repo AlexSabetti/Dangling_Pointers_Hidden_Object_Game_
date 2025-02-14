@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bbhqiymrpgcrk"
-path="res://.godot/imported/fluorescent.wav-16e03fb64c903fe654552b884ab2a38f.sample"
+path="res://.godot/imported/fluorescent.wav-37a2a77e60c800a525c6e36e9609c149.sample"
 
 [deps]
 
-source_file="res://Resources/Sounds/ambience/fluorescent.wav"
-dest_files=["res://.godot/imported/fluorescent.wav-16e03fb64c903fe654552b884ab2a38f.sample"]
+source_file="res://Resources/Sounds/Ambience/fluorescent.wav"
+dest_files=["res://.godot/imported/fluorescent.wav-37a2a77e60c800a525c6e36e9609c149.sample"]
 
 [params]
 

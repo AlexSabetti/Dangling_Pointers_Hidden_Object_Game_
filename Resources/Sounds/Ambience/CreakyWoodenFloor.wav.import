@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dtklyn2ffvpqs"
-path="res://.godot/imported/CreakyWoodenFloor.wav-9cd6d30adb99b77eb96680e30f449210.sample"
+path="res://.godot/imported/CreakyWoodenFloor.wav-43c62223851440aa88b566e0cd18dc33.sample"
 
 [deps]
 
-source_file="res://Resources/Sounds/ambience/CreakyWoodenFloor.wav"
-dest_files=["res://.godot/imported/CreakyWoodenFloor.wav-9cd6d30adb99b77eb96680e30f449210.sample"]
+source_file="res://Resources/Sounds/Ambience/CreakyWoodenFloor.wav"
+dest_files=["res://.godot/imported/CreakyWoodenFloor.wav-43c62223851440aa88b566e0cd18dc33.sample"]
 
 [params]
 
