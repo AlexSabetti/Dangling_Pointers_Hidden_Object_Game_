@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ukgrpgcf5tv1"
-path="res://.godot/imported/MuffledRockingBoatAmbiLoop.wav-14dc784037061db39cade7805db178b7.sample"
+path="res://.godot/imported/MuffledRockingBoatAmbiLoop.wav-8fde68be33dcbda6ce50366608fa9137.sample"
 
 [deps]
 
-source_file="res://Resources/Sounds/ambience/MuffledRockingBoatAmbiLoop.wav"
-dest_files=["res://.godot/imported/MuffledRockingBoatAmbiLoop.wav-14dc784037061db39cade7805db178b7.sample"]
+source_file="res://Resources/Sounds/Ambience/MuffledRockingBoatAmbiLoop.wav"
+dest_files=["res://.godot/imported/MuffledRockingBoatAmbiLoop.wav-8fde68be33dcbda6ce50366608fa9137.sample"]
 
 [params]
 
