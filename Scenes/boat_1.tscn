@@ -14,15 +14,15 @@
 [ext_resource type="Material" uid="uid://b43vs2i1nlm16" path="res://Resources/Materials/M_Emissive1.tres" id="11_f1lh3"]
 [ext_resource type="Material" uid="uid://vw5vcea70qmd" path="res://Resources/Materials/M_RedFabric.tres" id="12_arn7q"]
 [ext_resource type="Material" uid="uid://d1y3bx2agv0pq" path="res://Resources/Materials/M_Grey.tres" id="12_qapwe"]
-[ext_resource type="AudioStream" uid="uid://bbhqiymrpgcrk" path="res://Resources/Sounds/ambience/fluorescent.wav" id="16_sra5r"]
+[ext_resource type="AudioStream" uid="uid://bbhqiymrpgcrk" path="res://Resources/Sounds/Ambience/fluorescent.wav" id="16_sra5r"]
 [ext_resource type="PackedScene" uid="uid://d1g0rhhf4361n" path="res://Scenes/camera_controller.tscn" id="18_e6oi3"]
-[ext_resource type="AudioStream" uid="uid://dtklyn2ffvpqs" path="res://Resources/Sounds/ambience/CreakyWoodenFloor.wav" id="20_xw8yl"]
+[ext_resource type="AudioStream" uid="uid://dtklyn2ffvpqs" path="res://Resources/Sounds/Ambience/CreakyWoodenFloor.wav" id="20_xw8yl"]
 [ext_resource type="Material" uid="uid://cv3p54e1twhiv" path="res://Resources/Materials/M_Red.tres" id="21_33mjs"]
 [ext_resource type="Material" uid="uid://ca14s460rwyfg" path="res://Resources/Materials/M_LightPurple.tres" id="23_h8d6i"]
 [ext_resource type="Texture2D" uid="uid://co64ytynqw2vt" path="res://Resources/Textures/Sprites/Wire.png" id="23_xnwe6"]
 [ext_resource type="Material" uid="uid://c02t6qo5s28jd" path="res://Resources/Materials/M_Yellow.tres" id="24_o1lva"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="24_y5pvy"]
-[ext_resource type="AudioStream" uid="uid://ce3l3vhx6xsox" path="res://Resources/Sounds/ambience/BoatRockLoop1.wav" id="26_a2f3f"]
+[ext_resource type="AudioStream" uid="uid://bcl2te1l3ijkf" path="res://Resources/Sounds/ambience/BoatRockLoop1.wav" id="26_a2f3f"]
 [ext_resource type="Texture2D" uid="uid://ch13jgioemu4j" path="res://Resources/Textures/Sprites/reagan ronald.jpg" id="28_b8fd5"]
 [ext_resource type="Texture2D" uid="uid://bs5sl1tfnu15v" path="res://Resources/Textures/Sprites/Curtain1_a1.png" id="28_lni1y"]
 [ext_resource type="Texture2D" uid="uid://qu7k465j6q2q" path="res://Resources/Textures/Sprites/Curtain2_a1.png" id="29_7od5w"]
@@ -467,20 +467,21 @@ volume_db = -10.0
 pitch_scale = 0.9
 autoplay = true
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Wire1" type="Sprite3D" parent="."]
 transform = Transform3D(0.0874382, -0.00378213, 0, 0.00752838, 0.0439275, 0, 0, 0, 1, 3.44908, 4.47419, 0.0305632)
 shaded = true
 texture_filter = 0
 texture = ExtResource("23_xnwe6")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="Wire2" type="Sprite3D" parent="."]
 transform = Transform3D(0.0970446, 0, 0, 0, 0.0618634, 0, 0, 0, 1, -2.27317, 2.38156, 0.0350494)
 shaded = true
 texture_filter = 0
 texture = ExtResource("23_xnwe6")
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="Ronald" type="Sprite3D" parent="."]
 transform = Transform3D(0.956186, 0, -0.5, 0, 1.17095, 0, 0.552055, 0, 0.866025, -2.81321, 1.09211, -0.404371)
+visible = false
 shaded = true
 texture_filter = 0
 texture = ExtResource("28_b8fd5")
