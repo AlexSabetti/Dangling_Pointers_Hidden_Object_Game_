@@ -17,5 +17,9 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
 		if can_interact:
 			signal_manager.emit_signal("object_clicked", object_name)
 
-func _activate_in_scene(
+func _activate_in_scene(id_to_activate: int):
+	if id_to_activate == obj_id:
+		can_interact = true
+	else:
+		can_interact = false
 		
