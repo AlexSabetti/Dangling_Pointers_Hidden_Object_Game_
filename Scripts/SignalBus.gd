@@ -3,3 +3,4 @@ extends Node
 
 # For when the player clicks a valid object
 signal valid_object_clicked(obj: ClickableObject)
+signal camera_change(cam_id: int)
