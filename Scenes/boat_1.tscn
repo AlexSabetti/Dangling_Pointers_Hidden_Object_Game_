@@ -114,6 +114,72 @@ tracks/6/keys = {
 "points": PackedFloat32Array(-0.05, -1.5, 0, 1.5, 0, 0.05, -1.5, 0, 1.5, 0, -0.05, -1.5, 0, 1.5, 0),
 "times": PackedFloat32Array(0, 5, 10)
 }
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.0543984, -1.25, 0, 1.25, 0, -0.0828139, -1.25, 0, 1.25, 0, 0.0543984, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(-0.0544791, -1.25, 0, 1.25, 0, 0.0830994, -1.25, 0, 1.25, 0, -0.0544791, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:z")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(-0.786881, -1.25, 0, 1.25, 0, -0.788843, -1.25, 0, 1.25, 0, -0.786881, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.131032, -1.25, 0, 1.25, 0, -0.198425, -1.25, 0, 1.25, 0, 0.131032, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 9.99167)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.100659, -1.25, 0, 1.25, 0, -0.153927, -1.25, 0, 1.25, 0, 0.100659, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 9.99167)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:z")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.658071, -1.25, 0, 1.25, 0, 0.666813, -1.25, 0, 1.25, 0, 0.658071, -1.25, 0, 1.25, 0),
+"times": PackedFloat32Array(0, 5, 9.99167)
+}
 
 [sub_resource type="Animation" id="Animation_1a7qf"]
 length = 0.001
@@ -194,6 +260,72 @@ tracks/6/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.785398, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EmptyBoat1_a4_GD/Rope:rotation:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.131032, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.100659, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("EmptyBoat1_a4_GD/Rope2:rotation:z")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.658071, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_drqiq"]
 _data = {
@@ -241,12 +373,20 @@ surface_material_override/0 = ExtResource("2_m6xgg")
 surface_material_override/1 = ExtResource("7_8hxqg")
 surface_material_override/2 = ExtResource("23_h8d6i")
 
-[node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="3"]
+[node name="Rope" parent="EmptyBoat1_a4_GD" index="3"]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 4.83619, 7.21165, 0)
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
+transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 0, 0.164307, 0.986409, -2.67045, 9.13777, 0)
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
 surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("10_1qhld")
 surface_material_override/2 = ExtResource("12_qapwe")
 
-[node name="KitchenFurnature" parent="EmptyBoat1_a4_GD" index="4"]
+[node name="KitchenFurnature" parent="EmptyBoat1_a4_GD" index="6"]
 surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("10_1qhld")
 surface_material_override/2 = ExtResource("9_rntxu")
@@ -255,163 +395,159 @@ surface_material_override/4 = ExtResource("12_qapwe")
 surface_material_override/5 = ExtResource("2_m6xgg")
 surface_material_override/6 = ExtResource("7_8hxqg")
 
-[node name="BunkBed" parent="EmptyBoat1_a4_GD" index="5"]
+[node name="BunkBed" parent="EmptyBoat1_a4_GD" index="7"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("9_rntxu")
 surface_material_override/2 = ExtResource("10_1qhld")
 surface_material_override/3 = ExtResource("3_leush")
 
-[node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="6"]
+[node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="8"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("23_h8d6i")
 
-[node name="Chest" parent="EmptyBoat1_a4_GD" index="7"]
+[node name="Chest" parent="EmptyBoat1_a4_GD" index="9"]
 surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("2_m6xgg")
 surface_material_override/2 = ExtResource("24_y5pvy")
 
-[node name="Barrel" parent="EmptyBoat1_a4_GD" index="8"]
+[node name="Barrel" parent="EmptyBoat1_a4_GD" index="10"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Barrel_001" parent="EmptyBoat1_a4_GD" index="9"]
+[node name="Barrel_001" parent="EmptyBoat1_a4_GD" index="11"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="LightBulb1" parent="EmptyBoat1_a4_GD" index="10"]
+[node name="LightBulb1" parent="EmptyBoat1_a4_GD" index="12"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("9_rntxu")
 
-[node name="TrapDoor" parent="EmptyBoat1_a4_GD" index="11"]
+[node name="TrapDoor" parent="EmptyBoat1_a4_GD" index="13"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="BowLadder" parent="EmptyBoat1_a4_GD" index="12"]
+[node name="BowLadder" parent="EmptyBoat1_a4_GD" index="14"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 
-[node name="LightBulb2" parent="EmptyBoat1_a4_GD" index="13"]
+[node name="LightBulb2" parent="EmptyBoat1_a4_GD" index="15"]
 cast_shadow = 0
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("11_f1lh3")
 
-[node name="Chest_001" parent="EmptyBoat1_a4_GD" index="14"]
+[node name="Chest_001" parent="EmptyBoat1_a4_GD" index="16"]
 surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("2_m6xgg")
 surface_material_override/2 = ExtResource("24_y5pvy")
 
-[node name="Books1" parent="EmptyBoat1_a4_GD" index="15"]
+[node name="Books1" parent="EmptyBoat1_a4_GD" index="17"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("12_qapwe")
 
-[node name="Wheel" parent="EmptyBoat1_a4_GD" index="17"]
+[node name="Wheel" parent="EmptyBoat1_a4_GD" index="19"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
-[node name="Pan" parent="EmptyBoat1_a4_GD" index="18"]
+[node name="Pan" parent="EmptyBoat1_a4_GD" index="20"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 
-[node name="TackleBox" parent="EmptyBoat1_a4_GD" index="19"]
+[node name="TackleBox" parent="EmptyBoat1_a4_GD" index="21"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="Cups" parent="EmptyBoat1_a4_GD" index="20"]
+[node name="Cups" parent="EmptyBoat1_a4_GD" index="22"]
 surface_material_override/0 = ExtResource("9_rntxu")
 
-[node name="ScrewDriver" parent="EmptyBoat1_a4_GD" index="21"]
+[node name="ScrewDriver" parent="EmptyBoat1_a4_GD" index="23"]
 surface_material_override/0 = ExtResource("24_o1lva")
 surface_material_override/1 = ExtResource("12_qapwe")
 
-[node name="Thingy" parent="EmptyBoat1_a4_GD" index="22"]
+[node name="Thingy" parent="EmptyBoat1_a4_GD" index="24"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="FishingRod1" parent="EmptyBoat1_a4_GD" index="23"]
+[node name="FishingRod1" parent="EmptyBoat1_a4_GD" index="25"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("9_rntxu")
 
-[node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="24"]
+[node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="26"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
-[node name="Welcome Mat" parent="EmptyBoat1_a4_GD" index="25"]
+[node name="Welcome Mat" parent="EmptyBoat1_a4_GD" index="27"]
 surface_material_override/0 = ExtResource("12_arn7q")
 
-[node name="Toaster" parent="EmptyBoat1_a4_GD" index="26"]
+[node name="Toaster" parent="EmptyBoat1_a4_GD" index="28"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Paddle" parent="EmptyBoat1_a4_GD" index="27"]
+[node name="Paddle" parent="EmptyBoat1_a4_GD" index="29"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="Books2" parent="EmptyBoat1_a4_GD" index="28"]
+[node name="Books2" parent="EmptyBoat1_a4_GD" index="30"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("24_y5pvy")
 surface_material_override/2 = ExtResource("2_m6xgg")
 surface_material_override/3 = ExtResource("12_qapwe")
 
-[node name="Paddle2" parent="EmptyBoat1_a4_GD" index="29"]
+[node name="Paddle2" parent="EmptyBoat1_a4_GD" index="31"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="Books3" parent="EmptyBoat1_a4_GD" index="30"]
+[node name="Books3" parent="EmptyBoat1_a4_GD" index="32"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("24_y5pvy")
 surface_material_override/2 = ExtResource("23_h8d6i")
 surface_material_override/3 = ExtResource("21_33mjs")
 
-[node name="Pot" parent="EmptyBoat1_a4_GD" index="31"]
+[node name="Pot" parent="EmptyBoat1_a4_GD" index="33"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 
-[node name="CoffeeMaker" parent="EmptyBoat1_a4_GD" index="32"]
+[node name="CoffeeMaker" parent="EmptyBoat1_a4_GD" index="34"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("12_qapwe")
 surface_material_override/2 = ExtResource("2_m6xgg")
 
-[node name="Books4" parent="EmptyBoat1_a4_GD" index="33"]
+[node name="Books4" parent="EmptyBoat1_a4_GD" index="35"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("21_33mjs")
 
-[node name="FishingRod2" parent="EmptyBoat1_a4_GD" index="34"]
+[node name="FishingRod2" parent="EmptyBoat1_a4_GD" index="36"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="GuitarCase" parent="EmptyBoat1_a4_GD" index="35"]
+[node name="GuitarCase" parent="EmptyBoat1_a4_GD" index="37"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 surface_material_override/1 = ExtResource("2_y5rog")
 surface_material_override/2 = ExtResource("12_arn7q")
 
-[node name="BoomBox" parent="EmptyBoat1_a4_GD" index="36"]
+[node name="BoomBox" parent="EmptyBoat1_a4_GD" index="38"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="37"]
+[node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="39"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("2_m6xgg")
 surface_material_override/2 = ExtResource("9_rntxu")
 
-[node name="Bag1" parent="EmptyBoat1_a4_GD" index="38"]
+[node name="Bag1" parent="EmptyBoat1_a4_GD" index="40"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Bag2" parent="EmptyBoat1_a4_GD" index="39"]
+[node name="Bag2" parent="EmptyBoat1_a4_GD" index="41"]
 surface_material_override/0 = ExtResource("12_arn7q")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Buoy" parent="EmptyBoat1_a4_GD" index="40"]
+[node name="Buoy" parent="EmptyBoat1_a4_GD" index="42"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="BeachChair1" parent="EmptyBoat1_a4_GD" index="41"]
+[node name="BeachChair1" parent="EmptyBoat1_a4_GD" index="43"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/1 = ExtResource("21_33mjs")
 surface_material_override/2 = ExtResource("24_y5pvy")
 
-[node name="Buoy2" parent="EmptyBoat1_a4_GD" index="42"]
+[node name="Buoy2" parent="EmptyBoat1_a4_GD" index="44"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="Bucket" parent="EmptyBoat1_a4_GD" index="43"]
+[node name="Bucket" parent="EmptyBoat1_a4_GD" index="45"]
 surface_material_override/0 = ExtResource("2_y5rog")
-
-[node name="Carpet" parent="EmptyBoat1_a4_GD" index="44"]
-visible = false
-surface_material_override/0 = ExtResource("10_1qhld")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85704, 2.48576, 1.02177)

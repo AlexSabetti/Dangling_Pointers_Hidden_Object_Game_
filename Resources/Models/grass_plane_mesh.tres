@@ -1,0 +1,9 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://bar3y0gr8rc48"]
+
+[ext_resource type="Material" uid="uid://bwc51m71orexr" path="res://Resources/Materials/M_Reeds5.tres" id="1_0mr1o"]
+
+[resource]
+lightmap_size_hint = Vector2i(7, 12)
+material = ExtResource("1_0mr1o")
+center_offset = Vector3(0, 1, 0)
+orientation = 2
