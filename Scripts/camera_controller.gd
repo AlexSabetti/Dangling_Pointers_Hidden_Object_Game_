@@ -20,7 +20,7 @@ var max_cams: int = 4
 @export var cur_cam_sec: int = 1
 @export_group("Camera Control Toggles")
 # Whether or not the camera controls cam be used at the moment, should start as true so the main menu and / or pause menu isn't interupted
-@export var controls_disabled: bool = true
+@export var controls_disabled: bool = false
 
 var signal_manager: SignalBus = Bus
 
@@ -34,10 +34,10 @@ func _process(_delta: float) -> void:
 	
 	if enableCamWobble:
 		keepCam_Upright()
-	if Input.is_action_just_pressed("num_1") and !controls_disabled: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
+	if Input.is_action_just_pressed("section_back") and !controls_disabled: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
 		if(cur_cam_sec - 1 <= 0): change_cam_section(max_cams)
 		else: change_cam_section(cur_cam_sec - 1)
-	if Input.is_action_just_pressed("num_2") and !controls_disabled: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
+	if Input.is_action_just_pressed("section_next") and !controls_disabled: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
 		if(cur_cam_sec + 1 > max_cams): change_cam_section(1)
 		else: change_cam_section(cur_cam_sec + 1)
 		
@@ -50,7 +50,7 @@ func keepCam_Upright()-> void:
 # Changes camera sections depending on which id is provided
 func change_cam_section(cam_id: int):
 	# Send out signal to properly toggle objects
-	signal_manager.emit("camera_changed", cam_id)
+	#signal_manager.emit("camera_changed", cam_id) # commented out cuz not finished and was causing crashes
 
 	# For camera stern
 	if(cam_id == 1):
@@ -58,6 +58,7 @@ func change_cam_section(cam_id: int):
 		Global.waterPlane.visible = true
 		cam_Stern.make_current()
 		rocking_ambi.volume_db = -5
+		print("cam changed to Stern")
 
 	# For camera kitchen
 	if(cam_id == 2):
@@ -65,6 +66,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.8)
 		cam_Kitchen.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Kitchen")
 
 	# For camera helm
 	if(cam_id == 3):
@@ -72,6 +74,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.9)
 		cam_Helm.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Helm")
 
 	# For camera bedroom
 	if(cam_id == 4):
@@ -79,5 +82,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.25)
 		cam_Bedroom.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Bedroom")
 	
+	cur_cam_sec = cam_id
 	

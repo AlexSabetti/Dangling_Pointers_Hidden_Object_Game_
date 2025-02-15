@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://co64ytynqw2vt" path="res://Resources/Textures/Sprites/Wire.png" id="23_xnwe6"]
 [ext_resource type="Material" uid="uid://c02t6qo5s28jd" path="res://Resources/Materials/M_Yellow.tres" id="24_o1lva"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="24_y5pvy"]
-[ext_resource type="AudioStream" uid="uid://bcl2te1l3ijkf" path="res://Resources/Sounds/ambience/BoatRockLoop1.wav" id="26_a2f3f"]
+[ext_resource type="AudioStream" uid="uid://bcl2te1l3ijkf" path="res://Resources/Sounds/Ambience/BoatRockLoop1.wav" id="26_a2f3f"]
 [ext_resource type="Texture2D" uid="uid://ch13jgioemu4j" path="res://Resources/Textures/Sprites/reagan ronald.jpg" id="28_b8fd5"]
 [ext_resource type="Texture2D" uid="uid://bs5sl1tfnu15v" path="res://Resources/Textures/Sprites/Curtain1_a1.png" id="28_lni1y"]
 [ext_resource type="Texture2D" uid="uid://qu7k465j6q2q" path="res://Resources/Textures/Sprites/Curtain2_a1.png" id="29_7od5w"]
@@ -378,7 +378,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 0, 0.164307, 0.986409, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]

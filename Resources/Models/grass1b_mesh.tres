@@ -1,0 +1,18 @@
+[gd_resource type="PlaneMesh" load_steps=4 format=3 uid="uid://d4igk8ra7rknb"]
+
+[ext_resource type="Shader" uid="uid://dahqk2fus5fv3" path="res://Resources/Shaders/GrassShader1.tres" id="1_dfq1t"]
+[ext_resource type="Texture2D" uid="uid://durm5popdk16j" path="res://Resources/Textures/Sprites/Reeds1_b1.png" id="2_m6wpc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndeaj"]
+render_priority = 0
+shader = ExtResource("1_dfq1t")
+shader_parameter/sway_amount = 0.1
+shader_parameter/sway_speed = 1.0
+shader_parameter/Texture2D = ExtResource("2_m6wpc")
+
+[resource]
+lightmap_size_hint = Vector2i(7, 12)
+material = SubResource("ShaderMaterial_ndeaj")
+size = Vector2(1.5, 3)
+center_offset = Vector3(0, 1.64, 0)
+orientation = 2
