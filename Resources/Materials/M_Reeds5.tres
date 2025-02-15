@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bwc51m71orexr"]
+
+[ext_resource type="Texture2D" uid="uid://sty7vov50puo" path="res://Resources/Textures/Sprites/Reeds2_a1.png" id="1_mjgiq"]
+[ext_resource type="Texture2D" uid="uid://c0n2m1yomblcb" path="res://Resources/Textures/normalMaps/everytexture.com-stock-wood-texture-00088-normal-1024.jpg" id="2_slg27"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_mjgiq")
+normal_texture = ExtResource("2_slg27")
+texture_filter = 0
