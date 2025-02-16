@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://djh66mlci57qj"]
+[gd_scene load_steps=47 format=3 uid="uid://djh66mlci57qj"]
 
 [ext_resource type="Script" path="res://Scripts/boat_1.gd" id="1_ge6wi"]
 [ext_resource type="Material" uid="uid://dxuss7yrrfkat" path="res://Resources/Materials/M_DarkPurple.tres" id="2_m6xgg"]
@@ -23,14 +23,25 @@
 [ext_resource type="Material" uid="uid://c02t6qo5s28jd" path="res://Resources/Materials/M_Yellow.tres" id="24_o1lva"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="24_y5pvy"]
 [ext_resource type="AudioStream" uid="uid://bcl2te1l3ijkf" path="res://Resources/Sounds/Ambience/BoatRockLoop1.wav" id="26_a2f3f"]
+[ext_resource type="Texture2D" uid="uid://bnv4y8fgt0cvn" path="res://Resources/Textures/Sprites/CabinetLines1_a1.png" id="27_63xk8"]
+[ext_resource type="Texture2D" uid="uid://b5kef0scifs0h" path="res://Resources/Textures/Sprites/Clothes1_a1.png" id="27_mm5og"]
+[ext_resource type="Texture2D" uid="uid://cm1h26qcf2xup" path="res://Resources/Textures/Sprites/CabinetLines2_a1.png" id="28_6b1xg"]
 [ext_resource type="Texture2D" uid="uid://ch13jgioemu4j" path="res://Resources/Textures/Sprites/reagan ronald.jpg" id="28_b8fd5"]
 [ext_resource type="Texture2D" uid="uid://bs5sl1tfnu15v" path="res://Resources/Textures/Sprites/Curtain1_a1.png" id="28_lni1y"]
+[ext_resource type="Texture2D" uid="uid://cbk6j2jfnlnn" path="res://Resources/Textures/Sprites/Clothes2_a1.png" id="28_y5f8n"]
+[ext_resource type="Texture2D" uid="uid://0wg804tn1bl8" path="res://Resources/Textures/Sprites/Photos1_a1.png" id="29_3tvuc"]
 [ext_resource type="Texture2D" uid="uid://qu7k465j6q2q" path="res://Resources/Textures/Sprites/Curtain2_a1.png" id="29_7od5w"]
 [ext_resource type="Texture2D" uid="uid://bp86olg05lmx5" path="res://Resources/Textures/Sprites/WallFish1_a1.png" id="29_7sxht"]
+[ext_resource type="Texture2D" uid="uid://75ho4po3s035" path="res://Resources/Textures/Sprites/CabinetLines3_a1.png" id="29_be24c"]
+[ext_resource type="Texture2D" uid="uid://c8627c8wo82he" path="res://Resources/Textures/Sprites/Clothes3_a1.png" id="29_jkhho"]
 [ext_resource type="Texture2D" uid="uid://bu3hi8753d2ry" path="res://Resources/Textures/Sprites/Curtain3_a1.png" id="30_3navf"]
+[ext_resource type="Texture2D" uid="uid://sip4oj6yk64l" path="res://Resources/Textures/Sprites/Clothes4_a1.png" id="30_f45m2"]
+[ext_resource type="Texture2D" uid="uid://ma0vhbpo4asy" path="res://Resources/Textures/Sprites/CabinetLines4_a1.png" id="30_u44lp"]
 [ext_resource type="Texture2D" uid="uid://diwsn7yn5aeuv" path="res://Resources/Textures/Sprites/Painting1_a1.png" id="31_e6gux"]
+[ext_resource type="Texture2D" uid="uid://jklu042y3cls" path="res://Resources/Textures/Sprites/Clothes5_a1.png" id="31_nwkei"]
 [ext_resource type="Texture2D" uid="uid://dk2ql1fpyh33d" path="res://Resources/Textures/Sprites/Painting2_a1.png" id="32_d33lc"]
 [ext_resource type="Texture2D" uid="uid://qrv30leq2f64" path="res://Resources/Textures/Sprites/Painting3_a1.png" id="33_i52wy"]
+[ext_resource type="Texture2D" uid="uid://bym81rw8bu30g" path="res://Resources/Textures/Sprites/Clam1_a1.png" id="37_gewee"]
 [ext_resource type="PackedScene" uid="uid://dugyhpr0lnsom" path="res://Resources/Models/EmptyBoat1_a4_GD.glb" id="37_igsp8"]
 
 [sub_resource type="Animation" id="Animation_0lqpf"]
@@ -378,7 +389,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996276, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
@@ -400,6 +411,7 @@ surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("9_rntxu")
 surface_material_override/2 = ExtResource("10_1qhld")
 surface_material_override/3 = ExtResource("3_leush")
+surface_material_override/4 = ExtResource("12_qapwe")
 
 [node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="8"]
 surface_material_override/0 = ExtResource("23_h8d6i")
@@ -443,111 +455,134 @@ surface_material_override/2 = ExtResource("24_y5pvy")
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("12_qapwe")
 
-[node name="Wheel" parent="EmptyBoat1_a4_GD" index="19"]
+[node name="Wheel" parent="EmptyBoat1_a4_GD" index="18"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
-[node name="Pan" parent="EmptyBoat1_a4_GD" index="20"]
+[node name="Pan" parent="EmptyBoat1_a4_GD" index="19"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 
-[node name="TackleBox" parent="EmptyBoat1_a4_GD" index="21"]
+[node name="TackleBox" parent="EmptyBoat1_a4_GD" index="20"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="Cups" parent="EmptyBoat1_a4_GD" index="22"]
+[node name="Cups" parent="EmptyBoat1_a4_GD" index="21"]
 surface_material_override/0 = ExtResource("9_rntxu")
 
-[node name="ScrewDriver" parent="EmptyBoat1_a4_GD" index="23"]
+[node name="ScrewDriver" parent="EmptyBoat1_a4_GD" index="22"]
 surface_material_override/0 = ExtResource("24_o1lva")
 surface_material_override/1 = ExtResource("12_qapwe")
 
-[node name="Thingy" parent="EmptyBoat1_a4_GD" index="24"]
+[node name="Thingy" parent="EmptyBoat1_a4_GD" index="23"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="FishingRod1" parent="EmptyBoat1_a4_GD" index="25"]
+[node name="FishingRod1" parent="EmptyBoat1_a4_GD" index="24"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("9_rntxu")
 
-[node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="26"]
+[node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="25"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
-[node name="Welcome Mat" parent="EmptyBoat1_a4_GD" index="27"]
+[node name="Welcome Mat" parent="EmptyBoat1_a4_GD" index="26"]
 surface_material_override/0 = ExtResource("12_arn7q")
 
-[node name="Toaster" parent="EmptyBoat1_a4_GD" index="28"]
+[node name="Toaster" parent="EmptyBoat1_a4_GD" index="27"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Paddle" parent="EmptyBoat1_a4_GD" index="29"]
+[node name="Paddle" parent="EmptyBoat1_a4_GD" index="28"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="Books2" parent="EmptyBoat1_a4_GD" index="30"]
+[node name="Books2" parent="EmptyBoat1_a4_GD" index="29"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("24_y5pvy")
 surface_material_override/2 = ExtResource("2_m6xgg")
 surface_material_override/3 = ExtResource("12_qapwe")
 
-[node name="Paddle2" parent="EmptyBoat1_a4_GD" index="31"]
+[node name="Paddle2" parent="EmptyBoat1_a4_GD" index="30"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
-[node name="Books3" parent="EmptyBoat1_a4_GD" index="32"]
+[node name="Books3" parent="EmptyBoat1_a4_GD" index="31"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("24_y5pvy")
 surface_material_override/2 = ExtResource("23_h8d6i")
 surface_material_override/3 = ExtResource("21_33mjs")
 
-[node name="Pot" parent="EmptyBoat1_a4_GD" index="33"]
+[node name="Pot" parent="EmptyBoat1_a4_GD" index="32"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 
-[node name="CoffeeMaker" parent="EmptyBoat1_a4_GD" index="34"]
+[node name="CoffeeMaker" parent="EmptyBoat1_a4_GD" index="33"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("12_qapwe")
 surface_material_override/2 = ExtResource("2_m6xgg")
 
-[node name="Books4" parent="EmptyBoat1_a4_GD" index="35"]
+[node name="Books4" parent="EmptyBoat1_a4_GD" index="34"]
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("21_33mjs")
 
-[node name="FishingRod2" parent="EmptyBoat1_a4_GD" index="36"]
+[node name="FishingRod2" parent="EmptyBoat1_a4_GD" index="35"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="GuitarCase" parent="EmptyBoat1_a4_GD" index="37"]
+[node name="GuitarCase" parent="EmptyBoat1_a4_GD" index="36"]
 surface_material_override/0 = ExtResource("2_m6xgg")
 surface_material_override/1 = ExtResource("2_y5rog")
 surface_material_override/2 = ExtResource("12_arn7q")
 
-[node name="BoomBox" parent="EmptyBoat1_a4_GD" index="38"]
+[node name="BoomBox" parent="EmptyBoat1_a4_GD" index="37"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="39"]
+[node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="38"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("2_m6xgg")
 surface_material_override/2 = ExtResource("9_rntxu")
 
-[node name="Bag1" parent="EmptyBoat1_a4_GD" index="40"]
+[node name="Bag1" parent="EmptyBoat1_a4_GD" index="39"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Bag2" parent="EmptyBoat1_a4_GD" index="41"]
+[node name="Bag2" parent="EmptyBoat1_a4_GD" index="40"]
 surface_material_override/0 = ExtResource("12_arn7q")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
-[node name="Buoy" parent="EmptyBoat1_a4_GD" index="42"]
+[node name="Buoy" parent="EmptyBoat1_a4_GD" index="41"]
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="BeachChair1" parent="EmptyBoat1_a4_GD" index="43"]
+[node name="BeachChair1" parent="EmptyBoat1_a4_GD" index="42"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/1 = ExtResource("21_33mjs")
 surface_material_override/2 = ExtResource("24_y5pvy")
 
-[node name="Buoy2" parent="EmptyBoat1_a4_GD" index="44"]
+[node name="Buoy2" parent="EmptyBoat1_a4_GD" index="43"]
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
-[node name="Bucket" parent="EmptyBoat1_a4_GD" index="45"]
+[node name="Bucket" parent="EmptyBoat1_a4_GD" index="44"]
 surface_material_override/0 = ExtResource("2_y5rog")
+
+[node name="Cube" parent="EmptyBoat1_a4_GD" index="45"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+
+[node name="MiniBoat" parent="EmptyBoat1_a4_GD" index="46"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("9_rntxu")
+
+[node name="Mug1" parent="EmptyBoat1_a4_GD" index="47"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+
+[node name="Mug2" parent="EmptyBoat1_a4_GD" index="48"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+
+[node name="Camera" parent="EmptyBoat1_a4_GD" index="49"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+surface_material_override/1 = ExtResource("6_3qo3t")
+
+[node name="Pole" parent="EmptyBoat1_a4_GD" index="50"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="Bat" parent="EmptyBoat1_a4_GD" index="51"]
+surface_material_override/0 = ExtResource("24_y5pvy")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85704, 2.48576, 1.02177)
@@ -625,9 +660,148 @@ texture = ExtResource("28_b8fd5")
 [node name="Curtain1" type="Sprite3D" parent="."]
 transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0.569486, 2.83555, -2.66378)
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("28_lni1y")
+
+[node name="CabinetLines1" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0.615541, 1.57531, -2.05341)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("27_63xk8")
+
+[node name="CabinetLines2" type="Sprite3D" parent="."]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 1.17718, 1.95391, -1.68552)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("28_6b1xg")
+
+[node name="CabinetLines3" type="Sprite3D" parent="."]
+transform = Transform3D(0.236029, 0, 0, 0, 0.225783, 0, 0, 0, 0.24, 0.518598, 3.65632, -2.05757)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("29_be24c")
+
+[node name="CabinetLines5" type="Sprite3D" parent="."]
+transform = Transform3D(0.288848, 0.00218246, 3.72444e-08, -0.00265224, 0.236858, -0.0141541, -0.000156737, 0.0139932, 0.239582, 2.53574, 1.27179, -1.0106)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("29_be24c")
+
+[node name="CabinetLines4" type="Sprite3D" parent="."]
+transform = Transform3D(0.220654, 0, 0, 0, 0.22552, 0, 0, 0, 0.24, -1.70837, 3.04388, -1.26754)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("30_u44lp")
+
+[node name="Shirt1" type="Sprite3D" parent="."]
+transform = Transform3D(0.110386, -0.101562, 0, -4.43943e-09, -4.82513e-09, 0.15, -0.101562, -0.110386, -6.55671e-09, -2.16215, -0.348012, -0.58383)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("27_mm5og")
+
+[node name="Shirt3" type="Sprite3D" parent="."]
+transform = Transform3D(0.0695315, 0.132911, 6.33329e-09, 0.00421657, -0.00220588, 0.149924, 0.132844, -0.0694965, -0.00475871, -3.95328, -0.348012, 0.0109819)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("27_mm5og")
+
+[node name="Shirt2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.126672, -0.0803386, -6.3333e-09, -4.43943e-09, -4.82513e-09, 0.15, -0.0803386, 0.126672, 1.697e-09, -2.43586, -0.339689, 0.194972)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("28_y5f8n")
+
+[node name="Photos1" type="Sprite3D" parent="."]
+transform = Transform3D(0.0695315, 0.132911, 6.33329e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.132911, -0.0695315, 1.697e-09, -2.49763, -0.339689, -0.878873)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("29_3tvuc")
+
+[node name="Pants1" type="Sprite3D" parent="."]
+transform = Transform3D(-0.132911, 0.0695315, -1.697e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.0695315, 0.132911, 6.3333e-09, -2.8066, -0.319941, -0.502364)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("29_jkhho")
+
+[node name="Pants2" type="Sprite3D" parent="."]
+transform = Transform3D(0.0903161, 0.119762, 6.52547e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.119762, -0.0903161, 6.39254e-10, -3.18559, -0.356806, -0.759268)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("30_f45m2")
+
+[node name="Pants3" type="Sprite3D" parent="."]
+transform = Transform3D(0.0793302, 0.127305, 6.44298e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.127305, -0.0793302, 1.2159e-09, 1.56647, 1.01375, -0.735839)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("30_f45m2")
+
+[node name="Socks1" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0642709, 0.101337, 4.42959e-09, -0.00534244, -0.00338833, 0.119833, 0.101196, 0.0641816, 0.00632633, -2.53979, 0.479992, -1.46691)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("31_nwkei")
+
+[node name="Clam1" type="Sprite3D" parent="."]
+transform = Transform3D(0.119774, 0.00491439, 0.00547876, -0.00499779, 0.119883, 0.00172613, -0.00540276, -0.00195106, 0.119862, -2.30211, 2.0133, -2.24468)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("37_gewee")
+
+[node name="Clam2" type="Sprite3D" parent="."]
+transform = Transform3D(0.113796, -0.0378745, 0.00400236, 0.0377089, 0.113816, 0.00489935, -0.00534244, -0.00338834, 0.119833, -3.16274, 2.19305, -2.24468)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("37_gewee")
+
+[node name="Clam3" type="Sprite3D" parent="."]
+transform = Transform3D(-0.118424, 0.0188494, -0.00451353, 0.0187043, 0.118466, 0.00398242, 0.00508141, 0.00322661, -0.119849, -3.98811, 2.01067, -2.20375)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("37_gewee")
+
+[node name="Socks2" type="Sprite3D" parent="."]
+transform = Transform3D(0.114454, 0.035955, -0.0027593, 0.00248529, 0.00129534, 0.119967, 0.035975, -0.114479, 0.000490811, -2.37361, -0.344231, -0.782475)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("31_nwkei")
+
+[node name="Socks3" type="Sprite3D" parent="."]
+transform = Transform3D(-0.10629, 0.0556919, 0.000951073, -0.000797315, 0.000527516, -0.119996, -0.0556947, -0.106293, -9.72118e-05, 3.1426, 1.66264, -0.408588)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("31_nwkei")
 
 [node name="Curtain2" type="Sprite3D" parent="."]
 transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 2.62671, 3.38017, -1.65623)
