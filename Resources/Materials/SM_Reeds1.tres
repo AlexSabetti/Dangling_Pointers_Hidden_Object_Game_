@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://vhbx761prxew"]
+
+[ext_resource type="Shader" uid="uid://dahqk2fus5fv3" path="res://Resources/Shaders/GrassShader1.tres" id="1_foopt"]
+[ext_resource type="Texture2D" uid="uid://sty7vov50puo" path="res://Resources/Textures/Sprites/Reeds2_a1.png" id="2_vatlc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_foopt")
+shader_parameter/sway_amount = 0.1
+shader_parameter/sway_speed = 1.0
+shader_parameter/Texture2D = ExtResource("2_vatlc")

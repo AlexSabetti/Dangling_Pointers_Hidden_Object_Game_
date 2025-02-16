@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://sjfdagjqofx0"]
+[gd_scene load_steps=2 format=3 uid="uid://dgyk30ishfpoo"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_i8ex7"]
 
 [node name="UI_1" type="CanvasLayer"]
 
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i8ex7")
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 0
@@ -40,3 +43,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Btn_Start" to="Menu" method="_on_btn_start_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Btn_Settings" to="Menu" method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/Btn_Exit" to="Menu" method="_on_btn_exit_pressed"]
