@@ -3,6 +3,8 @@ extends Node3D
 @export_group("Object Specifics")
 @export var object_name: String
 @export var obj_id: int
+ # For item interaction requirements, like not being interactable until other objects have been picked up
+@export var requirements: Array = []
 
 # This is for when the player clicks on the item but isn't in the proper section (This would happen usually by accident). It just denies the signal unless it's true.
 @export var can_interact: bool = false
@@ -13,9 +15,9 @@ func _ready():
 	set_process_input(true)
 	signal_manager.connect("camera_changed", _activate_in_scene) 
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
+func _input_event(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if can_interact:
+		if can_interact and requirements.size() == 0:
 			signal_manager.emit_signal("object_clicked", self)
 
 func _activate_in_scene(id_to_activate: int):
@@ -23,4 +25,7 @@ func _activate_in_scene(id_to_activate: int):
 		can_interact = true
 	else:
 		can_interact = false
+
+func finish_pickup():
+	queue_free()
 		
