@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c6xjps75rk6lg" path="res://Resources/Models/EB_SandBar1_a4_GD.glb" id="5_mpr0f"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="6_ti2ph"]
 [ext_resource type="PackedScene" uid="uid://bgpmad6ydyk15" path="res://Resources/Models/EB_SandBar2_a4_GD.glb" id="7_tf5tg"]
-[ext_resource type="PlaneMesh" uid="uid://bar3y0gr8rc48" path="res://Resources/Models/grass2a_mesh.tres" id="8_f116o"]
-[ext_resource type="PlaneMesh" uid="uid://c11cvgnm1iyny" path="res://Resources/Models/grass2b_mesh.tres" id="9_wrh1x"]
-[ext_resource type="PlaneMesh" uid="uid://kd0dg6gjgpqv" path="res://Resources/Models/grass1a_mesh.tres" id="10_2tsl8"]
-[ext_resource type="PlaneMesh" uid="uid://d4igk8ra7rknb" path="res://Resources/Models/grass1b_mesh.tres" id="10_jrhmk"]
-[ext_resource type="PackedScene" uid="uid://bjh6w04gdk78b" path="res://Scenes/UI/ui_main_menu.tscn" id="12_8amwl"]
-[ext_resource type="PlaneMesh" uid="uid://bxca5su2mm132" path="res://Resources/Models/grass1c_mesh.tres" id="12_20v14"]
+[ext_resource type="PlaneMesh" uid="uid://c2132lxit2p86" path="res://Resources/Models/grass2a_mesh.tres" id="8_f116o"]
+[ext_resource type="PlaneMesh" uid="uid://bferf8kqwitfh" path="res://Resources/Models/grass2b_mesh.tres" id="9_wrh1x"]
+[ext_resource type="PlaneMesh" uid="uid://buv243r7dijdo" path="res://Resources/Models/grass1a_mesh.tres" id="10_2tsl8"]
+[ext_resource type="PlaneMesh" uid="uid://pm4334vw82q1" path="res://Resources/Models/grass1b_mesh.tres" id="10_jrhmk"]
+[ext_resource type="PackedScene" uid="uid://cg457s3jk4ebw" path="res://Scenes/UI/ui_main_menu.tscn" id="12_8amwl"]
+[ext_resource type="PlaneMesh" uid="uid://be74bylqmm3sc" path="res://Resources/Models/grass1c_mesh.tres" id="12_20v14"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 

@@ -33,8 +33,8 @@ func _ready() -> void:
 	boatRef = get_parent_node_3d()
 
 	# Connect to the signal manager
-	signal_manager.connect("pause_game", respond_to_pause())
-	signal_manager.connect("unpause_game", respond_to_unpause())
+	#signal_manager.connect("pause_game", respond_to_pause())
+	#signal_manager.connect("unpause_game", respond_to_unpause())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -98,15 +98,16 @@ func change_cam_section(cam_id: int):
 		cam_Bedroom.make_current()
 		rocking_ambi.volume_db = -80
 		print("cam changed to Bedroom")
-    previous_cam_id = 4
-    
+		previous_cam_id = 4
+	
 	cur_cam_sec = cam_id
 	
 
 	# For Pasue menu, basically same as camera Stern, just with disabled controls
 	if(cam_id == -4):
+		if Global.waterPlane:
+			Global.waterPlane.visible = true
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
-		Global.waterPlane.visible = true
 		cam_Stern.make_current()
 		rocking_ambi.volume_db = -5
 		controls_disabled = true

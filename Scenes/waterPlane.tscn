@@ -14,7 +14,6 @@ orientation = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2viph"]
 render_priority = 0
 shader = ExtResource("1_k24t1")
-shader_parameter/EnableEdgeFoam = true
 shader_parameter/color_deep = Color(0.262745, 0.239216, 0.176471, 1)
 shader_parameter/color_shallow = Color(0.776471, 0.717647, 0.521569, 1)
 shader_parameter/albedo = Color(0.281859, 0.230981, 0.171397, 1)
