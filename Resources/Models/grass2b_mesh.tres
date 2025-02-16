@@ -1,6 +1,6 @@
-[gd_resource type="PlaneMesh" load_steps=4 format=3 uid="uid://c11cvgnm1iyny"]
+[gd_resource type="PlaneMesh" load_steps=4 format=3 uid="uid://bferf8kqwitfh"]
 
-[ext_resource type="Shader" uid="uid://dahqk2fus5fv3" path="res://Resources/Shaders/GrassShader1.tres" id="1_7drb1"]
+[ext_resource type="Shader" uid="uid://bkqh368vuj2h1" path="res://Resources/Shaders/GrassShader1.tres" id="1_7drb1"]
 [ext_resource type="Texture2D" uid="uid://qx2y7kb8dobp" path="res://Resources/Textures/Sprites/Reeds2_b1.png" id="2_i4rhx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sxd06"]

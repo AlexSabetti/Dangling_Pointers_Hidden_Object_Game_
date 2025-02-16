@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjh6w04gdk78b"]
+[gd_scene load_steps=3 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
 [ext_resource type="AudioStream" uid="uid://dq7uxjtsu3qwm" path="res://Resources/Sounds/SFX/RotaryPhoneTick0.wav" id="2_ywp5j"]
