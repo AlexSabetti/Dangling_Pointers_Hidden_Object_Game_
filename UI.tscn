@@ -8,14 +8,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="VBoxContainer" parent="."]
+[node name="Ingame_UI" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.8
+anchor_top = 0.85
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Requests" type="ColorRect" parent="Ingame_UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.737255, 0.584314, 0.282353, 1)
+
+[node name="r_box" type="VBoxContainer" parent="Ingame_UI/Requests"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Panel2" type="Panel" parent="Ingame_UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Panel3" type="Panel" parent="Ingame_UI"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="PauseMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,11 +53,12 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 1
 
-[node name="Button" type="Button" parent="PauseMenu"]
+[node name="Resume" type="Button" parent="PauseMenu"]
 layout_mode = 2
-size_flags_vertical = 3
+text = "R E S U M E"
 
-[node name="Button2" type="Button" parent="PauseMenu"]
+[node name="Exit" type="Button" parent="PauseMenu"]
 layout_mode = 2
-size_flags_vertical = 3
+text = "E X I T"
