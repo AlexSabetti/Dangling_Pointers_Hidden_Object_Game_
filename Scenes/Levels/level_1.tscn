@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://c6xjps75rk6lg" path="res://Resources/Models/EB_SandBar1_a4_GD.glb" id="5_uwqvp"]
 [ext_resource type="PackedScene" uid="uid://bgpmad6ydyk15" path="res://Resources/Models/EB_SandBar2_a4_GD.glb" id="5_yy5rd"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="6_hf82j"]
-[ext_resource type="PlaneMesh" uid="uid://bar3y0gr8rc48" path="res://Resources/Models/grass_plane_mesh.tres" id="7_li8tt"]
+[ext_resource type="PlaneMesh" uid="uid://cnm420o340ocb" path="res://Resources/Models/grass_plane_mesh.tres" id="7_li8tt"]
 [ext_resource type="Material" uid="uid://ceygipf48d42m" path="res://Resources/Materials/M_Reeds6.tres" id="7_plr2s"]
 [ext_resource type="Material" uid="uid://b7ew2gog50h70" path="res://Resources/Materials/M_Reeds2.tres" id="8_m7aq2"]
-[ext_resource type="PlaneMesh" uid="uid://d4igk8ra7rknb" path="res://Resources/Models/grass_plane_mesh3.tres" id="8_mq53e"]
+[ext_resource type="PlaneMesh" uid="uid://ketnmcsq4w7q" path="res://Resources/Models/grass_plane_mesh3.tres" id="8_mq53e"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 
@@ -76,6 +76,18 @@ shadow_enabled = true
 
 [node name="Boat1" parent="." instance=ExtResource("2_yfk1g")]
 
+[node name="cameraController" parent="Boat1" index="0"]
+controls_disabled = false
+
+[node name="Rope" parent="Boat1/EmptyBoat1_a4_GD" index="3"]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 4.83619, 7.21165, 0)
+
+[node name="Rope2" parent="Boat1/EmptyBoat1_a4_GD" index="4"]
+transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
+
+[node name="Painting1" parent="Boat1" index="36"]
+transform = Transform3D(-1.31134e-08, 1.33356e-16, -0.3, 0, 0.3, 1.33356e-16, 0.3, 5.82918e-24, -1.31134e-08, -0.542108, 1.65091, 0.906752)
+
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0589, 4.05748, -11.7521)
 stream = ExtResource("3_q4n1s")
@@ -119,6 +131,9 @@ multimesh = SubResource("MultiMesh_64tl2")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.25251, 0)
 multimesh = SubResource("MultiMesh_kkfj2")
 
+[editable path="Boat1"]
+[editable path="Boat1/cameraController"]
+[editable path="Boat1/EmptyBoat1_a4_GD"]
 [editable path="WaterPlane"]
 [editable path="EB_SandBar1_a4_GD"]
 [editable path="EB_SandBar2_a4_GD"]

@@ -21,8 +21,10 @@ var previous_cam_id: int = 1
 # camera section selector, as of now, 1 is Camera Stern, 2 is Camera Kitchen, 3 is Camera helm, and 4 is Camera Bedroom. Do not select anything at or below 0.
 @export var cur_cam_sec: int = 1
 @export_group("Camera Control Toggles")
+
 # Whether or not the camera controls are disabled at the moment, should start as true so the main menu and / or pause menu isn't interupted
 @export var controls_disabled: bool = true
+
 
 var signal_manager: SignalBus = Bus
 
@@ -31,8 +33,8 @@ func _ready() -> void:
 	boatRef = get_parent_node_3d()
 
 	# Connect to the signal manager
-	signal_manager.connect("pause_game", respond_to_pause())
-	signal_manager.connect("unpause_game", respond_to_unpause())
+	#signal_manager.connect("pause_game", respond_to_pause())
+	#signal_manager.connect("unpause_game", respond_to_unpause())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,10 +42,10 @@ func _process(_delta: float) -> void:
 	
 	if enableCamWobble:
 		keepCam_Upright()
-	if Input.is_action_just_pressed("num_1") and !controls_disabled: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
+	if Input.is_action_just_pressed("section_back") and !controls_disabled: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
 		if(cur_cam_sec - 1 <= 0): change_cam_section(max_cams)
 		else: change_cam_section(cur_cam_sec - 1)
-	if Input.is_action_just_pressed("num_2") and !controls_disabled: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
+	if Input.is_action_just_pressed("section_next") and !controls_disabled: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
 		if(cur_cam_sec + 1 > max_cams): change_cam_section(1)
 		else: change_cam_section(cur_cam_sec + 1)
 		
@@ -59,7 +61,7 @@ func keepCam_Upright()-> void:
 # Changes camera sections depending on which id is provided
 func change_cam_section(cam_id: int):
 	# Send out signal to properly toggle objects
-	signal_manager.emit("camera_changed", cam_id)
+	#signal_manager.emit("camera_changed", cam_id) # commented out cuz not finished and was causing crashes
 
 	# For camera stern
 	if(cam_id == 1):
@@ -67,7 +69,9 @@ func change_cam_section(cam_id: int):
 		Global.waterPlane.visible = true
 		cam_Stern.make_current()
 		rocking_ambi.volume_db = -5
+		print("cam changed to Stern")
 		previous_cam_id = 1
+
 
 	# For camera kitchen
 	if(cam_id == 2):
@@ -75,6 +79,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.8)
 		cam_Kitchen.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Kitchen")
 		previous_cam_id = 2
 
 	# For camera helm
@@ -83,6 +88,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.9)
 		cam_Helm.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Helm")
 		previous_cam_id = 3
 
 	# For camera bedroom
@@ -91,13 +97,17 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.25)
 		cam_Bedroom.make_current()
 		rocking_ambi.volume_db = -80
+		print("cam changed to Bedroom")
 		previous_cam_id = 4
+	
+	cur_cam_sec = cam_id
 	
 
 	# For Pasue menu, basically same as camera Stern, just with disabled controls
 	if(cam_id == -4):
+		if Global.waterPlane:
+			Global.waterPlane.visible = true
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
-		Global.waterPlane.visible = true
 		cam_Stern.make_current()
 		rocking_ambi.volume_db = -5
 		controls_disabled = true

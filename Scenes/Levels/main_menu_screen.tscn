@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bjh6w04gdk78b" path="res://Scenes/UI/ui_main_menu.tscn" id="12_8amwl"]
 [ext_resource type="PlaneMesh" uid="uid://bxca5su2mm132" path="res://Resources/Models/grass1c_mesh.tres" id="12_20v14"]
 
+
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 
 [sub_resource type="Compositor" id="Compositor_8j73g"]
