@@ -389,7 +389,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996276, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
@@ -411,7 +411,7 @@ surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("9_rntxu")
 surface_material_override/2 = ExtResource("10_1qhld")
 surface_material_override/3 = ExtResource("3_leush")
-surface_material_override/4 = ExtResource("12_qapwe")
+surface_material_override/4 = ExtResource("2_y5rog")
 
 [node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="8"]
 surface_material_override/0 = ExtResource("23_h8d6i")
@@ -584,6 +584,27 @@ surface_material_override/0 = ExtResource("2_m6xgg")
 [node name="Bat" parent="EmptyBoat1_a4_GD" index="51"]
 surface_material_override/0 = ExtResource("24_y5pvy")
 
+[node name="Books3_001" parent="EmptyBoat1_a4_GD" index="52"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="DriftWood1" parent="EmptyBoat1_a4_GD" index="53"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="CassetteTape" parent="EmptyBoat1_a4_GD" index="54"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("2_y5rog")
+
+[node name="BedroomHook1" parent="EmptyBoat1_a4_GD" index="55"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+
+[node name="DriftWood2" parent="EmptyBoat1_a4_GD" index="56"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="Buoy3" parent="EmptyBoat1_a4_GD" index="57"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85704, 2.48576, 1.02177)
 light_color = Color(0.748153, 0.629115, 0.586203, 1)
@@ -666,21 +687,21 @@ render_priority = 5
 texture = ExtResource("28_lni1y")
 
 [node name="CabinetLines1" type="Sprite3D" parent="."]
-transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0.615541, 1.57531, -2.05341)
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0.615541, 1.57531, -2.07578)
 shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("27_63xk8")
 
 [node name="CabinetLines2" type="Sprite3D" parent="."]
-transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 1.17718, 1.95391, -1.68552)
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 1.17718, 1.95391, -1.70874)
 shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("28_6b1xg")
 
 [node name="CabinetLines3" type="Sprite3D" parent="."]
-transform = Transform3D(0.236029, 0, 0, 0, 0.225783, 0, 0, 0, 0.24, 0.518598, 3.65632, -2.05757)
+transform = Transform3D(0.236029, 0, 0, 0, 0.225783, 0, 0, 0, 0.24, 0.518598, 3.65632, -2.07801)
 shaded = true
 texture_filter = 0
 render_priority = 5
@@ -694,7 +715,7 @@ render_priority = 5
 texture = ExtResource("29_be24c")
 
 [node name="CabinetLines4" type="Sprite3D" parent="."]
-transform = Transform3D(0.220654, 0, 0, 0, 0.22552, 0, 0, 0, 0.24, -1.70837, 3.04388, -1.26754)
+transform = Transform3D(0.220654, 0, 0, 0, 0.22552, 0, 0, 0, 0.24, -1.70837, 3.05564, -1.2899)
 shaded = true
 texture_filter = 0
 render_priority = 5
