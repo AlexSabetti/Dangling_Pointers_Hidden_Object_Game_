@@ -57,13 +57,14 @@ compositor = SubResource("Compositor_8j73g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.353553, -0.841506, -0.408494, -0.928023, 0.260755, 0.266046, -0.117362, 0.473153, -0.873128, 0, 15, 0)
-light_color = Color(0.673072, 0.620329, 0.454284, 1)
+light_color = Color(0.721569, 0.603922, 0.384314, 1)
 light_energy = 1.5
 light_volumetric_fog_energy = 16.0
 light_angular_distance = 3.18
 shadow_enabled = true
 
 [node name="Boat1" parent="." instance=ExtResource("2_rjsud")]
+isMenuBoat = true
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0589, 4.05748, -11.7521)
