@@ -22,7 +22,6 @@ Bus="*res://Scripts/SignalBus.gd"
 
 [display]
 
-window/size/viewport_width=1148
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 mouse_cursor/custom_image="res://Resources/Textures/PointerArrow1.png"

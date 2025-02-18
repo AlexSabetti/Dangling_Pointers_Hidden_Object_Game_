@@ -81,13 +81,15 @@ environment = ExtResource("1_5eo3i")
 camera_attributes = SubResource("CameraAttributesPractical_jaxq7")
 compositor = SubResource("Compositor_8j73g")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="SunLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.353553, -0.841506, -0.408494, -0.928023, 0.260755, 0.266046, -0.117362, 0.473153, -0.873128, 0, 15, 0)
 light_color = Color(0.720325, 0.604816, 0.386018, 1)
 light_energy = 1.5
 light_volumetric_fog_energy = 16.0
 light_angular_distance = 3.18
 shadow_enabled = true
+shadow_normal_bias = 3.0
+shadow_blur = 0.8
 
 [node name="Boat1" parent="." instance=ExtResource("2_yfk1g")]
 
