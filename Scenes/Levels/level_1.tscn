@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://xnd1l3ulc26m"]
 
-[ext_resource type="Environment" uid="uid://bmigk2anxrp0t" path="res://Resources/Environments/Env_sunRise1.tres" id="1_5eo3i"]
+[ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_ww2a7"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_yfk1g"]
 [ext_resource type="PackedScene" uid="uid://d1g0rhhf4361n" path="res://Scenes/camera_controller.tscn" id="3_3gr4u"]
 [ext_resource type="AudioStream" uid="uid://ct0lt7mkfhrve" path="res://Resources/Sounds/Ambience/OceanAmbienceLoop.wav" id="3_q4n1s"]
@@ -78,13 +78,13 @@ buffer = PackedFloat32Array(0.785908, -0.141454, -0.779316, 24.6158, 0.118277, 1
 [node name="Level1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_5eo3i")
+environment = ExtResource("1_ww2a7")
 camera_attributes = SubResource("CameraAttributesPractical_jaxq7")
 compositor = SubResource("Compositor_8j73g")
 
 [node name="SunLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.353553, -0.841506, -0.408494, -0.928023, 0.260755, 0.266046, -0.117362, 0.473153, -0.873128, 0, 15, 0)
-light_color = Color(0.739646, 0.600251, 0.317829, 1)
+light_color = Color(0.727658, 0.606388, 0.314746, 1)
 light_energy = 1.75
 light_volumetric_fog_energy = 16.0
 light_angular_distance = 3.18

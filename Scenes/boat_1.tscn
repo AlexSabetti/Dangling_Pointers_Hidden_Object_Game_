@@ -129,7 +129,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-0.05, -1.5, 0, 1.5, 0, 0.05, -1.5, 0, 1.5, 0, -0.05, -1.5, 0, 1.5, 0),
+"points": PackedFloat32Array(0.05, -1.5, 0, 1.5, 0, -0.05, -1.5, 0, 1.5, 0, 0.05, -1.5, 0, 1.5, 0),
 "times": PackedFloat32Array(0, 5, 10)
 }
 tracks/7/type = "bezier"
@@ -561,6 +561,9 @@ surface_material_override/1 = ExtResource("24_y5pvy")
 [node name="Bucket" parent="EmptyBoat1_a4_GD" index="43"]
 surface_material_override/0 = ExtResource("2_y5rog")
 
+[node name="Duck" parent="EmptyBoat1_a4_GD" index="44"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
 [node name="MiniBoat" parent="EmptyBoat1_a4_GD" index="45"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("9_rntxu")
@@ -652,24 +655,29 @@ surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_y5rog")
 
 [node name="KitchenBounceLight1" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85704, 2.48576, 1.02177)
-light_color = Color(0.861345, 0.658046, 0.474341, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96958, 3.07357, 0.126274)
+light_color = Color(0.815686, 0.686275, 0.447059, 1)
+light_size = 0.64
+light_specular = 0.0
+light_bake_mode = 1
 shadow_enabled = true
-shadow_opacity = 0.75
-shadow_blur = 10.0
+omni_range = 4.02157
 
 [node name="KitchenBounceLight2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10578, 2.63878, -1.87458)
-light_color = Color(0.862745, 0.658824, 0.47451, 1)
-light_energy = 0.1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.958782, 2.63878, -1.3795)
+light_color = Color(0.815686, 0.686275, 0.447059, 1)
+light_energy = 0.3
 light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.0
 shadow_opacity = 0.75
 shadow_blur = 10.0
 
 [node name="BedroomLight1" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.20353, 2.21191, 0.0243201)
-light_color = Color(0.768702, 0.567109, 0.447192, 1)
+light_color = Color(0.720817, 0.592749, 0.445133, 1)
 light_energy = 0.35
 shadow_enabled = true
 shadow_bias = 0.015
@@ -677,7 +685,7 @@ omni_range = 3.54897
 
 [node name="HelmBounceLight1" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28646, 4.24917, 1.08054)
-light_color = Color(0.862745, 0.658824, 0.47451, 1)
+light_color = Color(0.815686, 0.686275, 0.447059, 1)
 light_energy = 0.6
 shadow_enabled = true
 shadow_normal_bias = 3.607
@@ -687,13 +695,13 @@ omni_range = 3.76608
 
 [node name="HelmBounceLight2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.928359, 4.57941, 0.146646)
-light_color = Color(0.862745, 0.658824, 0.47451, 1)
+light_color = Color(0.815686, 0.686275, 0.447059, 1)
 light_energy = 0.2
 shadow_enabled = true
 shadow_normal_bias = 1.765
 shadow_opacity = 0.75
 shadow_blur = 10.0
-omni_range = 2.55448
+omni_range = 3.83451
 
 [node name="HelmBounceLight3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22608, 4.44791, -0.0660578)
@@ -782,6 +790,7 @@ texture = ExtResource("28_6b1xg")
 [node name="FloorWires1" type="Sprite3D" parent="."]
 transform = Transform3D(-0.0540602, 0.201755, 0, 8.81901e-09, 2.36305e-09, 0.208873, 0.201755, 0.0540602, -9.13011e-09, 1.57107, 1.0028, 0.0712299)
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("30_hbhbo")
@@ -808,7 +817,7 @@ render_priority = 5
 texture = ExtResource("30_u44lp")
 
 [node name="Carpet1" type="Sprite3D" parent="."]
-transform = Transform3D(0.385865, 0.041868, 0, 1.80708e-09, -1.65204e-08, 0.568789, 0.0409647, -0.394375, -2.51457e-08, -2.12184, 2.70754, -0.117684)
+transform = Transform3D(0.385865, 0.041868, 0, 1.80708e-09, -1.65204e-08, 0.568789, 0.0409647, -0.394375, -2.51457e-08, -2.10031, 2.70754, -0.117684)
 shaded = true
 texture_filter = 0
 render_priority = 5
@@ -822,9 +831,8 @@ render_priority = 5
 texture = ExtResource("31_0j6ed")
 
 [node name="Carpet2" type="Sprite3D" parent="."]
-transform = Transform3D(0.250068, 0.00558576, 0, 2.83762e-10, -1.07102e-08, 0.366643, 0.00546524, -0.255583, -1.49012e-08, 3.15027, 1.00025, 0.926512)
+transform = Transform3D(0.00982197, -0.459327, -2.67801e-08, 5.0997e-10, -1.92481e-08, 0.658922, -0.449416, -0.0100386, 3.59385e-15, 2.24825, 1.00025, 0.972144)
 shaded = true
-alpha_cut = 1
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("32_qe03i")
