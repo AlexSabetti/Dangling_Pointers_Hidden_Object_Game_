@@ -12,13 +12,13 @@ class_name UIHandler
 var signal_manager: SignalBus = Bus
 
 var isPaused: bool = false
-var isInMainMenu: bool = false
+# var isInMainMenu: bool = false
 
 func _ready():
-	signal_manager.connect("pause_game", respond_to_pause())
-	signal_manager.connect("unpause_game", respond_to_unpause())
-	pauseMenu.get_node("Resume").connect("pressed", _resume_pressed())
-	pauseMenu.get_node("Exit").connect("pressed", _exit())
+	signal_manager.pause_game.connect(respond_to_pause)
+	signal_manager.unpause_game.connect(respond_to_unpause)
+	pauseMenu.get_node("Resume").pressed.connect(_resume_pressed)
+	pauseMenu.get_node("Exit").pressed.connect(_exit)
 
 
 func respond_to_pause():

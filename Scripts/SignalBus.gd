@@ -5,5 +5,5 @@ extends Node
 signal valid_object_clicked(obj: ClickableObject)
 signal camera_changed(cam_id: int)
 
-signal pause_game()
-signal unpause_game()  
+signal pause_game
+signal unpause_game

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=2 format=3 uid="uid://cnu3g4uuvf7id"]
 
-[ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
+[ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_56j55"]
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_coxev")
+script = ExtResource("1_56j55")
 
 [node name="Ingame_UI" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -23,7 +23,7 @@ grow_vertical = 0
 [node name="Requests" type="ColorRect" parent="Ingame_UI"]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.682353, 0.470588, 0.215686, 1)
+color = Color(0.683725, 0.471362, 0.216233, 1)
 
 [node name="r_box" type="VBoxContainer" parent="Ingame_UI/Requests"]
 layout_mode = 1

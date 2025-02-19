@@ -13,12 +13,12 @@ var signal_manager: SignalBus = Bus
 
 func _ready():
 	set_process_input(true)
-	signal_manager.connect("camera_changed", _activate_in_scene) 
+	signal_manager.camera_changed.connect(_activate_in_scene) 
 
 func _input_event(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if can_interact and requirements.size() == 0:
-			signal_manager.emit_signal("object_clicked", self)
+			signal_manager.object_clicked.emit_signal(self)
 
 func _activate_in_scene(id_to_activate: int):
 	if id_to_activate == obj_id:
