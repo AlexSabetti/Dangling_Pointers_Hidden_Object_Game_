@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://di5yopwk7dyhn"]
 
-[ext_resource type="Environment" uid="uid://bmigk2anxrp0t" path="res://Resources/Environments/Env_sunRise1.tres" id="1_ojj00"]
+[ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_j3g3g"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_rjsud"]
 [ext_resource type="AudioStream" uid="uid://ct0lt7mkfhrve" path="res://Resources/Sounds/Ambience/OceanAmbienceLoop.wav" id="3_pauaq"]
 [ext_resource type="PackedScene" uid="uid://duo07ra8l725q" path="res://Scenes/waterPlane.tscn" id="4_jnxa7"]
@@ -51,7 +51,7 @@ buffer = PackedFloat32Array(0.785908, -0.141454, -0.779316, 24.6158, 0.118277, 1
 [node name="main_menu_screen" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_ojj00")
+environment = ExtResource("1_j3g3g")
 camera_attributes = SubResource("CameraAttributesPractical_jaxq7")
 compositor = SubResource("Compositor_8j73g")
 
