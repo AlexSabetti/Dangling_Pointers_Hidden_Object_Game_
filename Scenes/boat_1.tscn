@@ -640,6 +640,13 @@ obj_id = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153565, 0.0443726, 0.0548701)
 shape = SubResource("BoxShape3D_lqj7v")
 
+[node name="LogBookLable" type="Sprite3D" parent="EmptyBoat1_a4_GD/LogBook" index="1"]
+transform = Transform3D(-0.0112207, -0.131164, -0.00043877, -0.00462848, -6.28643e-09, 0.140029, -0.128251, 0.0114754, -0.00501512, 0.00411814, 0.0385997, 0.0223324)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("21_3t2lr")
+
 [node name="DriftWood1" parent="EmptyBoat1_a4_GD" index="52"]
 surface_material_override/0 = ExtResource("2_y5rog")
 
@@ -971,13 +978,6 @@ shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("33_potu1")
-
-[node name="LogBookLable" type="Sprite3D" parent="."]
-transform = Transform3D(0.124354, -0.0340775, 0.00486274, -0.00462848, -6.28643e-09, 0.140029, -0.0333207, -0.127179, -0.00130297, -3.0303, 3.0386, 0.221552)
-shaded = true
-texture_filter = 0
-render_priority = 5
-texture = ExtResource("21_3t2lr")
 
 [node name="Shirt1" type="Sprite3D" parent="."]
 transform = Transform3D(0.132463, -0.121875, -5.32731e-09, 0, -7.86805e-09, 0.18, -0.121875, -0.132463, -5.79016e-09, -2.15504, -0.346709, -0.648987)
