@@ -66,13 +66,13 @@ shadow_enabled = true
 [node name="Boat" parent="." instance=ExtResource("2_rjsud")]
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0589, 4.05748, -11.7521)
+transform = Transform3D(-0.866461, 0, 0.499244, 0, 1, 0, -0.499244, 0, -0.866461, -17.5663, 4.05748, -27.03)
 stream = ExtResource("3_pauaq")
 volume_db = -10.0
 autoplay = true
 
 [node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1.00028, 5.85139e-06, 0.000286141, -5.48077e-06, 1.00028, -0.00129559, -0.000286149, 0.00129559, 1.00028, 4.05681, 4.06694, 10.9585)
+transform = Transform3D(-0.866604, -0.000871514, 0.498996, -0.000277131, 0.999999, 0.00126524, -0.498996, 0.000958179, -0.866604, -32.9367, 4.09078, -10.3067)
 stream = ExtResource("3_pauaq")
 volume_db = -10.0
 autoplay = true

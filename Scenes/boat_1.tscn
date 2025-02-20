@@ -410,7 +410,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996276, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996275, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
@@ -639,6 +639,13 @@ obj_id = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/LogBook/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153565, 0.0443726, 0.0548701)
 shape = SubResource("BoxShape3D_lqj7v")
+
+[node name="LogBookLable" type="Sprite3D" parent="EmptyBoat1_a4_GD/LogBook" index="1"]
+transform = Transform3D(-0.0112207, -0.131164, -0.00043877, -0.00462848, -6.28643e-09, 0.140029, -0.128251, 0.0114754, -0.00501512, 0.00411814, 0.0385997, 0.0223324)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("21_3t2lr")
 
 [node name="DriftWood1" parent="EmptyBoat1_a4_GD" index="52"]
 surface_material_override/0 = ExtResource("2_y5rog")
@@ -972,13 +979,6 @@ texture_filter = 0
 render_priority = 5
 texture = ExtResource("33_potu1")
 
-[node name="LogBookLable" type="Sprite3D" parent="."]
-transform = Transform3D(0.124354, -0.0340775, 0.00486274, -0.00462848, -6.28643e-09, 0.140029, -0.0333207, -0.127179, -0.00130297, -3.0303, 3.0386, 0.221552)
-shaded = true
-texture_filter = 0
-render_priority = 5
-texture = ExtResource("21_3t2lr")
-
 [node name="Shirt1" type="Sprite3D" parent="."]
 transform = Transform3D(0.132463, -0.121875, -5.32731e-09, 0, -7.86805e-09, 0.18, -0.121875, -0.132463, -5.79016e-09, -2.15504, -0.346709, -0.648987)
 shaded = true
@@ -1168,14 +1168,15 @@ texture_filter = 0
 render_priority = 5
 texture = ExtResource("46_cesx7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Keys"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ShipKeys"]
+transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.29993, -0.990615, 0.0679774, -0.118577, 0.18538, -0.0362663, 0.00792408)
 script = ExtResource("18_4cqqd")
 object_name = "skip keys"
 obj_id = 2
 progress_requirement = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Keys/StaticBody3D"]
-transform = Transform3D(1, 0, -2.16067e-07, 0, 1, 7.72998e-08, -1.11759e-08, -5.68107e-08, 1, 9.53674e-07, -0.456047, -9.53674e-07)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShipKeys/StaticBody3D"]
+transform = Transform3D(1, -1.41553e-15, -2.16067e-07, 2.77556e-17, 1, 7.45058e-08, -7.45058e-09, -2.98023e-08, 1, 9.67266e-07, -0.456047, -1.04347e-06)
 shape = SubResource("BoxShape3D_xx2gy")
 
 [editable path="EmptyBoat1_a4_GD"]
