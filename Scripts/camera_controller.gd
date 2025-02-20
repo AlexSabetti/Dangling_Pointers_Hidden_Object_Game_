@@ -156,7 +156,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
 		cam_Stern.make_current()
 		cam_Stern.global_rotation = cam_Stern_rot
-		rocking_ambi.volume_db = -5
+		rocking_ambi.volume_db = -12
 		controls_disabled = true
 
 

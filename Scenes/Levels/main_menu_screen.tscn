@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://di5yopwk7dyhn"]
+[gd_scene load_steps=23 format=3 uid="uid://di5yopwk7dyhn"]
 
 [ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_j3g3g"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_rjsud"]
+[ext_resource type="AudioStream" uid="uid://b4krqnru1qyn8" path="res://Resources/Sounds/Ambience/OceanAndSeagullAmbienceLoop.wav" id="3_mj7ro"]
 [ext_resource type="AudioStream" uid="uid://ct0lt7mkfhrve" path="res://Resources/Sounds/Ambience/OceanAmbienceLoop.wav" id="3_pauaq"]
 [ext_resource type="PackedScene" uid="uid://duo07ra8l725q" path="res://Scenes/waterPlane.tscn" id="4_jnxa7"]
 [ext_resource type="PackedScene" uid="uid://c6xjps75rk6lg" path="res://Resources/Models/EB_SandBar1_a4_GD.glb" id="5_mpr0f"]
@@ -13,6 +14,7 @@
 [ext_resource type="PlaneMesh" uid="uid://pm4334vw82q1" path="res://Resources/Models/grass1b_mesh.tres" id="10_jrhmk"]
 [ext_resource type="PackedScene" uid="uid://cg457s3jk4ebw" path="res://Scenes/UI/ui_main_menu.tscn" id="12_8amwl"]
 [ext_resource type="PlaneMesh" uid="uid://be74bylqmm3sc" path="res://Resources/Models/grass1c_mesh.tres" id="12_20v14"]
+[ext_resource type="AudioStream" uid="uid://y0kjctdr2kss" path="res://Resources/Sounds/Ambience/CicadaLoop1.wav" id="14_1f2s8"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 
@@ -66,13 +68,14 @@ shadow_enabled = true
 [node name="Boat" parent="." instance=ExtResource("2_rjsud")]
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(-0.866461, 0, 0.499244, 0, 1, 0, -0.499244, 0, -0.866461, -17.5663, 4.05748, -27.03)
-stream = ExtResource("3_pauaq")
-volume_db = -10.0
+transform = Transform3D(-0.866461, 0, 0.499244, 0, 1, 0, -0.499244, 0, -0.866461, -25.5409, 7.92956, -18.2108)
+stream = ExtResource("3_mj7ro")
+volume_db = -20.0
 autoplay = true
 
 [node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(-0.866604, -0.000871514, 0.498996, -0.000277131, 0.999999, 0.00126524, -0.498996, 0.000958179, -0.866604, -32.9367, 4.09078, -10.3067)
+visible = false
 stream = ExtResource("3_pauaq")
 volume_db = -10.0
 autoplay = true
@@ -113,6 +116,12 @@ multimesh = SubResource("MultiMesh_kkfj2")
 [node name="MainMenuCamera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.916003, -0.054414, -0.397463, 0, 0.990758, -0.135638, 0.401171, -0.124245, -0.907538, -25.8104, 2.06038, -18.3531)
 current = true
+
+[node name="CicadaAmbience1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1017, 1.5323, -20.1666)
+stream = ExtResource("14_1f2s8")
+volume_db = -5.0
+autoplay = true
 
 [editable path="WaterPlane"]
 [editable path="EB_SandBar1_a4_GD"]

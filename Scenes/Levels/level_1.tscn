@@ -1,10 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://xnd1l3ulc26m"]
+[gd_scene load_steps=28 format=3 uid="uid://xnd1l3ulc26m"]
 
 [ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_ww2a7"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_yfk1g"]
 [ext_resource type="PackedScene" uid="uid://d1g0rhhf4361n" path="res://Scenes/camera_controller.tscn" id="3_3gr4u"]
 [ext_resource type="AudioStream" uid="uid://ct0lt7mkfhrve" path="res://Resources/Sounds/Ambience/OceanAmbienceLoop.wav" id="3_q4n1s"]
 [ext_resource type="PackedScene" uid="uid://duo07ra8l725q" path="res://Scenes/waterPlane.tscn" id="4_q6f3t"]
+[ext_resource type="AudioStream" uid="uid://b4krqnru1qyn8" path="res://Resources/Sounds/Ambience/OceanAndSeagullAmbienceLoop.wav" id="4_r7wvt"]
+[ext_resource type="AudioStream" uid="uid://y0kjctdr2kss" path="res://Resources/Sounds/Ambience/CicadaLoop1.wav" id="5_fy05e"]
 [ext_resource type="PackedScene" uid="uid://c6xjps75rk6lg" path="res://Resources/Models/EB_SandBar1_a4_GD.glb" id="5_uwqvp"]
 [ext_resource type="PackedScene" uid="uid://bgpmad6ydyk15" path="res://Resources/Models/EB_SandBar2_a4_GD.glb" id="5_yy5rd"]
 [ext_resource type="Material" uid="uid://bq0nux2vqt3ja" path="res://Resources/Materials/M_Tan.tres" id="6_hf82j"]
@@ -101,14 +103,22 @@ waterPlaneRef = NodePath("../../WaterPlane")
 controls_disabled = false
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0589, 4.05748, -11.7521)
+transform = Transform3D(0.998246, -0.0592018, 0, 0.0592018, 0.998246, 0, 0, 0, 1, 10.4034, 5.96743, 3.31898)
+stream = ExtResource("4_r7wvt")
+volume_db = -18.0
+autoplay = true
+max_distance = 50.0
+
+[node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.52405, 0.846335, -0.0953327, -0.850254, 0.526372, -0.000925006, 0.0493976, 0.0815418, 0.995445, -35.1088, 8.6258, 8.74338)
 stream = ExtResource("3_q4n1s")
 volume_db = -10.0
 autoplay = true
+max_distance = 150.0
 
-[node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1.00028, 5.85139e-06, 0.000286141, -5.48077e-06, 1.00028, -0.00129559, -0.000286149, 0.00129559, 1.00028, 4.05681, 4.06694, 10.9585)
-stream = ExtResource("3_q4n1s")
+[node name="CicadaAmbience1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99923, -0.0392424, 0, 0.0392424, 0.99923, 7.87809, 3.227, -2.90178)
+stream = ExtResource("5_fy05e")
 volume_db = -10.0
 autoplay = true
 

@@ -845,7 +845,7 @@ shadow_blur = 10.0
 omni_range = 3.53133
 
 [node name="FluorescentLightAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, -1.08184e-09, -7.27595e-12, 1.08184e-09, 1, -7.45058e-09, 7.27596e-12, 7.45058e-09, 1, -3.22042, 1.89331, 0.0406996)
+transform = Transform3D(1, -1.08184e-09, -7.27595e-12, 1.08184e-09, 1, -7.45058e-09, 7.27596e-12, 7.45058e-09, 1, -3.73028, 1.64069, -0.0197382)
 stream = ExtResource("16_sra5r")
 volume_db = -5.0
 unit_size = 2.5
@@ -853,17 +853,18 @@ autoplay = true
 max_distance = 5.0
 
 [node name="BoatCreakingAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83628, 5.17083, 0.277005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1036, 5.17083, 0.277005)
 stream = ExtResource("20_xw8yl")
 volume_db = -20.0
 pitch_scale = 0.7
 autoplay = true
+max_distance = 30.0
 attenuation_filter_cutoff_hz = 800.0
 
 [node name="BoatRockingAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92327, 0.657084, -0.188656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15077, 0.657084, -0.188656)
 stream = ExtResource("26_a2f3f")
-volume_db = -10.0
+volume_db = -15.0
 pitch_scale = 0.9
 autoplay = true
 
