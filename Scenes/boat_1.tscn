@@ -388,7 +388,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996277, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986409, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996276, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
@@ -483,6 +483,7 @@ surface_material_override/1 = ExtResource("9_rntxu")
 
 [node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="25"]
 surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("10_1qhld")
 
 [node name="Toaster" parent="EmptyBoat1_a4_GD" index="26"]
 surface_material_override/0 = ExtResource("12_qapwe")
@@ -530,7 +531,7 @@ surface_material_override/2 = ExtResource("12_arn7q")
 
 [node name="BoomBox" parent="EmptyBoat1_a4_GD" index="36"]
 surface_material_override/0 = ExtResource("12_qapwe")
-surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/1 = ExtResource("2_y5rog")
 
 [node name="FireExtinguisher" parent="EmptyBoat1_a4_GD" index="37"]
 surface_material_override/0 = ExtResource("21_33mjs")
@@ -562,7 +563,8 @@ surface_material_override/1 = ExtResource("24_y5pvy")
 surface_material_override/0 = ExtResource("2_y5rog")
 
 [node name="Duck" parent="EmptyBoat1_a4_GD" index="44"]
-surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/0 = ExtResource("10_1qhld")
+surface_material_override/1 = ExtResource("6_3qo3t")
 
 [node name="MiniBoat" parent="EmptyBoat1_a4_GD" index="45"]
 surface_material_override/0 = ExtResource("12_qapwe")
@@ -654,6 +656,46 @@ surface_material_override/2 = ExtResource("24_y5pvy")
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("2_y5rog")
 
+[node name="FishingCap1" parent="EmptyBoat1_a4_GD" index="68"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("10_1qhld")
+
+[node name="FishingCap2" parent="EmptyBoat1_a4_GD" index="69"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="BaseBallCap1" parent="EmptyBoat1_a4_GD" index="70"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("12_qapwe")
+
+[node name="Thingy2" parent="EmptyBoat1_a4_GD" index="71"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="Pencil1" parent="EmptyBoat1_a4_GD" index="72"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="Pencil2" parent="EmptyBoat1_a4_GD" index="73"]
+surface_material_override/0 = ExtResource("12_qapwe")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="FireExtinguisher2" parent="EmptyBoat1_a4_GD" index="74"]
+surface_material_override/0 = ExtResource("21_33mjs")
+surface_material_override/1 = ExtResource("2_m6xgg")
+surface_material_override/2 = ExtResource("9_rntxu")
+
+[node name="WaterBottle1" parent="EmptyBoat1_a4_GD" index="75"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("6_3qo3t")
+
+[node name="WaterBottle2" parent="EmptyBoat1_a4_GD" index="76"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("6_3qo3t")
+
+[node name="WaterBottle3" parent="EmptyBoat1_a4_GD" index="77"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("6_3qo3t")
+
 [node name="KitchenBounceLight1" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96958, 3.07357, 0.126274)
 light_color = Color(0.815686, 0.686275, 0.447059, 1)
@@ -684,29 +726,31 @@ shadow_bias = 0.015
 omni_range = 3.54897
 
 [node name="HelmBounceLight1" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28646, 4.24917, 1.08054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28646, 4.25011, 1.0336)
 light_color = Color(0.815686, 0.686275, 0.447059, 1)
 light_energy = 0.6
+light_size = 0.2
 shadow_enabled = true
 shadow_normal_bias = 3.607
-shadow_opacity = 0.4
 shadow_blur = 10.0
 omni_range = 3.76608
 
 [node name="HelmBounceLight2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.928359, 4.57941, 0.146646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02504, 4.57941, 0.146646)
 light_color = Color(0.815686, 0.686275, 0.447059, 1)
 light_energy = 0.2
+light_size = 0.3
 shadow_enabled = true
+shadow_bias = 0.0
 shadow_normal_bias = 1.765
-shadow_opacity = 0.75
 shadow_blur = 10.0
 omni_range = 3.83451
 
 [node name="HelmBounceLight3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22608, 4.44791, -0.0660578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34108, 4.44791, -0.0660578)
 light_color = Color(0.817447, 0.690059, 0.373097, 1)
 light_energy = 0.2
+light_size = 0.15
 shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_opacity = 0.75
@@ -838,7 +882,7 @@ render_priority = 5
 texture = ExtResource("32_qe03i")
 
 [node name="SlumberSign" type="Sprite3D" parent="."]
-transform = Transform3D(0.142948, 0, 0, 0, 0.146101, 0, 0, 0, 0.155481, -0.822288, 3.65457, 0.0191165)
+transform = Transform3D(0.142948, 0, 0, 0, 0.146101, 0, 0, -2.32831e-10, 0.155481, -0.822288, 3.71133, 0.0202518)
 shaded = true
 texture_filter = 0
 render_priority = 5
@@ -859,14 +903,14 @@ render_priority = 5
 texture = ExtResource("33_potu1")
 
 [node name="LogBookLable" type="Sprite3D" parent="."]
-transform = Transform3D(0.124354, -0.0340775, 0.00486274, -0.00462848, -5.47152e-09, 0.140029, -0.0333207, -0.127179, -0.00130297, -3.02152, 3.03812, 0.245542)
+transform = Transform3D(0.124354, -0.0340775, 0.00486274, -0.00462848, -6.28643e-09, 0.140029, -0.0333207, -0.127179, -0.00130297, -3.0303, 3.0386, 0.221552)
 shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("21_3t2lr")
 
 [node name="Shirt1" type="Sprite3D" parent="."]
-transform = Transform3D(0.110386, -0.101562, 0, -4.43943e-09, -4.82513e-09, 0.15, -0.101562, -0.110386, -6.55671e-09, -2.16215, -0.348012, -0.58383)
+transform = Transform3D(0.132463, -0.121875, -5.32731e-09, 0, -7.86805e-09, 0.18, -0.121875, -0.132463, -5.79016e-09, -2.15504, -0.346709, -0.648987)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -874,7 +918,7 @@ render_priority = 5
 texture = ExtResource("27_mm5og")
 
 [node name="Shirt3" type="Sprite3D" parent="."]
-transform = Transform3D(0.0695315, 0.132911, 6.33329e-09, 0.00421657, -0.00220588, 0.149924, 0.132844, -0.0694965, -0.00475871, -3.96109, -0.336021, 0.21149)
+transform = Transform3D(0.0834379, 0.159493, 9.03118e-09, 0.00505991, -0.00264707, 0.179909, 0.159413, -0.0833959, -0.00571049, -3.96109, -0.336021, 0.21149)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -882,7 +926,7 @@ render_priority = 5
 texture = ExtResource("27_mm5og")
 
 [node name="Shirt2" type="Sprite3D" parent="."]
-transform = Transform3D(0.00623928, -0.14987, -6.3333e-09, 1.95899e-09, -6.25724e-09, 0.15, -0.14987, -0.00623928, 1.697e-09, -2.46253, -0.339689, 0.20185)
+transform = Transform3D(0.00748714, -0.179844, -7.86124e-09, 0, -7.86805e-09, 0.18, -0.179844, -0.00748714, -3.27273e-10, -2.59186, -0.340531, 0.243925)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -890,7 +934,7 @@ render_priority = 5
 texture = ExtResource("28_y5f8n")
 
 [node name="Photos1" type="Sprite3D" parent="."]
-transform = Transform3D(0.0695315, 0.132911, 6.33329e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.132911, -0.0695315, 1.697e-09, -2.49763, -0.339689, -0.878873)
+transform = Transform3D(0.0834379, 0.159493, 6.97167e-09, -2.32831e-10, -7.91624e-09, 0.18, 0.159493, -0.0834379, -3.72529e-09, -2.49763, -0.328531, -0.87865)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -898,7 +942,7 @@ render_priority = 5
 texture = ExtResource("29_3tvuc")
 
 [node name="Pants1" type="Sprite3D" parent="."]
-transform = Transform3D(-0.132911, 0.0695315, -1.697e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.0695315, 0.132911, 6.3333e-09, -2.80373, -0.319941, -0.458186)
+transform = Transform3D(-0.159493, 0.0834379, 3.64719e-09, 0, -7.86805e-09, 0.18, 0.0834379, 0.159493, 6.97167e-09, -2.73454, -0.323066, -0.301936)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -906,7 +950,7 @@ render_priority = 5
 texture = ExtResource("29_jkhho")
 
 [node name="Pants2" type="Sprite3D" parent="."]
-transform = Transform3D(0.0903161, 0.119762, 6.52547e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.119762, -0.0903161, 6.39254e-10, -3.18559, -0.356806, -0.759268)
+transform = Transform3D(0.108379, 0.143715, 6.28197e-09, 0, -7.86805e-09, 0.18, 0.143715, -0.108379, -4.73742e-09, -3.18559, -0.356806, -0.759268)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -914,7 +958,7 @@ render_priority = 5
 texture = ExtResource("30_f45m2")
 
 [node name="Pants3" type="Sprite3D" parent="."]
-transform = Transform3D(0.0793302, 0.127305, 6.44298e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.127305, -0.0793302, 1.2159e-09, 1.56647, 1.01375, -0.735839)
+transform = Transform3D(-0.122969, 0.131445, -0.000870064, -0.000591074, 0.000638486, 0.179998, 0.131447, 0.122971, -4.55794e-06, 1.75356, 1.00744, -0.420456)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -922,7 +966,7 @@ render_priority = 5
 texture = ExtResource("30_f45m2")
 
 [node name="Socks1" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0642709, 0.101337, 4.42959e-09, -0.00534244, -0.00338833, 0.119833, 0.101196, 0.0641816, 0.00632633, -2.53979, 0.479992, -1.46691)
+transform = Transform3D(-0.0803389, 0.126672, -9.40252e-09, -0.00667805, -0.00423541, 0.149791, 0.126495, 0.0802271, 0.00790791, -2.51672, 0.479627, -1.44864)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -954,7 +998,7 @@ render_priority = 5
 texture = ExtResource("37_gewee")
 
 [node name="Socks2" type="Sprite3D" parent="."]
-transform = Transform3D(0.114454, 0.035955, -0.0027593, 0.00248529, 0.00129534, 0.119967, 0.035975, -0.114479, 0.000490811, -2.37361, -0.344231, -0.782475)
+transform = Transform3D(0.143067, 0.0449436, -0.00344902, 0.00310653, 0.00161914, 0.149959, 0.0449686, -0.143099, 0.00061351, -2.37361, -0.344231, -0.782475)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -962,7 +1006,7 @@ render_priority = 5
 texture = ExtResource("31_nwkei")
 
 [node name="Socks3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.10629, 0.0556919, 0.000951073, -0.000797315, 0.000527516, -0.119996, -0.0556947, -0.106293, -9.72118e-05, 3.1426, 1.66264, -0.408588)
+transform = Transform3D(-0.132862, 0.0696151, 0.00118834, -0.000996223, 0.000659121, -0.149995, -0.0696181, -0.132866, -0.000121466, 3.1426, 1.66264, -0.408588)
 shaded = true
 texture_filter = 0
 render_priority = 5
@@ -1036,8 +1080,8 @@ shaded = true
 texture_filter = 0
 texture = ExtResource("33_i52wy")
 
-[node name="Keys" type="Sprite3D" parent="."]
-transform = Transform3D(0.00773308, 0.0608492, -0.101282, 0.020221, 0.0930146, 0.0651153, 0.108658, -0.0216404, -0.0049097, 3.70379, 2.282, 0.216043)
+[node name="ShipKeys" type="Sprite3D" parent="."]
+transform = Transform3D(0.00773308, 0.0608492, -0.101282, 0.0339188, 0.0894935, 0.0639568, 0.10519, -0.0333307, -0.0131773, 3.69333, 2.26205, 0.207709)
 offset = Vector2(-8.095, -53.665)
 shaded = true
 texture_filter = 0
