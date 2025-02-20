@@ -61,15 +61,11 @@ func _update_requests(requests: Array):
 	UI_SFX.play()
 	# Not the optimal way to do this
 	print(taskBar.get_node("Requests/r_box").get_child_count())
-	for i in range(taskBar.get_node("Requests/r_box").get_child_count()):
-		taskBar.get_node("Requests/r_box").get_child(0).queue_free()
 
-	for i in range(requests.size()):
-		taskBar.get_node("Requests/r_box").add_child(RichTextLabel.new())
-		var label: RichTextLabel = taskBar.get_node("Requests/r_box").get_child(i)
-		label.text = requests[i]
-		label.fit_content = true
-		print(taskBar.get_node("Requests/r_box").get_child(i).text)
+	var label: RichTextLabel = taskBar.get_node("Requests/r_box").get_child(0)
+	label.text = requests[0]
+	label.fit_content = true
+	
 		
 	# open taskbar to show new task if it's currently hidden
 	if isTaskBarHidden:
