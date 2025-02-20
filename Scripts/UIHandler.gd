@@ -6,6 +6,7 @@ class_name UIHandler
 @onready var pauseMenu: VBoxContainer = $PauseMenu
 @onready var barPos : Control = $bar_Pos
 @onready var UI_SFX : AudioStreamPlayer2D = $UI_SFX
+@onready var UI_SFX2 : AudioStreamPlayer2D = $UI_SFX2
 @onready var FadeToBlack : ColorRect = $FadeToBlack
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
@@ -76,6 +77,7 @@ func _update_requests(requests: Array):
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
+	UI_SFX2.play()
 	if isTaskBarHidden: # show bar
 		show_bar()
 	else: # hide bar
@@ -108,3 +110,7 @@ func fade_to_black():
 func fade_from_black():
 	var tween = create_tween()
 	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.0).from(fadeBlackColor).set_trans(Tween.TRANS_SINE)
+
+# when button is hovered over
+func _on_btn_mouse_entered() -> void:
+	UI_SFX2.play()

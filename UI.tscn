@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=12 format=3 uid="uid://cw83dccua6vux"]
 
 [ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
+[ext_resource type="Texture2D" uid="uid://e0254uqt5s6x" path="res://Resources/Textures/Sprites/LeftArrow1_b1.png" id="2_iow18"]
 [ext_resource type="AudioStream" uid="uid://bqh2xiyjpu1yl" path="res://Resources/Sounds/SFX/ScribbleSound1.wav" id="2_qp715"]
+[ext_resource type="Texture2D" uid="uid://dkxvghrtwholn" path="res://Resources/Textures/Sprites/LeftArrow1_c1.png" id="3_p445d"]
+[ext_resource type="Texture2D" uid="uid://burru3fbp8ydw" path="res://Resources/Textures/Sprites/LeftArrow1_d1.png" id="4_cmdtj"]
+[ext_resource type="Texture2D" uid="uid://cnw8drbefbd2" path="res://Resources/Textures/Sprites/LeftArrow1_a1.png" id="5_p28g2"]
+[ext_resource type="Texture2D" uid="uid://bwrrakvrtrmk5" path="res://Resources/Textures/Sprites/RightArrow1_b1.png" id="6_3pdgs"]
+[ext_resource type="Texture2D" uid="uid://d3375smwpjgme" path="res://Resources/Textures/Sprites/RightArrow1_c1.png" id="7_2tgps"]
+[ext_resource type="Texture2D" uid="uid://b1ynhujyoraya" path="res://Resources/Textures/Sprites/RightArrow1_d1.png" id="8_or8dl"]
+[ext_resource type="Texture2D" uid="uid://tpsgy2gbf587" path="res://Resources/Textures/Sprites/RightArrow1_a1.png" id="9_qkpuu"]
+[ext_resource type="AudioStream" uid="uid://dq7uxjtsu3qwm" path="res://Resources/Sounds/SFX/RotaryPhoneTick0.wav" id="11_qx3cn"]
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -104,6 +113,65 @@ size_flags_stretch_ratio = 3.0
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="Ingame_UI/TaskBar/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ingame_UI/TaskBar/Panel3/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Btn_left" type="TextureButton" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_iow18")
+texture_pressed = ExtResource("3_p445d")
+texture_hover = ExtResource("4_cmdtj")
+texture_disabled = ExtResource("5_p28g2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/default_color = Color(0.745098, 0.670588, 0.509804, 1)
+text = "    to helm"
+scroll_active = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Btn_Right" type="TextureButton" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("6_3pdgs")
+texture_pressed = ExtResource("7_2tgps")
+texture_hover = ExtResource("8_or8dl")
+texture_disabled = ExtResource("9_qkpuu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/default_color = Color(0.745098, 0.670588, 0.509804, 1)
+text = "   to kitchen"
+scroll_active = false
+
 [node name="bar_Pos" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 12
@@ -117,4 +185,12 @@ grow_vertical = 0
 stream = ExtResource("2_qp715")
 volume_db = 10.0
 
+[node name="UI_SFX2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_qx3cn")
+
+[connection signal="mouse_entered" from="PauseMenu/Resume" to="." method="_on_btn_mouse_entered"]
+[connection signal="mouse_entered" from="PauseMenu/Exit" to="." method="_on_btn_mouse_entered"]
+[connection signal="mouse_entered" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_mouse_entered"]
 [connection signal="pressed" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_toggle_bar_pressed"]
+[connection signal="mouse_entered" from="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer/Btn_left" to="." method="_on_btn_mouse_entered"]
+[connection signal="mouse_entered" from="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/VBoxContainer2/Btn_Right" to="." method="_on_btn_mouse_entered"]

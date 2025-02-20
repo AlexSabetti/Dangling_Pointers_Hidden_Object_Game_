@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://djh66mlci57qj"]
+[gd_scene load_steps=65 format=3 uid="uid://djh66mlci57qj"]
 
 [ext_resource type="Script" path="res://Scripts/boat_1.gd" id="1_ge6wi"]
 [ext_resource type="Material" uid="uid://dxuss7yrrfkat" path="res://Resources/Materials/M_DarkPurple.tres" id="2_m6xgg"]
@@ -47,6 +47,9 @@
 [ext_resource type="Texture2D" uid="uid://buj6q31nc5odd" path="res://Resources/Textures/Sprites/Carpet2_a1.png" id="32_qe03i"]
 [ext_resource type="Texture2D" uid="uid://qrv30leq2f64" path="res://Resources/Textures/Sprites/Painting3_a1.png" id="33_i52wy"]
 [ext_resource type="Texture2D" uid="uid://d0o3nt4xdj3xe" path="res://Resources/Textures/Sprites/LifeRing_a1.png" id="33_potu1"]
+[ext_resource type="Texture2D" uid="uid://di24743svtw47" path="res://Resources/Textures/Sprites/PaperSheet1_a1.png" id="34_ne85n"]
+[ext_resource type="Texture2D" uid="uid://g0x1lph5busu" path="res://Resources/Textures/Sprites/PaperSheet2_a1.png" id="35_u0fe5"]
+[ext_resource type="Texture2D" uid="uid://nyhvcd0wen1v" path="res://Resources/Textures/Sprites/PaperSheet3_a1.png" id="35_u0r2n"]
 [ext_resource type="Texture2D" uid="uid://bym81rw8bu30g" path="res://Resources/Textures/Sprites/Clam1_a1.png" id="37_gewee"]
 [ext_resource type="PackedScene" uid="uid://dugyhpr0lnsom" path="res://Resources/Models/EmptyBoat1_a4_GD.glb" id="37_igsp8"]
 [ext_resource type="Texture2D" uid="uid://lu1645ysxaof" path="res://Resources/Textures/Sprites/LightSwitch1_a1.png" id="46_bx4sa"]
@@ -941,9 +944,56 @@ texture = ExtResource("30_u44lp")
 [node name="Carpet1" type="Sprite3D" parent="."]
 transform = Transform3D(0.385865, 0.041868, 0, 1.80708e-09, -1.65204e-08, 0.568789, 0.0409647, -0.394375, -2.51457e-08, -2.10031, 2.70754, -0.117684)
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("31_0j6ed")
+
+[node name="Paper1" type="Sprite3D" parent="."]
+transform = Transform3D(0.135192, -0.11884, -5.19468e-09, 0, -7.86805e-09, 0.18, -0.11884, -0.135192, -5.90944e-09, -1.59223, 2.72496, -0.315232)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("34_ne85n")
+
+[node name="Paper3" type="Sprite3D" parent="."]
+transform = Transform3D(0.175406, 0.0404086, -5.19468e-09, 6.38871e-09, -4.59245e-09, 0.18, 0.0404086, -0.175406, -5.90944e-09, -1.77098, 2.73791, -0.257051)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("35_u0r2n")
+
+[node name="Paper4" type="Sprite3D" parent="."]
+transform = Transform3D(-0.156594, -0.0887593, -5.19468e-09, -7.4332e-09, 2.5795e-09, 0.18, -0.0887593, 0.156594, -5.90944e-09, -2.05365, 2.70783, -1.04908)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("35_u0r2n")
+
+[node name="Paper5" type="Sprite3D" parent="."]
+transform = Transform3D(0.137672, -0.115959, -5.19468e-09, 1.66149e-10, -7.8663e-09, 0.18, -0.115959, -0.137672, -5.90944e-09, 1.91457, 2.16056, -0.521889)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("35_u0r2n")
+
+[node name="Paper6" type="Sprite3D" parent="."]
+transform = Transform3D(0.0684651, -0.166458, 0.00208991, -2.30559e-05, 0.00225027, 0.179986, -0.166471, -0.06846, 0.000834598, -4.99417, 0.633634, 0.12972)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("35_u0fe5")
+
+[node name="Paper2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0115626, 0.179628, -4.31148e-09, -0.00404104, -0.000260115, 0.179954, 0.179583, 0.0115596, 0.0040494, -0.823267, 3.92557, -0.174133)
+shaded = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("35_u0fe5")
 
 [node name="Carpet3" type="Sprite3D" parent="."]
 transform = Transform3D(0.0524003, -0.44965, 0.00507628, -2.08966e-08, 0.00355936, 0.64851, -0.493583, -0.0477363, 0.000538887, -2.90192, -0.364184, 0.456353)
