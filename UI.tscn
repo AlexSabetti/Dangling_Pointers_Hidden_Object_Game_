@@ -71,7 +71,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.67453, 0.477563, 0.16976, 1)
+color = Color(0.682353, 0.470588, 0.215686, 0.533333)
 
 [node name="r_box" type="VBoxContainer" parent="Ingame_UI/TaskBar/Requests"]
 layout_mode = 1
@@ -81,6 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 1
 
 [node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://xnd1l3ulc26m"]
+[gd_scene load_steps=26 format=3 uid="uid://xnd1l3ulc26m"]
 
 [ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_ww2a7"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_yfk1g"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://bkqh368vuj2h1" path="res://Resources/Shaders/GrassShader1.tres" id="9_3fu1d"]
 [ext_resource type="Texture2D" uid="uid://qx2y7kb8dobp" path="res://Resources/Textures/Sprites/Reeds2_b1.png" id="10_3seh5"]
 [ext_resource type="Texture2D" uid="uid://dbwtewspae7v" path="res://Resources/Textures/Sprites/Reeds1_c1.png" id="12_qjqqs"]
+[ext_resource type="Script" path="res://Scripts/GameController.gd" id="14_hlqws"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 
@@ -141,6 +142,9 @@ multimesh = SubResource("MultiMesh_64tl2")
 [node name="MultiMeshInstance3D5" type="MultiMeshInstance3D" parent="GrassZones"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.25251, 0)
 multimesh = SubResource("MultiMesh_kkfj2")
+
+[node name="GameControllerNode" type="Node3D" parent="."]
+script = ExtResource("14_hlqws")
 
 [editable path="WaterPlane"]
 [editable path="EB_SandBar1_a4_GD"]

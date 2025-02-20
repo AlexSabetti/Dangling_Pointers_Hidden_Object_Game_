@@ -50,12 +50,16 @@ func _exit():
 
 func _update_requests(requests: Array):
 	# Not the optimal way to do this
-	for i in range(requests.size()):
-		taskBar.get_node("Requests/r_box").get_child(0).queue_free()
+	print(inGame_UI.get_node("Requests/r_box").get_child_count())
+	for i in range(inGame_UI.get_node("Requests/r_box").get_child_count()):
+		inGame_UI.get_node("Requests/r_box").get_child(0).queue_free()
 
 	for i in range(requests.size()):
-		taskBar.get_node("Requests/r_box").add_child(RichTextLabel.new())
-		taskBar.get_node("Requests/r_box").get_child(i).text = requests[i]
+		inGame_UI.get_node("Requests/r_box").add_child(RichTextLabel.new())
+		var label: RichTextLabel = inGame_UI.get_node("Requests/r_box").get_child(i)
+		label.text = requests[i]
+		label.fit_content = true
+		print(inGame_UI.get_node("Requests/r_box").get_child(i).text)
 		
 
 # toggles the taskbar from view
