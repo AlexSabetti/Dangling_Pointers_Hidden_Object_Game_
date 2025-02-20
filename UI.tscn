@@ -104,6 +104,11 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 1
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/Requests/r_box"]
+z_index = 1
+layout_mode = 2
+fit_content = true
+
 [node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar"]
 layout_mode = 2
 size_flags_horizontal = 3
