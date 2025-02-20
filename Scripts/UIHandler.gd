@@ -5,11 +5,17 @@ class_name UIHandler
 @onready var taskBar: HBoxContainer = $Ingame_UI/TaskBar
 @onready var pauseMenu: VBoxContainer = $PauseMenu
 @onready var barPos : Control = $bar_Pos
+@onready var UI_SFX : AudioStreamPlayer2D = $UI_SFX
+@onready var FadeToBlack : ColorRect = $FadeToBlack
+
+var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
+var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
 
 # @onready var request_text_a: RichTextLabel = $Ingame_UI/Requests/request_text_a
 # @onready var request_text_b: RichTextLabel = $Ingame_UI/Requests/request_text_b
 # @onready var request_text_c: RichTextLabel = $Ingame_UI/Requests/request_text_c
 
+var rng := RandomNumberGenerator.new()
 
 var signal_manager: SignalBus = Bus
 
@@ -22,6 +28,7 @@ func _ready():
 	signal_manager.unpause_game.connect(respond_to_unpause)
 	pauseMenu.get_node("Resume").pressed.connect(_resume_pressed)
 	pauseMenu.get_node("Exit").pressed.connect(_exit)
+	fade_from_black()
 
 
 func respond_to_pause():
@@ -49,6 +56,8 @@ func _exit():
 	get_tree().quit()
 
 func _update_requests(requests: Array):
+	UI_SFX.pitch_scale = rng.randf_range(0.9, 1.15)
+	UI_SFX.play()
 	# Not the optimal way to do this
 	print(taskBar.get_node("Requests/r_box").get_child_count())
 	for i in range(taskBar.get_node("Requests/r_box").get_child_count()):
@@ -61,6 +70,9 @@ func _update_requests(requests: Array):
 		label.fit_content = true
 		print(taskBar.get_node("Requests/r_box").get_child(i).text)
 		
+	# open taskbar to show new task if it's currently hidden
+	if isTaskBarHidden:
+		show_bar()
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
@@ -86,3 +98,13 @@ func hide_bar():
 	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_SINE)
 	isTaskBarHidden = true
 	print("hiding bar")
+
+# fade to black
+func fade_to_black():
+	var tween = create_tween()
+	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).from(fadeTransColor).set_trans(Tween.TRANS_SINE)
+
+# fade in from black
+func fade_from_black():
+	var tween = create_tween()
+	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.0).from(fadeBlackColor).set_trans(Tween.TRANS_SINE)
