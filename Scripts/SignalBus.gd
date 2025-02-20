@@ -7,3 +7,5 @@ signal camera_changed(cam_id: int)
 
 signal pause_game()
 signal unpause_game()  
+
+signal inc_progress()

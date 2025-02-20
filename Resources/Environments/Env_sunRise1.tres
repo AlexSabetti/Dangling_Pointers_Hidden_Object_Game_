@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=2 format=3 uid="uid://bmigk2anxrp0t"]
 
-[ext_resource type="Sky" uid="uid://dmbgi67n8ef20" path="res://Resources/Enviroments/Sky_sunSet1.tres" id="1_4kf18"]
+[ext_resource type="Sky" uid="uid://dmbgi67n8ef20" path="res://Resources/Environments/Sky_sunSet1.tres" id="1_4kf18"]
 
 [resource]
 background_mode = 2
@@ -11,7 +11,7 @@ glow_intensity = 0.5
 glow_bloom = 0.4
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.670662, 0.600507, 0.409409, 1)
+fog_light_color = Color(0.710497, 0.585675, 0.362833, 1)
 fog_light_energy = 1.56
 fog_sun_scatter = 0.5
 fog_density = 1.0

@@ -1,11 +1,11 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d1y3bx2agv0pq"]
 
-[ext_resource type="Texture2D" uid="uid://d2cyqs0r03mbl" path="res://Resources/Textures/EB_GreyWoodTexture_b1.png" id="1_vrd3s"]
+[ext_resource type="Texture2D" uid="uid://jahs2un1e010" path="res://Resources/Textures/EB_DarkTanTexture_a1.png" id="1_xfbnu"]
 [ext_resource type="Texture2D" uid="uid://c0n2m1yomblcb" path="res://Resources/Textures/normalMaps/everytexture.com-stock-wood-texture-00088-normal-1024.jpg" id="2_7g217"]
 
 [resource]
 diffuse_mode = 3
 specular_mode = 1
-albedo_texture = ExtResource("1_vrd3s")
+albedo_texture = ExtResource("1_xfbnu")
 normal_texture = ExtResource("2_7g217")
 uv1_scale = Vector3(4, 4, 4)

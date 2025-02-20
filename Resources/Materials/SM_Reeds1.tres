@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://vhbx761prxew"]
 
-[ext_resource type="Shader" uid="uid://dahqk2fus5fv3" path="res://Resources/Shaders/GrassShader1.tres" id="1_foopt"]
+[ext_resource type="Shader" uid="uid://bkqh368vuj2h1" path="res://Resources/Shaders/GrassShader1.tres" id="1_foopt"]
 [ext_resource type="Texture2D" uid="uid://sty7vov50puo" path="res://Resources/Textures/Sprites/Reeds2_a1.png" id="2_vatlc"]
 
 [resource]

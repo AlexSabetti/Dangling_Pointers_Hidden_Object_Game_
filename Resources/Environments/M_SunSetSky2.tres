@@ -2,6 +2,6 @@
 
 [resource]
 sky_top_color = Color(0.745098, 0.592157, 0.368627, 1)
-sky_horizon_color = Color(0.793169, 0.638345, 0.413777, 1)
+sky_horizon_color = Color(0.254902, 0.156863, 0.152941, 1)
 ground_bottom_color = Color(0.132031, 0.0802744, 0.0855609, 1)
-ground_horizon_color = Color(0.698519, 0.461133, 0.332952, 1)
+ground_horizon_color = Color(0.255118, 0.157488, 0.153481, 1)
