@@ -6,11 +6,14 @@ class_name Menu
 @onready var FadeTimer := $FadeTimer
 @onready var AudioPlayer := $AudioStreamPlayer2D
 
+var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
+var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# fade in from black
 	var tween = create_tween()
-	tween.tween_property(FadeToBlack, "color", Color(0.0,0.0,0.0,0.0), 1.5).from(Color.BLACK)
+	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.5).from(fadeBlackColor)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +25,7 @@ func startGame() -> void:
 	var tween = create_tween()
 	FadeTimer.start()
 	# fade to black
-	tween.tween_property(FadeToBlack, "color", Color.BLACK, 1.0).from(Color(0.0,0.0,0.0,0.0))
+	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).from(fadeTransColor)
 
 # toggles the settings menu (if one gets added anyway, this is low priority)
 func toggleSettings() -> void:

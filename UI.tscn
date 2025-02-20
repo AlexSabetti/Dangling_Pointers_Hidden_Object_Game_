@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=3 format=3 uid="uid://cw83dccua6vux"]
 
 [ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
+[ext_resource type="AudioStream" uid="uid://bqh2xiyjpu1yl" path="res://Resources/Sounds/SFX/ScribbleSound1.wav" id="2_qp715"]
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -10,6 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_coxev")
+
+[node name="FadeToBlack" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="PauseMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -62,7 +74,7 @@ theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 12
-text = "toggle taskbar "
+text = "toggle notes"
 
 [node name="TaskBar" type="HBoxContainer" parent="Ingame_UI"]
 layout_mode = 2
@@ -100,5 +112,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="UI_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qp715")
+volume_db = 10.0
 
 [connection signal="pressed" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_toggle_bar_pressed"]
