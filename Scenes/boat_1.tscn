@@ -410,7 +410,7 @@ transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.795198, -0.598108, 0.0996276, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996275, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="5"]
@@ -1168,14 +1168,15 @@ texture_filter = 0
 render_priority = 5
 texture = ExtResource("46_cesx7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Keys"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ShipKeys"]
+transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.29993, -0.990615, 0.0679774, -0.118577, 0.18538, -0.0362663, 0.00792408)
 script = ExtResource("18_4cqqd")
 object_name = "skip keys"
 obj_id = 2
 progress_requirement = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Keys/StaticBody3D"]
-transform = Transform3D(1, 0, -2.16067e-07, 0, 1, 7.72998e-08, -1.11759e-08, -5.68107e-08, 1, 9.53674e-07, -0.456047, -9.53674e-07)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShipKeys/StaticBody3D"]
+transform = Transform3D(1, -1.41553e-15, -2.16067e-07, 2.77556e-17, 1, 7.45058e-08, -7.45058e-09, -2.98023e-08, 1, 9.67266e-07, -0.456047, -1.04347e-06)
 shape = SubResource("BoxShape3D_xx2gy")
 
 [editable path="EmptyBoat1_a4_GD"]
