@@ -8,6 +8,7 @@ const MAX_DIST = 800
 
 var signal_manager: SignalBus = Bus
 
+var paused: bool = false
 func _ready():
 
 	signal_manager.emit_signal("camera_changed", 1)
@@ -15,11 +16,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		UI.toggle_pause_menu()
-		signal_manager.emit_signal("pause_game")
-	if event.is_action_released("ui_cancel"):
-		UI.toggle_pause_menu()
-		signal_manager.emit_signal("unpause_game")
+		toggle_pause_menu()
 	if event is InputEventMouseMotion:
 		mouse = event.position
 	if event is InputEventMouseButton:
@@ -54,3 +51,11 @@ func mark_off(obj: ClickableObject):
 	progress_order.remove_at(0)
 	UI._update_requests(["- find the " + progress_order[0]])
 	obj.finish_pickup()
+
+func toggle_pause_menu() -> void:
+	if paused:
+		paused = false
+		signal_manager.emit_signal("unpause_game")
+	else:
+		paused = true
+		signal_manager.emit_signal("pause_game")
