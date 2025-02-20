@@ -2,7 +2,7 @@ extends Node3D
 class_name GameController
 
 @onready var UI = $"../Boat/cameraController/ui_hud"
-@export var progress_order: Array = ["logbook", "duck", "photos", "ship keys", "fishing rod", "spyglass", "cassette tape"]
+@export var progress_order: Array = ["logbook", "duck", "photos", "ship keys", "fishing rod", "spyglass", "cassette tape", "compass", "boot"]
 var mouse: Vector2 = Vector2.ZERO
 const MAX_DIST = 800
 
@@ -49,7 +49,12 @@ func mark_off(obj: ClickableObject):
 	print("clicked")
 	signal_manager.emit_signal("inc_progress")
 	progress_order.remove_at(0)
-	UI._update_requests(["- find the " + progress_order[0]])
+	# checks if there's any objects left
+	if progress_order.size() > 0:
+		UI._update_requests(["- find the " + progress_order[0]])
+	else: # if no objects are left, win game
+		UI._update_requests([""])
+		win_game()
 	obj.finish_pickup()
 
 func toggle_pause_menu() -> void:
@@ -59,3 +64,10 @@ func toggle_pause_menu() -> void:
 	else:
 		paused = true
 		signal_manager.emit_signal("pause_game")
+
+
+# function for when the player finds everything
+func win_game() -> void:
+	print("you found everything.")
+	
+	pass

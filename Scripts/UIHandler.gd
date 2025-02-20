@@ -1,5 +1,7 @@
 extends Control
 class_name UIHandler
+# reference to the camera controller
+var camControllerRef: CameraController
 
 @onready var inGame_UI: VBoxContainer = $Ingame_UI
 @onready var taskBar: HBoxContainer = $Ingame_UI/TaskBar
@@ -8,6 +10,9 @@ class_name UIHandler
 @onready var UI_SFX : AudioStreamPlayer2D = $UI_SFX
 @onready var UI_SFX2 : AudioStreamPlayer2D = $UI_SFX2
 @onready var FadeToBlack : ColorRect = $FadeToBlack
+
+@onready var rb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer
+@onready var lb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/LB_VBoxContainer
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -20,6 +25,11 @@ var rng := RandomNumberGenerator.new()
 
 var signal_manager: SignalBus = Bus
 
+# the cam to send player to when left button is pressed
+var lb_cam:int
+# the cam to send player to when right button is pressed
+var rb_cam:int
+
 var isPaused: bool = false
 var isTaskBarHidden: bool = false
 # var isInMainMenu: bool = false
@@ -29,6 +39,8 @@ func _ready():
 	signal_manager.unpause_game.connect(respond_to_unpause)
 	pauseMenu.get_node("Resume").pressed.connect(_resume_pressed)
 	pauseMenu.get_node("Exit").pressed.connect(_exit)
+	camControllerRef = $".."
+	
 	fade_from_black()
 
 
@@ -107,6 +119,52 @@ func fade_from_black():
 	var tween = create_tween()
 	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.0).from(fadeBlackColor).set_trans(Tween.TRANS_SINE)
 
+# set status of left button
+func set_left_btn(isActive:bool, camNum:int, displayText:String):
+	if isActive:
+		# activate button
+		lb_container.get_node("Btn_Left").disabled = false
+		# change text
+		lb_container.get_node("RichTextLabel").text = displayText
+		# set camera number to use when pressed
+		lb_cam = camNum
+	else:
+		# deactivate button
+		lb_container.get_node("Btn_Left").disabled = true
+		# remove text
+		lb_container.get_node("RichTextLabel").text = ""
+
+# set status of right button
+func set_right_btn(isActive:bool, camNum:int, displayText:String):
+	if isActive:
+		# activate button
+		rb_container.get_node("Btn_Right").disabled = false
+		# change text
+		rb_container.get_node("RichTextLabel").text = displayText
+		# set camera number to use when pressed
+		rb_cam = camNum
+	else:
+		# deactivate button
+		rb_container.get_node("Btn_Right").disabled = true
+		# remove text
+		rb_container.get_node("RichTextLabel").text = ""
+
 # when button is hovered over
 func _on_btn_mouse_entered() -> void:
 	UI_SFX2.play()
+
+# when left button is pressed
+func _on_btn_left_pressed() -> void:
+	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
+		UI_SFX2.play()
+		set_left_btn(false, 0, "")
+		set_right_btn(false, 0, "")
+		camControllerRef.change_room(lb_cam)
+
+# when right button is pressed
+func _on_btn_right_pressed() -> void:
+	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
+		UI_SFX2.play()
+		set_left_btn(false, 0, "")
+		set_right_btn(false, 0, "")
+		camControllerRef.change_room(rb_cam)

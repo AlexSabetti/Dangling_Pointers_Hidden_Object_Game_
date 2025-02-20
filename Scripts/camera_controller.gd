@@ -70,17 +70,19 @@ func _process(_delta: float) -> void:
 	if enableCamWobble:
 		keepCam_Upright()
 	if Input.is_action_just_pressed("section_back") and !controls_disabled and !isChangingCam: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
-		redirect(-1)
-		UI.fade_to_black()
-		FadeTimer.start()
-		playStepSound()
-		isChangingCam = true
+		UI._on_btn_left_pressed()
+		#redirect(-1)
+		#UI.fade_to_black()
+		#FadeTimer.start()
+		#playStepSound()
+		#isChangingCam = true
 	if Input.is_action_just_pressed("section_next") and !controls_disabled and !isChangingCam: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
-		redirect(1)
-		UI.fade_to_black()
-		FadeTimer.start()
-		playStepSound()
-		isChangingCam = true
+		UI._on_btn_right_pressed()
+		#redirect(1)
+		#UI.fade_to_black()
+		#FadeTimer.start()
+		#playStepSound()
+		#isChangingCam = true
 	if Input.is_action_just_pressed("menu"): #if "menu" key is pressed, toggle pause menu
 		if UI.isPaused: # if game is already paused, unpause it
 			signal_manager.unpause_game.emit()
@@ -91,6 +93,15 @@ func _process(_delta: float) -> void:
 func keepCam_Upright()-> void:
 	var currentCamPivot = get_viewport().get_camera_3d().get_parent_node_3d()
 	currentCamPivot.global_rotation = lerp(currentCamPivot.global_rotation, currentCamPivot.global_rotation + (boatRef.rotation * -0.125), 0.01)
+
+# begins moving the player to the give target room
+# used mainly just for the ui move buttons
+func change_room(target:int):
+	UI.fade_to_black()
+	FadeTimer.start()
+	playStepSound()
+	isChangingCam = true
+	target_cam_id = target
 
 
 # NOTE: When activating Pause menu it will call this function with the id of -4 to disable all clickables. 
@@ -109,6 +120,9 @@ func change_cam_section(cam_id: int):
 		rocking_ambi.volume_db = -5
 		print("cam changed to Stern")
 		previous_cam_id = 1
+		
+		UI.set_left_btn(true, 3, "     to helm")
+		UI.set_right_btn(true, 2, "    to cabin")
 
 
 	# For camera kitchen
@@ -120,6 +134,9 @@ func change_cam_section(cam_id: int):
 		rocking_ambi.volume_db = -80
 		print("cam changed to Kitchen")
 		previous_cam_id = 2
+		
+		UI.set_left_btn(false, 0, " ")
+		UI.set_right_btn(true, 1, "     to stern")
 
 	# For camera helm
 	if(cam_id == 3):
@@ -130,6 +147,9 @@ func change_cam_section(cam_id: int):
 		rocking_ambi.volume_db = -80
 		print("cam changed to Helm")
 		previous_cam_id = 3
+		
+		UI.set_left_btn(true, 1, "     to stern")
+		UI.set_right_btn(true, 4, " to bunkroom")
 
 	# For camera bedroom
 	if(cam_id == 4):
@@ -140,6 +160,9 @@ func change_cam_section(cam_id: int):
 		rocking_ambi.volume_db = -80
 		print("cam changed to Bedroom")
 		previous_cam_id = 4
+		
+		UI.set_left_btn(false, 0, " ")
+		UI.set_right_btn(true, 3, "     to helm")
 	
 	cur_cam_sec = cam_id
 	
@@ -150,7 +173,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
 		cam_Stern.make_current()
 		cam_Stern.global_rotation = cam_Stern_rot
-		rocking_ambi.volume_db = -12
+		rocking_ambi.volume_db = -5
 		controls_disabled = true
 
 
