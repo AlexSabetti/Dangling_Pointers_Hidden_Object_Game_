@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://djh66mlci57qj"]
+[gd_scene load_steps=62 format=3 uid="uid://djh66mlci57qj"]
 
 [ext_resource type="Script" path="res://Scripts/boat_1.gd" id="1_ge6wi"]
 [ext_resource type="Material" uid="uid://dxuss7yrrfkat" path="res://Resources/Materials/M_DarkPurple.tres" id="2_m6xgg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Material" uid="uid://vw5vcea70qmd" path="res://Resources/Materials/M_RedFabric.tres" id="12_arn7q"]
 [ext_resource type="Material" uid="uid://d1y3bx2agv0pq" path="res://Resources/Materials/M_Grey.tres" id="12_qapwe"]
 [ext_resource type="AudioStream" uid="uid://bbhqiymrpgcrk" path="res://Resources/Sounds/Ambience/fluorescent.wav" id="16_sra5r"]
+[ext_resource type="Script" path="res://Scripts/ClickableObject.gd" id="18_4cqqd"]
 [ext_resource type="AudioStream" uid="uid://dtklyn2ffvpqs" path="res://Resources/Sounds/Ambience/CreakyWoodenFloor.wav" id="20_xw8yl"]
 [ext_resource type="Texture2D" uid="uid://ejob0wsb7mph" path="res://Resources/Textures/Sprites/ShipsLogLable1_a1.png" id="21_3t2lr"]
 [ext_resource type="Material" uid="uid://cv3p54e1twhiv" path="res://Resources/Materials/M_Red.tres" id="21_33mjs"]
@@ -351,6 +352,27 @@ _data = {
 "RESET": SubResource("Animation_1a7qf")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7y03"]
+size = Vector3(0.713867, 0.18042, 1.70795)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mno7a"]
+size = Vector3(0.671143, 0.532227, 0.776367)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqj7v"]
+size = Vector3(0.692871, 0.0987549, 0.404175)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dr17g"]
+size = Vector3(0.61438, 0.064846, 0.279297)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4mbw"]
+size = Vector3(0.363281, 0.57373, 0.164185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7w24"]
+size = Vector3(2.2207, 1.98413, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xx2gy"]
+size = Vector3(1, 1.91211, 1)
+
 [node name="Boat" type="Node3D"]
 script = ExtResource("1_ge6wi")
 
@@ -481,6 +503,16 @@ surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/1 = ExtResource("9_rntxu")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/FishingRod1" index="0"]
+script = ExtResource("18_4cqqd")
+object_name = "fishing_rod"
+obj_id = 2
+progress_requirement = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/FishingRod1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143066, 0.0106201, -0.249176)
+shape = SubResource("BoxShape3D_r7y03")
+
 [node name="KitchenHook1" parent="EmptyBoat1_a4_GD" index="25"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
@@ -564,6 +596,16 @@ surface_material_override/0 = ExtResource("2_y5rog")
 [node name="Duck" parent="EmptyBoat1_a4_GD" index="44"]
 surface_material_override/0 = ExtResource("12_qapwe")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/Duck" index="0"]
+script = ExtResource("18_4cqqd")
+object_name = "duck"
+obj_id = 2
+progress_requirement = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Duck/StaticBody3D"]
+transform = Transform3D(1, -7.45058e-08, -8.9407e-08, -1.49012e-08, 1, -1.84402e-07, 5.21541e-08, 2.14204e-08, 1, -0.0257568, 0.233885, 0.111817)
+shape = SubResource("BoxShape3D_mno7a")
+
 [node name="MiniBoat" parent="EmptyBoat1_a4_GD" index="45"]
 surface_material_override/0 = ExtResource("12_qapwe")
 surface_material_override/1 = ExtResource("9_rntxu")
@@ -588,6 +630,14 @@ surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/0 = ExtResource("21_33mjs")
 surface_material_override/1 = ExtResource("24_y5pvy")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/LogBook" index="0"]
+script = ExtResource("18_4cqqd")
+obj_id = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/LogBook/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153565, 0.0443726, 0.0548701)
+shape = SubResource("BoxShape3D_lqj7v")
+
 [node name="DriftWood1" parent="EmptyBoat1_a4_GD" index="52"]
 surface_material_override/0 = ExtResource("2_y5rog")
 
@@ -595,6 +645,16 @@ surface_material_override/0 = ExtResource("2_y5rog")
 surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("2_y5rog")
 surface_material_override/2 = ExtResource("24_y5pvy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/CassetteTape" index="0"]
+script = ExtResource("18_4cqqd")
+object_name = "cassette tape"
+obj_id = 3
+progress_requirement = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/CassetteTape/StaticBody3D"]
+transform = Transform3D(1, 1.37109e-08, -2.93774e-08, -2.18454e-08, 0.954491, -0.298241, 2.39523e-08, 0.298241, 0.954491, 0.135071, 0.0050633, 0.0568264)
+shape = SubResource("BoxShape3D_dr17g")
 
 [node name="BedroomHook1" parent="EmptyBoat1_a4_GD" index="54"]
 surface_material_override/0 = ExtResource("12_qapwe")
@@ -626,6 +686,16 @@ surface_material_override/1 = ExtResource("6_3qo3t")
 surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("12_qapwe")
 surface_material_override/2 = ExtResource("9_gu8b6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/Telescope" index="0"]
+script = ExtResource("18_4cqqd")
+object_name = "spyglass"
+obj_id = 4
+progress_requirement = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Telescope/StaticBody3D"]
+transform = Transform3D(1, 1.16602e-06, 2.98023e-08, -9.87202e-08, 0.999992, 1.86265e-09, -2.05636e-06, 2.18675e-06, 1, -0.0458975, 0.213131, -0.0100715)
+shape = SubResource("BoxShape3D_x4mbw")
 
 [node name="BeachChairFolded1" parent="EmptyBoat1_a4_GD" index="62"]
 surface_material_override/0 = ExtResource("24_y5pvy")
@@ -897,6 +967,16 @@ texture_filter = 0
 render_priority = 5
 texture = ExtResource("29_3tvuc")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Photos1"]
+script = ExtResource("18_4cqqd")
+object_name = "photos"
+obj_id = 4
+progress_requirement = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Photos1/StaticBody3D"]
+transform = Transform3D(1, -2.98023e-07, -1.23457e-13, 2.98023e-07, 1, 6.35048e-14, -1.59872e-14, -8.88178e-16, 1, 0.0986328, 0.0413818, 0)
+shape = SubResource("BoxShape3D_j7w24")
+
 [node name="Pants1" type="Sprite3D" parent="."]
 transform = Transform3D(-0.132911, 0.0695315, -1.697e-09, -4.43943e-09, -4.82513e-09, 0.15, 0.0695315, 0.132911, 6.3333e-09, -2.80373, -0.319941, -0.458186)
 shaded = true
@@ -1043,5 +1123,15 @@ shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("46_cesx7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Keys"]
+script = ExtResource("18_4cqqd")
+object_name = "skip keys"
+obj_id = 2
+progress_requirement = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Keys/StaticBody3D"]
+transform = Transform3D(1, 0, -2.16067e-07, 0, 1, 7.72998e-08, -1.11759e-08, -5.68107e-08, 1, 9.53674e-07, -0.456047, -9.53674e-07)
+shape = SubResource("BoxShape3D_xx2gy")
 
 [editable path="EmptyBoat1_a4_GD"]
