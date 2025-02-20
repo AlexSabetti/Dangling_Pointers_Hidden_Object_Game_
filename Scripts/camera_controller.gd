@@ -70,19 +70,13 @@ func _process(_delta: float) -> void:
 	if enableCamWobble:
 		keepCam_Upright()
 	if Input.is_action_just_pressed("section_back") and !controls_disabled and !isChangingCam: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
-		if(cur_cam_sec - 1 <= 0): 
-			target_cam_id = max_cams
-		else: 
-			target_cam_id = cur_cam_sec - 1
+		redirect(-1)
 		UI.fade_to_black()
 		FadeTimer.start()
 		playStepSound()
 		isChangingCam = true
 	if Input.is_action_just_pressed("section_next") and !controls_disabled and !isChangingCam: #if Input.is_action_just_pressed("section_next") and !controls_disabled: <- re-add this once you setup the keys in settings
-		if(cur_cam_sec + 1 > max_cams): 
-			target_cam_id = 1
-		else: 
-			target_cam_id = cur_cam_sec + 1
+		redirect(1)
 		UI.fade_to_black()
 		FadeTimer.start()
 		playStepSound()
@@ -182,3 +176,20 @@ func _on_fade_timer_timeout() -> void:
 	change_cam_section(target_cam_id)
 	UI.fade_from_black()
 	isChangingCam = false
+
+func redirect(move: int) -> void:
+	if move == 1:
+		if cur_cam_sec == 1:
+			target_cam_id = 2
+		elif cur_cam_sec == 3:
+			target_cam_id = 1
+		elif cur_cam_sec == 4:
+			target_cam_id = 3
+	elif move == -1:
+		if cur_cam_sec == 1:
+			target_cam_id = 3
+		elif cur_cam_sec == 2:
+			target_cam_id = 1
+		elif cur_cam_sec == 3:
+			target_cam_id = 4
+	
