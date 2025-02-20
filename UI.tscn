@@ -11,39 +11,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_coxev")
 
-[node name="Ingame_UI" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.85
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Requests" type="ColorRect" parent="Ingame_UI"]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.682353, 0.470588, 0.215686, 0.533333)
-
-[node name="r_box" type="VBoxContainer" parent="Ingame_UI/Requests"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Panel2" type="Panel" parent="Ingame_UI"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.0
-
-[node name="Panel3" type="Panel" parent="Ingame_UI"]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="PauseMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -61,8 +28,77 @@ alignment = 1
 
 [node name="Resume" type="Button" parent="PauseMenu"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 text = "R E S U M E"
 
 [node name="Exit" type="Button" parent="PauseMenu"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 text = "E X I T"
+
+[node name="Ingame_UI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 123)
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame_UI"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="btn_ToggleBar" type="Button" parent="Ingame_UI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 12
+text = "toggle taskbar "
+
+[node name="TaskBar" type="HBoxContainer" parent="Ingame_UI"]
+layout_mode = 2
+
+[node name="Requests" type="ColorRect" parent="Ingame_UI/TaskBar"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.682353, 0.470588, 0.215686, 0.533333)
+
+[node name="r_box" type="VBoxContainer" parent="Ingame_UI/TaskBar/Requests"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Panel3" type="Panel" parent="Ingame_UI/TaskBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bar_Pos" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[connection signal="pressed" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_toggle_bar_pressed"]

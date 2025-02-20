@@ -1,8 +1,10 @@
 extends Control
 class_name UIHandler
 
-@onready var inGame_UI: HBoxContainer = $Ingame_UI
+@onready var inGame_UI: VBoxContainer = $Ingame_UI
+@onready var taskBar: HBoxContainer = $Ingame_UI/TaskBar
 @onready var pauseMenu: VBoxContainer = $PauseMenu
+@onready var barPos : Control = $bar_Pos
 
 # @onready var request_text_a: RichTextLabel = $Ingame_UI/Requests/request_text_a
 # @onready var request_text_b: RichTextLabel = $Ingame_UI/Requests/request_text_b
@@ -12,6 +14,7 @@ class_name UIHandler
 var signal_manager: SignalBus = Bus
 
 var isPaused: bool = false
+var isTaskBarHidden: bool = false
 # var isInMainMenu: bool = false
 
 func _ready():
@@ -59,4 +62,27 @@ func _update_requests(requests: Array):
 		print(inGame_UI.get_node("Requests/r_box").get_child(i).text)
 		
 
- 
+# toggles the taskbar from view
+func _on_btn_toggle_bar_pressed() -> void:
+	if isTaskBarHidden: # show bar
+		show_bar()
+	else: # hide bar
+		hide_bar()
+
+# Moves the bar on screen
+func show_bar():
+	# tweens between current position and on screen positon relative to the bar_pos node
+	var tween = create_tween()
+	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 121)
+	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_SINE)
+	isTaskBarHidden = false
+	print("showing bar")
+
+# Moves the bar off screen
+func hide_bar():
+	# tweens between current position and off screen positon relative to the bar_pos node
+	var tween = create_tween()
+	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 33)
+	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_SINE)
+	isTaskBarHidden = true
+	print("hiding bar")
