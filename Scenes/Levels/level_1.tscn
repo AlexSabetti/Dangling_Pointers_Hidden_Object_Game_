@@ -110,7 +110,7 @@ autoplay = true
 max_distance = 50.0
 
 [node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.52405, 0.846335, -0.0953327, -0.850254, 0.526372, -0.000925006, 0.0493976, 0.0815418, 0.995445, -35.1088, 8.6258, 8.74338)
+transform = Transform3D(0.52405, 0.846335, -0.0953328, -0.850254, 0.526372, -0.000925069, 0.0493976, 0.0815418, 0.995445, -5.044, 11.6732, 0.0644518)
 stream = ExtResource("3_q4n1s")
 volume_db = -10.0
 autoplay = true

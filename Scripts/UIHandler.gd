@@ -11,6 +11,7 @@ var camControllerRef: CameraController
 
 @onready var rb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer
 @onready var lb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/LB_VBoxContainer
+@onready var blurbContainer := $Ingame_UI/TaskBar/MarginContainer/Panel2/MarginContainer/RichTextLabel
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -35,6 +36,7 @@ var isTaskBarHidden: bool = false
 func _ready():
 	signal_manager.pause_game.connect(respond_to_pause)
 	signal_manager.unpause_game.connect(respond_to_unpause)
+	signal_manager.toggle_bar.connect(_on_btn_toggle_bar_pressed)
 	pauseMenu.get_node("Resume").pressed.connect(_resume_pressed)
 	pauseMenu.get_node("Exit").pressed.connect(_exit)
 	camControllerRef = $".."
@@ -70,15 +72,32 @@ func _update_requests(requests: Array):
 	SoundManager2D.PlaySoundQueue2D("SQ_Scribble")
 	# Not the optimal way to do this
 	print(taskBar.get_node("Requests/MarginContainer/r_box").get_child_count())
-
-	var label: RichTextLabel = taskBar.get_node("Requests/MarginContainer/r_box").get_child(0)
-	label.text = requests[0]
-	label.fit_content = true
+	
+	# add top most 3 items from request list
+	var idx := 0
+	for child in taskBar.get_node("Requests/MarginContainer/r_box").get_children():
+		var label: RichTextLabel = child
+		if idx < requests.size():
+			label.text = requests[idx]
+		else:
+			label.text = " "
+		label.fit_content = true
+		idx += 1
+	
+	#var label: RichTextLabel = taskBar.get_node("Requests/MarginContainer/r_box").get_child(0)
+	#label.text = requests[0]
+	#label.fit_content = true
 	
 		
 	# open taskbar to show new task if it's currently hidden
 	if isTaskBarHidden:
 		show_bar()
+
+# updates the blurb text in the middle of the task bar
+func _update_blurb(blurbText: String):
+	var tween = create_tween()
+	tween.tween_property(blurbContainer, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0).from(Color(0.0,0.0,0.0,0.0))
+	blurbContainer.text = blurbText
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
@@ -92,8 +111,8 @@ func _on_btn_toggle_bar_pressed() -> void:
 func show_bar():
 	# tweens between current position and on screen positon relative to the bar_pos node
 	var tween = create_tween()
-	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 121)
-	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_SINE)
+	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 128)
+	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_BACK)
 	isTaskBarHidden = false
 	print("showing bar")
 
@@ -102,14 +121,14 @@ func hide_bar():
 	# tweens between current position and off screen positon relative to the bar_pos node
 	var tween = create_tween()
 	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 33)
-	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_BACK)
 	isTaskBarHidden = true
 	print("hiding bar")
 
 # fade to black
 func fade_to_black():
 	var tween = create_tween()
-	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).from(fadeTransColor).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).set_trans(Tween.TRANS_SINE)
 
 # fade in from black
 func fade_from_black():

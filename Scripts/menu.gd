@@ -24,9 +24,10 @@ func startGame() -> void:
 	var tween = create_tween()
 	#FadeTimer.start()
 	# fade to black
-	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).from(fadeTransColor)
+	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0)
 	tween.chain().tween_property($VBoxContainer, "modulate", Color.WHITE, 1.0).from(Color.TRANSPARENT)
 	$VBoxContainer/Button.disabled = false
+	$FadeToBlack.mouse_filter = MOUSE_FILTER_STOP
 
 # toggles the settings menu (if one gets added anyway, this is low priority)
 func toggleSettings() -> void:

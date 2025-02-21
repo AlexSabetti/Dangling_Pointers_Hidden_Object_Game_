@@ -87,6 +87,8 @@ func _process(_delta: float) -> void:
 			signal_manager.unpause_game.emit()
 		else: # if game is currently  unpaused, pause it
 			signal_manager.pause_game.emit()
+	if Input.is_action_just_pressed("toggle_bar"): #if "menu" key is pressed, toggle pause menu
+		signal_manager.toggle_bar.emit()
 
 # smoothly moves the active camera towards staying upright
 func keepCam_Upright()-> void:

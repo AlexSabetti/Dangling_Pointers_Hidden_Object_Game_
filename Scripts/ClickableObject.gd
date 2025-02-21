@@ -1,8 +1,13 @@
 class_name ClickableObject
 extends Node3D
 @export_group("Object Specifics")
+# the name of the object
 @export var object_name: String
+# the room id of the object
 @export var obj_id: int
+# the text to be displayed upon picking up the object
+@export var obj_blurb: String
+# the collision box used for the object
 @onready var col_box: CollisionShape3D = $CollisionShape3D
  # For item interaction requirements, like not being interactable until other objects have been picked up
 @export var progress_requirement: int = 0
@@ -24,7 +29,10 @@ func _activate_in_scene(id_to_activate: int):
 		can_interact = false
 
 func lower_progress_requirement():
-	progress_requirement -= 1
+	if progress_requirement > 0:
+		progress_requirement -= 1
+	else:
+		progress_requirement = 0
 
 func finish_pickup():
 	get_parent().visible = false
