@@ -412,6 +412,7 @@ libraries = {
 "": SubResource("AnimationLibrary_drqiq")
 }
 autoplay = "Anim_BoatSway"
+speed_scale = 1.75
 
 [node name="EmptyBoat1_a4_GD" parent="." instance=ExtResource("37_igsp8")]
 
