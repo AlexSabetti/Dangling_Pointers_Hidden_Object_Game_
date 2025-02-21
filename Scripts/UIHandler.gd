@@ -7,8 +7,6 @@ var camControllerRef: CameraController
 @onready var taskBar: HBoxContainer = $Ingame_UI/TaskBar
 @onready var pauseMenu: VBoxContainer = $PauseMenu
 @onready var barPos : Control = $bar_Pos
-@onready var UI_SFX : AudioStreamPlayer2D = $UI_SFX
-@onready var UI_SFX2 : AudioStreamPlayer2D = $UI_SFX2
 @onready var FadeToBlack : ColorRect = $FadeToBlack
 
 @onready var rb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer
@@ -69,12 +67,11 @@ func _exit():
 	get_tree().quit()
 
 func _update_requests(requests: Array):
-	UI_SFX.pitch_scale = rng.randf_range(0.9, 1.15)
-	UI_SFX.play()
+	SoundManager2D.PlaySoundQueue2D("SQ_Scribble")
 	# Not the optimal way to do this
-	print(taskBar.get_node("Requests/r_box").get_child_count())
+	print(taskBar.get_node("Requests/MarginContainer/r_box").get_child_count())
 
-	var label: RichTextLabel = taskBar.get_node("Requests/r_box").get_child(0)
+	var label: RichTextLabel = taskBar.get_node("Requests/MarginContainer/r_box").get_child(0)
 	label.text = requests[0]
 	label.fit_content = true
 	
@@ -85,7 +82,7 @@ func _update_requests(requests: Array):
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
-	UI_SFX2.play()
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 	if isTaskBarHidden: # show bar
 		show_bar()
 	else: # hide bar
@@ -125,14 +122,14 @@ func set_left_btn(isActive:bool, camNum:int, displayText:String):
 		# activate button
 		lb_container.get_node("Btn_Left").disabled = false
 		# change text
-		lb_container.get_node("RichTextLabel").text = displayText
+		lb_container.get_node("TextLabel").text = displayText
 		# set camera number to use when pressed
 		lb_cam = camNum
 	else:
 		# deactivate button
 		lb_container.get_node("Btn_Left").disabled = true
 		# remove text
-		lb_container.get_node("RichTextLabel").text = ""
+		lb_container.get_node("TextLabel").text = ""
 
 # set status of right button
 func set_right_btn(isActive:bool, camNum:int, displayText:String):
@@ -140,23 +137,23 @@ func set_right_btn(isActive:bool, camNum:int, displayText:String):
 		# activate button
 		rb_container.get_node("Btn_Right").disabled = false
 		# change text
-		rb_container.get_node("RichTextLabel").text = displayText
+		rb_container.get_node("TextLabel").text = displayText
 		# set camera number to use when pressed
 		rb_cam = camNum
 	else:
 		# deactivate button
 		rb_container.get_node("Btn_Right").disabled = true
 		# remove text
-		rb_container.get_node("RichTextLabel").text = ""
+		rb_container.get_node("TextLabel").text = ""
 
 # when button is hovered over
 func _on_btn_mouse_entered() -> void:
-	UI_SFX2.play()
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick1")
 
 # when left button is pressed
 func _on_btn_left_pressed() -> void:
 	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
-		UI_SFX2.play()
+		SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 		set_left_btn(false, 0, "")
 		set_right_btn(false, 0, "")
 		camControllerRef.change_room(lb_cam)
@@ -164,7 +161,7 @@ func _on_btn_left_pressed() -> void:
 # when right button is pressed
 func _on_btn_right_pressed() -> void:
 	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
-		UI_SFX2.play()
+		SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 		set_left_btn(false, 0, "")
 		set_right_btn(false, 0, "")
 		camControllerRef.change_room(rb_cam)

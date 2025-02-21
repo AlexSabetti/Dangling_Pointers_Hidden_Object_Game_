@@ -4,7 +4,6 @@ class_name Menu
 
 @onready var FadeToBlack := $FadeToBlack
 @onready var FadeTimer := $FadeTimer
-@onready var AudioPlayer := $AudioStreamPlayer2D
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -23,9 +22,11 @@ func _process(_delta: float) -> void:
 # starts the game
 func startGame() -> void:
 	var tween = create_tween()
-	FadeTimer.start()
+	#FadeTimer.start()
 	# fade to black
 	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0).from(fadeTransColor)
+	tween.chain().tween_property($VBoxContainer, "modulate", Color.WHITE, 1.0).from(Color.TRANSPARENT)
+	$VBoxContainer/Button.disabled = false
 
 # toggles the settings menu (if one gets added anyway, this is low priority)
 func toggleSettings() -> void:
@@ -40,14 +41,17 @@ func exitGame() -> void:
 
 func _on_btn_start_pressed() -> void:
 	print("startBtnPressed!")
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 	startGame()
 
 func _on_btn_settings_pressed() -> void:
 	print("settingsBtnPressed!")
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 	toggleSettings()
 
 func _on_btn_exit_pressed() -> void:
 	print("exitBtnPressed!")
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 	exitGame()
 
 
@@ -57,4 +61,11 @@ func _on_fade_timer_timeout() -> void:
 
 
 func _on_btn_focus_entered() -> void:
-	AudioPlayer.play()
+	#AudioPlayer.play()
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick1")
+
+
+func _on_continue_button_pressed() -> void:
+	var tween = create_tween()
+	FadeTimer.start()
+	tween.tween_property($VBoxContainer, "modulate", Color.TRANSPARENT, 1.0).from(Color.WHITE)

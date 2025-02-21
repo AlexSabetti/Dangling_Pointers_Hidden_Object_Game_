@@ -2,7 +2,7 @@ extends Node3D
 class_name GameController
 
 @onready var UI = $"../Boat/cameraController/ui_hud"
-@export var progress_order: Array = ["logbook", "duck", "photos", "ship keys", "fishing rod", "spyglass", "cassette tape", "compass", "boot"]
+@export var progress_order: Array = ["logbook", "fishing rod", "photos", "ship keys", "duck", "spyglass", "boot", "cassette tape", "compass"]
 var mouse: Vector2 = Vector2.ZERO
 const MAX_DIST = 800
 

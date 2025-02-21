@@ -202,6 +202,17 @@ tracks/12/keys = {
 "points": PackedFloat32Array(0.658071, -1.25, 0, 1.25, 0, 0.666813, -1.25, 0, 1.25, 0, 0.658071, -1.25, 0, 1.25, 0),
 "times": PackedFloat32Array(0, 5, 9.99167)
 }
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0, -2, 0, 2, 0, -0.1, -2, 0, 2, 0, 0, -2, 0, 2, 0),
+"times": PackedFloat32Array(0, 5, 10)
+}
 
 [sub_resource type="Animation" id="Animation_1a7qf"]
 length = 0.001
@@ -348,6 +359,17 @@ tracks/12/keys = {
 "points": PackedFloat32Array(0.658071, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_drqiq"]
 _data = {
@@ -390,7 +412,6 @@ libraries = {
 "": SubResource("AnimationLibrary_drqiq")
 }
 autoplay = "Anim_BoatSway"
-speed_scale = 2.0
 
 [node name="EmptyBoat1_a4_GD" parent="." instance=ExtResource("37_igsp8")]
 
@@ -517,7 +538,7 @@ surface_material_override/1 = ExtResource("9_rntxu")
 script = ExtResource("18_4cqqd")
 object_name = "fishing_rod"
 obj_id = 2
-progress_requirement = 4
+progress_requirement = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/FishingRod1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0275881, 0.0106201, -0.249176)
@@ -655,7 +676,7 @@ surface_material_override/2 = ExtResource("24_y5pvy")
 script = ExtResource("18_4cqqd")
 object_name = "cassette tape"
 obj_id = 3
-progress_requirement = 6
+progress_requirement = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/CassetteTape/StaticBody3D"]
 transform = Transform3D(1, 1.37141e-08, -2.93774e-08, -2.18454e-08, 0.954491, -0.298241, 2.39523e-08, 0.298241, 0.954491, 0.000221491, 0.00506353, 0.0568252)
@@ -721,7 +742,7 @@ surface_material_override/2 = ExtResource("21_33mjs")
 script = ExtResource("18_4cqqd")
 object_name = "compass"
 obj_id = 3
-progress_requirement = 7
+progress_requirement = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Compass/StaticBody3D"]
 transform = Transform3D(0.999999, 0, -5.96046e-08, 0, 0.999992, 0, 5.96046e-08, 0, 0.999999, 0.00587463, 0.0264187, -0.0021798)
@@ -795,7 +816,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.0395815, 0.210533,
 script = ExtResource("18_4cqqd")
 object_name = "duck"
 obj_id = 2
-progress_requirement = 1
+progress_requirement = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Duck/StaticBody3D"]
 transform = Transform3D(0.772744, 0.207056, -2.98023e-08, -0.207055, 0.772743, -7.45058e-08, -3.57628e-07, 7.89762e-07, 0.800001, -0.104705, -0.000434875, 2.02656e-06)
@@ -830,7 +851,7 @@ transform = Transform3D(2.12132, -2.12132, 0, 2.12132, 2.12132, 0, 0, 0, 3, -0.1
 script = ExtResource("18_4cqqd")
 object_name = "boot"
 obj_id = 4
-progress_requirement = 8
+progress_requirement = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/RightBoot1/StaticBody3D"]
 transform = Transform3D(1, -2.23517e-08, 1.49012e-08, -2.23517e-08, 1, -1.49012e-08, -2.98023e-08, 2.98023e-08, 1, -0.000291064, -0.000301242, -0.00225542)

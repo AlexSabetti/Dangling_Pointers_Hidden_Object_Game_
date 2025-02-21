@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cncwn8o73tvi3"]
+
+[ext_resource type="Script" path="res://Systems/soundManagement/soundManager3D.gd" id="1_2l8s5"]
+[ext_resource type="PackedScene" uid="uid://drobeer7yj06m" path="res://Systems/soundManagement/SoundPool3D.tscn" id="2_8nbji"]
+[ext_resource type="PackedScene" uid="uid://bcwkhgt1f7r5l" path="res://Systems/soundManagement/SoundQueue3D.tscn" id="3_87wvs"]
+[ext_resource type="AudioStream" uid="uid://bgfjir4oxlhus" path="res://Resources/Sounds/SFX/WoodStep1.mp3" id="4_8ar3m"]
+[ext_resource type="AudioStream" uid="uid://dx2up88508ajq" path="res://Resources/Sounds/SFX/WoodStep2.mp3" id="5_3qg0i"]
+[ext_resource type="AudioStream" uid="uid://hucb85u4o2qy" path="res://Resources/Sounds/SFX/WoodStep3.mp3" id="6_fbssq"]
+
+[node name="SoundManager3D" type="Node3D"]
+script = ExtResource("1_2l8s5")
+
+[node name="SP_WoodSteps" parent="." instance=ExtResource("2_8nbji")]
+overrideSoundQueueSettings = true
+minPitch = 0.7
+maxPitch = 1.1
+
+[node name="SoundQueue1" parent="SP_WoodSteps" instance=ExtResource("3_87wvs")]
+count = 3
+minPitch = 0.7
+maxPitch = 1.1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SP_WoodSteps/SoundQueue1"]
+stream = ExtResource("4_8ar3m")
+volume_db = -30.0
+
+[node name="SoundQueue2" parent="SP_WoodSteps" instance=ExtResource("3_87wvs")]
+count = 3
+minPitch = 0.7
+maxPitch = 1.1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SP_WoodSteps/SoundQueue2"]
+stream = ExtResource("5_3qg0i")
+volume_db = -30.0
+
+[node name="SoundQueue3" parent="SP_WoodSteps" instance=ExtResource("3_87wvs")]
+count = 3
+minPitch = 0.7
+maxPitch = 1.1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SP_WoodSteps/SoundQueue3"]
+stream = ExtResource("6_fbssq")
+volume_db = -30.0
