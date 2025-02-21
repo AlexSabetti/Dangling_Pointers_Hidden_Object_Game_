@@ -51,7 +51,4 @@ transform = Transform3D(0.852019, 1.08162e-09, -0.52351, 0, 1, -1.86265e-09, 0.5
 [node name="FadeTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
-volume_db = 10.0
-
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

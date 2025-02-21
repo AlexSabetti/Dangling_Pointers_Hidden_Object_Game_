@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=3 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
-[ext_resource type="AudioStream" uid="uid://dq7uxjtsu3qwm" path="res://Resources/Sounds/SFX/RotaryPhoneTick0.wav" id="2_ywp5j"]
 
 [sub_resource type="Theme" id="Theme_6nyy8"]
 
@@ -55,6 +54,56 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 text = "Exit"
 
+[node name="settings_menu" type="Control" parent="main_menu"]
+visible = false
+layout_mode = 1
+anchor_left = 0.003
+anchor_top = 0.549
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.456
+offset_top = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="main_menu/settings_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="main_menu/settings_menu/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu/settings_menu/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="FadeToBlack" type="ColorRect" parent="main_menu"]
 layout_mode = 1
 anchors_preset = 15
@@ -63,15 +112,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.231373, 0.0823529, 0.101961, 1)
+color = Color(0.231373, 0.0823529, 0.101961, 0)
 metadata/_edit_lock_ = true
 
 [node name="FadeTimer" type="Timer" parent="main_menu"]
 wait_time = 1.1
 one_shot = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="main_menu"]
-stream = ExtResource("2_ywp5j")
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 128
+
+[node name="BlerbLabel" type="Label" parent="main_menu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+text = "It's an early sunday morning and you're already out on your dingy.
+
+Pushing through the morning mist, you stumble upon a small 
+forgotten fishing boat, anchored by the sandbar.
+
+Any atempts to contact her crew are met with silence. 
+
+Curiosity gets the better of you, as you choose to take a closer look."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="main_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+disabled = true
+text = "  continue  "
 
 [connection signal="focus_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Start" to="main_menu" method="_on_btn_focus_entered"]
 [connection signal="mouse_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Start" to="main_menu" method="_on_btn_focus_entered"]
@@ -83,3 +169,4 @@ stream = ExtResource("2_ywp5j")
 [connection signal="mouse_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Exit" to="main_menu" method="_on_btn_focus_entered"]
 [connection signal="pressed" from="main_menu/MarginContainer/VBoxContainer/Btn_Exit" to="main_menu" method="_on_btn_exit_pressed"]
 [connection signal="timeout" from="main_menu/FadeTimer" to="main_menu" method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="main_menu/VBoxContainer/Button" to="main_menu" method="_on_continue_button_pressed"]

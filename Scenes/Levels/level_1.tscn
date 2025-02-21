@@ -119,7 +119,7 @@ max_distance = 150.0
 [node name="CicadaAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.99923, -0.0392424, 0, 0.0392424, 0.99923, 7.87809, 3.227, -2.90178)
 stream = ExtResource("5_fy05e")
-volume_db = -10.0
+volume_db = -12.0
 autoplay = true
 
 [node name="WaterPlane" parent="." instance=ExtResource("4_q6f3t")]

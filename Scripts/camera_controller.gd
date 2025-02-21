@@ -22,7 +22,6 @@ var max_cams: int = 4
 
 @onready var UI = $ui_hud
 @onready var FadeTimer : Timer = $FadeTimer
-@onready var SFX : AudioStreamPlayer2D = $SFX
 var rng := RandomNumberGenerator.new()
 # array of possible step sounds
 var stepSounds:Array = ["res://Resources/Sounds/SFX/WoodStep1.mp3", "res://Resources/Sounds/SFX/WoodStep2.mp3", "res://Resources/Sounds/SFX/WoodStep3.mp3", "res://Resources/Sounds/SFX/WoodStep4.mp3"]
@@ -99,7 +98,7 @@ func keepCam_Upright()-> void:
 func change_room(target:int):
 	UI.fade_to_black()
 	FadeTimer.start()
-	playStepSound()
+	SoundManager2D.PlaySoundPool2D("SP_WoodSteps")
 	isChangingCam = true
 	target_cam_id = target
 
@@ -121,8 +120,8 @@ func change_cam_section(cam_id: int):
 		print("cam changed to Stern")
 		previous_cam_id = 1
 		
-		UI.set_left_btn(true, 3, "     to helm")
-		UI.set_right_btn(true, 2, "    to cabin")
+		UI.set_left_btn(true, 3, "to helm")
+		UI.set_right_btn(true, 2, "to cabin")
 
 
 	# For camera kitchen
@@ -136,7 +135,7 @@ func change_cam_section(cam_id: int):
 		previous_cam_id = 2
 		
 		UI.set_left_btn(false, 0, " ")
-		UI.set_right_btn(true, 1, "     to stern")
+		UI.set_right_btn(true, 1, "to stern")
 
 	# For camera helm
 	if(cam_id == 3):
@@ -148,8 +147,8 @@ func change_cam_section(cam_id: int):
 		print("cam changed to Helm")
 		previous_cam_id = 3
 		
-		UI.set_left_btn(true, 1, "     to stern")
-		UI.set_right_btn(true, 4, " to bunkroom")
+		UI.set_left_btn(true, 1, "to stern")
+		UI.set_right_btn(true, 4, "to bunkroom")
 
 	# For camera bedroom
 	if(cam_id == 4):
@@ -162,7 +161,7 @@ func change_cam_section(cam_id: int):
 		previous_cam_id = 4
 		
 		UI.set_left_btn(false, 0, " ")
-		UI.set_right_btn(true, 3, "     to helm")
+		UI.set_right_btn(true, 3, "to helm")
 	
 	cur_cam_sec = cam_id
 	
@@ -190,10 +189,6 @@ func respond_to_unpause():
 	change_cam_section(previous_cam_id)
 	reenable_controls()
 	
-
-func playStepSound():
-	SFX.stream = load(stepSounds[rng.randi_range(0, 3)])
-	SFX.play()
 
 func _on_fade_timer_timeout() -> void:
 	change_cam_section(target_cam_id)

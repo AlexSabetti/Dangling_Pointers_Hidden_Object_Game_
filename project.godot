@@ -19,6 +19,8 @@ config/icon="res://Resources/Textures/icon.svg"
 
 Global="*res://Scripts/global.gd"
 Bus="*res://Scripts/SignalBus.gd"
+SoundManager3D="*res://Systems/soundManagement/SoundManager3D.tscn"
+SoundManager2D="*res://Systems/soundManagement/SoundManager2D.tscn"
 
 [display]
 
