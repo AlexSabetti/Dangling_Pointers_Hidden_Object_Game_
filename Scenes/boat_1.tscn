@@ -210,7 +210,7 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "handle_modes": PackedInt32Array(3, 3, 3),
-"points": PackedFloat32Array(0, -2, 0, 2, 0, -0.1, -2, 0, 2, 0, 0, -2, 0, 2, 0),
+"points": PackedFloat32Array(0, -2, 0, 2, 0, -0.2, -2, 0, 2, 0, 0, -2, 0, 2, 0),
 "times": PackedFloat32Array(0, 5, 10)
 }
 
@@ -465,7 +465,7 @@ surface_material_override/1 = ExtResource("9_rntxu")
 surface_material_override/2 = ExtResource("10_1qhld")
 surface_material_override/3 = ExtResource("3_leush")
 surface_material_override/4 = ExtResource("12_qapwe")
-surface_material_override/5 = ExtResource("23_h8d6i")
+surface_material_override/5 = ExtResource("2_y5rog")
 
 [node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="8"]
 surface_material_override/0 = ExtResource("23_h8d6i")
@@ -539,6 +539,7 @@ surface_material_override/1 = ExtResource("9_rntxu")
 script = ExtResource("18_4cqqd")
 object_name = "fishing rod"
 obj_id = 2
+obj_blurb = "It's a fishing rod."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/FishingRod1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0275881, 0.0106201, -0.249176)
@@ -653,7 +654,7 @@ surface_material_override/1 = ExtResource("24_y5pvy")
 script = ExtResource("18_4cqqd")
 object_name = "logbook"
 obj_id = 3
-obj_blurb = "It's the ships log book"
+obj_blurb = "It's the ships log book."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/LogBook/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153565, 0.0443726, 0.0548701)
@@ -678,6 +679,7 @@ surface_material_override/2 = ExtResource("24_y5pvy")
 script = ExtResource("18_4cqqd")
 object_name = "cassette tape"
 obj_id = 3
+obj_blurb = "Resting against a book, you find a cassete tape. Playing it on the neighboring boom box rewards you with sounds of screaming and guitar. An aquired taste."
 progress_requirement = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/CassetteTape/StaticBody3D"]
@@ -720,6 +722,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182568, 0.173882, 0.00386
 script = ExtResource("18_4cqqd")
 object_name = "spyglass"
 obj_id = 4
+obj_blurb = "Proped up by a table lamp, you spot a spy glass. The body is bent out of shape, with dust coating its lens. Well worn, but functional."
 progress_requirement = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Telescope/StaticBody3D"]
@@ -744,6 +747,7 @@ surface_material_override/2 = ExtResource("21_33mjs")
 script = ExtResource("18_4cqqd")
 object_name = "compass"
 obj_id = 3
+obj_blurb = "Resting on the floor is a broken compass. The needle seems to have forgotten where north is..."
 progress_requirement = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Compass/StaticBody3D"]
@@ -816,8 +820,9 @@ surface_material_override/1 = ExtResource("24_y5pvy")
 [node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/Duck" index="0"]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.0395815, 0.210533, -0.0756077)
 script = ExtResource("18_4cqqd")
-object_name = "duck decoy"
+object_name = "decoy duck"
 obj_id = 2
+obj_blurb = "A plastic decoy duck is found nesting among the dirty dishes. It bares the markings of a female mallard. Fishing line is tied through a loop in its base."
 progress_requirement = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Duck/StaticBody3D"]
@@ -845,7 +850,7 @@ surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/1 = ExtResource("12_arn7q")
 
 [node name="RightBoot1" parent="EmptyBoat1_a4_GD" index="85"]
-surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/0 = ExtResource("23_h8d6i")
 surface_material_override/1 = ExtResource("2_m6xgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="EmptyBoat1_a4_GD/RightBoot1" index="0"]
@@ -853,6 +858,7 @@ transform = Transform3D(2.12132, -2.12132, 0, 2.12132, 2.12132, 0, 0, 0, 3, -0.1
 script = ExtResource("18_4cqqd")
 object_name = "boot"
 obj_id = 4
+obj_blurb = "It's a lonesome right boot, sitting atop the bunkroom dresser. The view must be great from up there. Perhaps it was kept here in hopes that its left partner would one day return."
 progress_requirement = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/RightBoot1/StaticBody3D"]
@@ -963,7 +969,7 @@ stream = ExtResource("26_a2f3f")
 volume_db = -15.0
 pitch_scale = 0.9
 autoplay = true
-panning_strength = 0.5
+panning_strength = 0.0
 
 [node name="Wire1" type="Sprite3D" parent="."]
 transform = Transform3D(0.0874382, -0.00378213, 0, 0.00752838, 0.0439275, 0, 0, 0, 1, 3.44908, 4.47419, 0.0305632)
@@ -1160,6 +1166,7 @@ texture = ExtResource("29_3tvuc")
 script = ExtResource("18_4cqqd")
 object_name = "polaroid photos"
 obj_id = 4
+obj_blurb = "Hidden amongst the mountain of dirty clothes is a collection of polaroid photos."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Photos1/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-07, -1.23457e-13, 2.98023e-07, 1, 6.35048e-14, -1.59872e-14, -8.88178e-16, 1, 0.0986328, 0.0413818, 0)
@@ -1317,6 +1324,7 @@ transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.2999
 script = ExtResource("18_4cqqd")
 object_name = "skip keys"
 obj_id = 2
+obj_blurb = "The ships keys are found hanging off a stick of drift wood."
 progress_requirement = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShipKeys/StaticBody3D"]

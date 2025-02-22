@@ -101,7 +101,6 @@ func _update_blurb(blurbText: String):
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
-	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 	if isTaskBarHidden: # show bar
 		show_bar()
 	else: # hide bar
@@ -109,19 +108,21 @@ func _on_btn_toggle_bar_pressed() -> void:
 
 # Moves the bar on screen
 func show_bar():
+	SoundManager2D.PlaySoundPool2D("SP_WoodDrawer")
 	# tweens between current position and on screen positon relative to the bar_pos node
 	var tween = create_tween()
 	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 128)
-	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(inGame_UI, "position", pos, 0.3).set_trans(Tween.TRANS_SINE)
 	isTaskBarHidden = false
 	print("showing bar")
 
 # Moves the bar off screen
 func hide_bar():
+	SoundManager2D.PlaySoundPool2D("SP_WoodDrawer")
 	# tweens between current position and off screen positon relative to the bar_pos node
 	var tween = create_tween()
 	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 33)
-	tween.tween_property(inGame_UI, "position", pos, 0.2).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(inGame_UI, "position", pos, 0.3).set_trans(Tween.TRANS_SINE)
 	isTaskBarHidden = true
 	print("hiding bar")
 
@@ -140,6 +141,7 @@ func set_left_btn(isActive:bool, camNum:int, displayText:String):
 	if isActive:
 		# activate button
 		lb_container.get_node("Btn_Left").disabled = false
+		lb_container.get_node("Btn_Left").mouse_filter = MOUSE_FILTER_STOP
 		# change text
 		lb_container.get_node("TextLabel").text = displayText
 		# set camera number to use when pressed
@@ -147,6 +149,7 @@ func set_left_btn(isActive:bool, camNum:int, displayText:String):
 	else:
 		# deactivate button
 		lb_container.get_node("Btn_Left").disabled = true
+		lb_container.get_node("Btn_Left").mouse_filter = MOUSE_FILTER_IGNORE
 		# remove text
 		lb_container.get_node("TextLabel").text = ""
 
@@ -155,6 +158,7 @@ func set_right_btn(isActive:bool, camNum:int, displayText:String):
 	if isActive:
 		# activate button
 		rb_container.get_node("Btn_Right").disabled = false
+		rb_container.get_node("Btn_Right").mouse_filter = MOUSE_FILTER_STOP
 		# change text
 		rb_container.get_node("TextLabel").text = displayText
 		# set camera number to use when pressed
@@ -162,6 +166,7 @@ func set_right_btn(isActive:bool, camNum:int, displayText:String):
 	else:
 		# deactivate button
 		rb_container.get_node("Btn_Right").disabled = true
+		rb_container.get_node("Btn_Right").mouse_filter = MOUSE_FILTER_IGNORE
 		# remove text
 		rb_container.get_node("TextLabel").text = ""
 

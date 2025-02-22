@@ -17,6 +17,7 @@ func _ready() -> void:
 	SoundPoolsByName = {
 		"SP_RotoryTick":$SP_RotoryTick,
 		"SP_WoodSteps":$SP_WoodSteps,
+		"SP_WoodDrawer":$SP_WoodDrawer,
 	}
 	
 

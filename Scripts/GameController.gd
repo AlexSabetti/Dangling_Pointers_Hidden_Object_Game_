@@ -2,9 +2,8 @@ extends Node3D
 class_name GameController
 
 @onready var UI = $"../Boat/cameraController/ui_hud"
-@export var progress_order: Array = ["logbook", "fishing rod", "polaroid photos", "skip keys", "duck decoy", "spyglass", "boot", "cassette tape", "compass"]
-#@export var item_groups: Array = [["logbook", "cassette tape", "compass"],["fishing rod", "duck", "ship keys"], ["photos", "boot", "spyglass"]]
-#var ItemIdByName := {}
+@export var progress_order: Array = ["logbook", "fishing rod", "polaroid photos", "skip keys", "decoy duck", "spyglass", "boot", "cassette tape", "compass"]
+
 
 var mouse: Vector2 = Vector2.ZERO
 const MAX_DIST = 800
@@ -16,19 +15,6 @@ func _ready():
 	
 	signal_manager.emit_signal("camera_changed", 1)
 	UI._update_requests(["- find " + progress_order[0], "- find " + progress_order[1], "- find " + progress_order[2]])
-	
-	# dictionary of item names and ids
-	#ItemIdByName = {
-		#"logbook": 1,
-		#"cassette tape": 2,
-		#"compass": 3,
-		#"fishing rod": 4,
-		#"duck": 5,
-		#"ship keys": 6,
-		#"polaroid photos": 7,
-		#"boot": 8,
-		#"spyglass": 9,
-	#}
 	
 
 func _input(event):

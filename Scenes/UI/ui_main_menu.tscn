@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=7 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
 
 [sub_resource type="Theme" id="Theme_6nyy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ln7a5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bxug"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1qxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bbl2"]
 
 [node name="ui_main_menu" type="CanvasLayer"]
 
@@ -42,16 +50,19 @@ horizontal_alignment = 1
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745757, 0.671712, 0.509469, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ln7a5")
 text = "Begin"
 
 [node name="Btn_Settings" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0bxug")
 text = "Settings"
 
 [node name="Btn_Exit" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q1qxo")
 text = "Exit"
 
 [node name="settings_menu" type="Control" parent="main_menu"]
@@ -128,6 +139,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="main_menu/VBoxContainer"]
 layout_mode = 2
@@ -136,8 +148,9 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 128
+metadata/_edit_lock_ = true
 
-[node name="BlerbLabel" type="Label" parent="main_menu/VBoxContainer/MarginContainer"]
+[node name="BlurbLabel" type="Label" parent="main_menu/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
@@ -148,16 +161,19 @@ forgotten fishing boat, anchored by the sandbar.
 
 Any atempts to contact her crew are met with silence. 
 
-Curiosity gets the better of you, as you choose to take a closer look."
+You decide to take a closer look."
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="main_menu/VBoxContainer"]
+[node name="btn_continue" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6bbl2")
 disabled = true
 text = "  continue  "
+metadata/_edit_lock_ = true
 
 [connection signal="focus_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Start" to="main_menu" method="_on_btn_focus_entered"]
 [connection signal="mouse_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Start" to="main_menu" method="_on_btn_focus_entered"]
@@ -169,4 +185,4 @@ text = "  continue  "
 [connection signal="mouse_entered" from="main_menu/MarginContainer/VBoxContainer/Btn_Exit" to="main_menu" method="_on_btn_focus_entered"]
 [connection signal="pressed" from="main_menu/MarginContainer/VBoxContainer/Btn_Exit" to="main_menu" method="_on_btn_exit_pressed"]
 [connection signal="timeout" from="main_menu/FadeTimer" to="main_menu" method="_on_fade_timer_timeout"]
-[connection signal="pressed" from="main_menu/VBoxContainer/Button" to="main_menu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/btn_continue" to="main_menu" method="_on_continue_button_pressed"]

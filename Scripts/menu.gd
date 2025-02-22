@@ -26,7 +26,7 @@ func startGame() -> void:
 	# fade to black
 	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0)
 	tween.chain().tween_property($VBoxContainer, "modulate", Color.WHITE, 1.0).from(Color.TRANSPARENT)
-	$VBoxContainer/Button.disabled = false
+	$VBoxContainer/btn_continue.disabled = false
 	$FadeToBlack.mouse_filter = MOUSE_FILTER_STOP
 
 # toggles the settings menu (if one gets added anyway, this is low priority)
@@ -67,6 +67,8 @@ func _on_btn_focus_entered() -> void:
 
 
 func _on_continue_button_pressed() -> void:
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
+	$VBoxContainer/btn_continue.disabled = true
 	var tween = create_tween()
 	FadeTimer.start()
 	tween.tween_property($VBoxContainer, "modulate", Color.TRANSPARENT, 1.0).from(Color.WHITE)

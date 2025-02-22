@@ -70,7 +70,7 @@ shadow_enabled = true
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(-0.866461, 0, 0.499244, 0, 1, 0, -0.499244, 0, -0.866461, -25.5409, 7.92956, -18.2108)
 stream = ExtResource("3_mj7ro")
-volume_db = -20.0
+volume_db = -25.0
 autoplay = true
 
 [node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
@@ -120,7 +120,7 @@ current = true
 [node name="CicadaAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1017, 1.5323, -20.1666)
 stream = ExtResource("14_1f2s8")
-volume_db = -5.0
+volume_db = -8.0
 autoplay = true
 
 [editable path="WaterPlane"]

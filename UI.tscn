@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=13 format=3 uid="uid://cw83dccua6vux"]
 
 [ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
 [ext_resource type="Texture2D" uid="uid://e0254uqt5s6x" path="res://Resources/Textures/Sprites/LeftArrow1_b1.png" id="2_iow18"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://d3375smwpjgme" path="res://Resources/Textures/Sprites/RightArrow1_c1.png" id="7_2tgps"]
 [ext_resource type="Texture2D" uid="uid://b1ynhujyoraya" path="res://Resources/Textures/Sprites/RightArrow1_d1.png" id="8_or8dl"]
 [ext_resource type="Texture2D" uid="uid://tpsgy2gbf587" path="res://Resources/Textures/Sprites/RightArrow1_a1.png" id="9_qkpuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6kub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l73ec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40ubk"]
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -48,11 +54,13 @@ alignment = 1
 [node name="Resume" type="Button" parent="PauseMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h6kub")
 text = "R E S U M E"
 
 [node name="Exit" type="Button" parent="PauseMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l73ec")
 text = "E X I T"
 
 [node name="Ingame_UI" type="VBoxContainer" parent="."]
@@ -78,10 +86,12 @@ theme_override_constants/margin_bottom = 4
 [node name="btn_ToggleBar" type="Button" parent="Ingame_UI/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_colors/font_hover_color = Color(0.914881, 0.820293, 0.684292, 1)
 theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40ubk")
 text = "toggle notes"
 
 [node name="TaskBar" type="HBoxContainer" parent="Ingame_UI"]
