@@ -1,14 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=19 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
+[ext_resource type="Texture2D" uid="uid://ducijr4snm1wg" path="res://Resources/Textures/Sprites/Square1_a1.png" id="2_bub0a"]
+[ext_resource type="Texture2D" uid="uid://5vtdi2syeyvh" path="res://Resources/Textures/Sprites/Square1_c1.png" id="3_3t7yb"]
+[ext_resource type="Texture2D" uid="uid://fccfq1p3jv6n" path="res://Resources/Textures/Sprites/Square1_b1.png" id="3_bheg1"]
 
 [sub_resource type="Theme" id="Theme_6nyy8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ln7a5"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inoek"]
+texture = ExtResource("2_bub0a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjq7e"]
+texture = ExtResource("3_3t7yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l1uv"]
+texture = ExtResource("3_bheg1")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bxug"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0acwk"]
+texture = ExtResource("2_bub0a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78hyj"]
+texture = ExtResource("3_3t7yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6om3"]
+texture = ExtResource("3_bheg1")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1qxo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0s6v"]
+texture = ExtResource("2_bub0a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lda56"]
+texture = ExtResource("3_3t7yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_342l7"]
+texture = ExtResource("3_bheg1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bbl2"]
 
@@ -49,20 +79,35 @@ horizontal_alignment = 1
 
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745757, 0.671712, 0.509469, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ln7a5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_inoek")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wjq7e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6l1uv")
 text = "Begin"
 
 [node name="Btn_Settings" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0bxug")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0acwk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_78hyj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_y6om3")
 text = "Settings"
 
 [node name="Btn_Exit" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q1qxo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x0s6v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lda56")
+theme_override_styles/normal = SubResource("StyleBoxTexture_342l7")
 text = "Exit"
 
 [node name="settings_menu" type="Control" parent="main_menu"]
