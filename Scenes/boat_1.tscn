@@ -722,7 +722,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182568, 0.173882, 0.00386
 script = ExtResource("18_4cqqd")
 object_name = "spyglass"
 obj_id = 4
-obj_blurb = "Proped up by a table lamp, you spot a spy glass. The body is bent out of shape, with dust coating its lens. Well worn, but functional."
+obj_blurb = "Propped up by a table lamp, you spot a spy glass. The body is bent out of shape, with dust coating its lens. Well worn, but functional."
 progress_requirement = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Telescope/StaticBody3D"]
@@ -1322,7 +1322,7 @@ texture = ExtResource("46_cesx7")
 [node name="StaticBody3D" type="StaticBody3D" parent="ShipKeys"]
 transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.29993, -0.990615, 0.0679774, -0.118577, 0.18538, -0.0362663, 0.00792408)
 script = ExtResource("18_4cqqd")
-object_name = "skip keys"
+object_name = "ship keys"
 obj_id = 2
 obj_blurb = "The ships keys are found hanging off a stick of drift wood."
 progress_requirement = 1

@@ -2,7 +2,7 @@ extends Node3D
 class_name GameController
 
 @onready var UI = $"../Boat/cameraController/ui_hud"
-@export var progress_order: Array = ["logbook", "fishing rod", "polaroid photos", "skip keys", "decoy duck", "spyglass", "boot", "cassette tape", "compass"]
+@export var progress_order: Array = ["logbook", "fishing rod", "polaroid photos", "ship keys", "decoy duck", "spyglass", "boot", "cassette tape", "compass"]
 
 
 var mouse: Vector2 = Vector2.ZERO
