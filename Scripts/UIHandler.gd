@@ -172,6 +172,15 @@ func set_right_btn(isActive:bool, camNum:int, displayText:String):
 		# remove text
 		rb_container.get_node("TextLabel").text = ""
 
+func show_end_button(show:bool):
+	if show:
+		$Ingame_UI/MarginContainer/btn_EndGame.mouse_filter = MOUSE_FILTER_STOP
+		$Ingame_UI/MarginContainer/btn_EndGame.visible = true
+	else:
+		$Ingame_UI/MarginContainer/btn_EndGame.mouse_filter = MOUSE_FILTER_IGNORE
+		$Ingame_UI/MarginContainer/btn_EndGame.visible = false
+
+
 # when button is hovered over
 func _on_btn_mouse_entered() -> void:
 	SoundManager2D.PlaySoundQueue2D("SQ_Tick1")
@@ -191,3 +200,8 @@ func _on_btn_right_pressed() -> void:
 		set_left_btn(false, 0, "")
 		set_right_btn(false, 0, "")
 		camControllerRef.change_room(rb_cam)
+
+# ends the game
+func _on_btn_end_game_pressed() -> void:
+	fade_to_black()
+	pass # Replace with function body.

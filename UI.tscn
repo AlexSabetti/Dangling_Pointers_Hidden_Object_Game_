@@ -151,6 +151,30 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
+[node name="btn_EndGame" type="Button" parent="Ingame_UI/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_colors/font_hover_color = Color(0.914881, 0.820293, 0.684292, 1)
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40ubk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5h77u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_im458")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ktv0d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_edi3g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_muyxy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ki31v")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_shxfx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g7hll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_og5vh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0d8oo")
+text = "   leave ship?   "
+
 [node name="btn_ToggleBar" type="Button" parent="Ingame_UI/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -159,7 +183,6 @@ theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1
 theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_40ubk")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5h77u")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_im458")
@@ -206,7 +229,7 @@ theme_override_constants/margin_bottom = 42
 
 [node name="r_box" type="VBoxContainer" parent="Ingame_UI/TaskBar/Requests/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/Requests/MarginContainer/r_box"]
@@ -353,6 +376,8 @@ grow_vertical = 0
 
 [connection signal="mouse_entered" from="PauseMenu/Resume" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="PauseMenu/Exit" to="." method="_on_btn_mouse_entered"]
+[connection signal="mouse_entered" from="Ingame_UI/MarginContainer/btn_EndGame" to="." method="_on_btn_mouse_entered"]
+[connection signal="pressed" from="Ingame_UI/MarginContainer/btn_EndGame" to="." method="_on_btn_end_game_pressed"]
 [connection signal="mouse_entered" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_mouse_entered"]
 [connection signal="pressed" from="Ingame_UI/MarginContainer/btn_ToggleBar" to="." method="_on_btn_toggle_bar_pressed"]
 [connection signal="mouse_entered" from="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/LB_VBoxContainer/Btn_Left" to="." method="_on_btn_mouse_entered"]
