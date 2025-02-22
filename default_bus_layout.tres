@@ -1,3 +1,16 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://dsvqumbc1ueha"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://dsvqumbc1ueha"]
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_vmm77"]
+resource_name = "Delay"
+tap1_active = false
+tap1_delay_ms = 0.0
+tap2_active = false
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_gwoca"]
+resource_name = "Amplify"
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectDelay_vmm77")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectAmplify_gwoca")
+bus/0/effect/1/enabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fsrbbvaup8yt"]
+[gd_scene load_steps=15 format=3 uid="uid://fsrbbvaup8yt"]
 
 [ext_resource type="Script" path="res://Systems/soundManagement/soundManager2D.gd" id="1_npvuk"]
 [ext_resource type="PackedScene" uid="uid://dtapmajmx7ee7" path="res://Systems/soundManagement/SoundPool2D.tscn" id="2_1hqif"]
@@ -10,7 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://cyxbx52r51mu7" path="res://Resources/Sounds/SFX/RotaryPhoneTick3.wav" id="6_4hp06"]
 [ext_resource type="AudioStream" uid="uid://hucb85u4o2qy" path="res://Resources/Sounds/SFX/WoodStep3.mp3" id="6_bf6v5"]
 [ext_resource type="AudioStream" uid="uid://chb70wuved76" path="res://Resources/Sounds/SFX/WoodStep4.mp3" id="10_md5dv"]
+[ext_resource type="AudioStream" uid="uid://tjq3pb53fpr8" path="res://Resources/Sounds/SFX/woodenDrawerSound1.wav" id="11_2kb14"]
 [ext_resource type="AudioStream" uid="uid://bqh2xiyjpu1yl" path="res://Resources/Sounds/SFX/ScribbleSound1.wav" id="11_x7fad"]
+[ext_resource type="AudioStream" uid="uid://dug2t17oiybg" path="res://Resources/Sounds/SFX/woodenDrawerSound2.wav" id="12_fgq8a"]
+[ext_resource type="AudioStream" uid="uid://ulx1ytoe3a45" path="res://Resources/Sounds/SFX/woodenDrawerSound3.wav" id="13_67xlj"]
 
 [node name="SoundManager2D" type="Node2D"]
 script = ExtResource("1_npvuk")
@@ -86,6 +89,38 @@ maxPitch = 1.15
 stream = ExtResource("10_md5dv")
 volume_db = 5.0
 
+[node name="SP_WoodDrawer" parent="." instance=ExtResource("2_1hqif")]
+overrideSoundQueueSettings = true
+minPitch = 0.8
+maxPitch = 1.05
+
+[node name="SoundQueue2D" parent="SP_WoodDrawer" instance=ExtResource("3_rhpdf")]
+count = 2
+minPitch = 0.8
+maxPitch = 1.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D"]
+stream = ExtResource("11_2kb14")
+volume_db = 5.0
+
+[node name="SoundQueue2D2" parent="SP_WoodDrawer" instance=ExtResource("3_rhpdf")]
+count = 2
+minPitch = 0.8
+maxPitch = 1.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D2"]
+stream = ExtResource("12_fgq8a")
+volume_db = 5.0
+
+[node name="SoundQueue2D3" parent="SP_WoodDrawer" instance=ExtResource("3_rhpdf")]
+count = 2
+minPitch = 0.8
+maxPitch = 1.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D3"]
+stream = ExtResource("13_67xlj")
+volume_db = 5.0
+
 [node name="SQ_Scribble" parent="." instance=ExtResource("3_rhpdf")]
 count = 2
 minPitch = 0.9
@@ -97,7 +132,8 @@ volume_db = 10.0
 
 [node name="SQ_Tick1" parent="." instance=ExtResource("3_rhpdf")]
 count = 2
-minPitch = 0.8
+minPitch = 0.6
+maxPitch = 0.8
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SQ_Tick1"]
 stream = ExtResource("4_v3jmj")
@@ -105,8 +141,9 @@ volume_db = -7.0
 
 [node name="SQ_Tick2" parent="." instance=ExtResource("3_rhpdf")]
 count = 2
-minPitch = 0.9
-maxPitch = 1.15
+minPitch = 0.75
+maxPitch = 0.95
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SQ_Tick2"]
 stream = ExtResource("5_bki04")
+volume_db = -7.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=13 format=3 uid="uid://cw83dccua6vux"]
 
 [ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
 [ext_resource type="Texture2D" uid="uid://e0254uqt5s6x" path="res://Resources/Textures/Sprites/LeftArrow1_b1.png" id="2_iow18"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://d3375smwpjgme" path="res://Resources/Textures/Sprites/RightArrow1_c1.png" id="7_2tgps"]
 [ext_resource type="Texture2D" uid="uid://b1ynhujyoraya" path="res://Resources/Textures/Sprites/RightArrow1_d1.png" id="8_or8dl"]
 [ext_resource type="Texture2D" uid="uid://tpsgy2gbf587" path="res://Resources/Textures/Sprites/RightArrow1_a1.png" id="9_qkpuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6kub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l73ec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40ubk"]
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -48,11 +54,13 @@ alignment = 1
 [node name="Resume" type="Button" parent="PauseMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h6kub")
 text = "R E S U M E"
 
 [node name="Exit" type="Button" parent="PauseMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l73ec")
 text = "E X I T"
 
 [node name="Ingame_UI" type="VBoxContainer" parent="."]
@@ -61,10 +69,11 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -119.0
+offset_top = -126.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(0, 123)
+pivot_offset = Vector2(0, 126)
 theme_override_constants/separation = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="Ingame_UI"]
@@ -77,17 +86,19 @@ theme_override_constants/margin_bottom = 4
 [node name="btn_ToggleBar" type="Button" parent="Ingame_UI/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_colors/font_hover_color = Color(0.914881, 0.820293, 0.684292, 1)
 theme_override_colors/font_focus_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40ubk")
 text = "toggle notes"
 
 [node name="TaskBar" type="HBoxContainer" parent="Ingame_UI"]
 layout_mode = 2
 
 [node name="Requests" type="ColorRect" parent="Ingame_UI/TaskBar"]
-custom_minimum_size = Vector2(0, 90)
+custom_minimum_size = Vector2(0, 131)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.682353, 0.470588, 0.215686, 0.533333)
@@ -100,9 +111,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 42
 
 [node name="r_box" type="VBoxContainer" parent="Ingame_UI/TaskBar/Requests/MarginContainer"]
 layout_mode = 2
@@ -112,12 +123,50 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/Requests/MarginContainer/r_box"]
 z_index = 1
 layout_mode = 2
+theme_override_colors/default_color = Color(0.852032, 0.790908, 0.65973, 1)
+text = "temp1"
 fit_content = true
 
-[node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Ingame_UI/TaskBar/Requests/MarginContainer/r_box"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.85098, 0.792157, 0.658824, 1)
+text = "temp2"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Ingame_UI/TaskBar/Requests/MarginContainer/r_box"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.85098, 0.792157, 0.658824, 1)
+text = "temp3"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame_UI/TaskBar"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_top = 16
+
+[node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame_UI/TaskBar/MarginContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 42
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ingame_UI/TaskBar/MarginContainer/Panel2/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.745098, 0.670588, 0.509804, 1)
 
 [node name="Panel3" type="Panel" parent="Ingame_UI/TaskBar"]
 layout_mode = 2
@@ -131,9 +180,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 42
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ingame_UI/TaskBar/Panel3/MarginContainer"]
 layout_mode = 2

@@ -103,24 +103,27 @@ waterPlaneRef = NodePath("../../WaterPlane")
 controls_disabled = false
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.998246, -0.0592018, 0, 0.0592018, 0.998246, 0, 0, 0, 1, 10.4034, 5.96743, 3.31898)
+transform = Transform3D(0.998246, -0.0592018, 0, 0.0592018, 0.998246, 0, 0, 0, 1, 12.3048, 3.06784, 5.63116)
 stream = ExtResource("4_r7wvt")
-volume_db = -18.0
+volume_db = -20.0
 autoplay = true
 max_distance = 50.0
+panning_strength = 0.5
 
 [node name="OceanAmbience2" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.52405, 0.846335, -0.0953327, -0.850254, 0.526372, -0.000925006, 0.0493976, 0.0815418, 0.995445, -35.1088, 8.6258, 8.74338)
+transform = Transform3D(0.52405, 0.846335, -0.0953328, -0.850254, 0.526372, -0.000925069, 0.0493976, 0.0815418, 0.995445, -5.044, 11.6732, 0.0644518)
 stream = ExtResource("3_q4n1s")
-volume_db = -10.0
+volume_db = -12.0
 autoplay = true
 max_distance = 150.0
 
 [node name="CicadaAmbience1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99923, -0.0392424, 0, 0.0392424, 0.99923, 7.87809, 3.227, -2.90178)
+transform = Transform3D(1, 0, 0, 0, 0.99923, -0.0392424, 0, 0.0392424, 0.99923, 7.73771, 3.227, -3.48964)
 stream = ExtResource("5_fy05e")
-volume_db = -12.0
+volume_db = -14.0
 autoplay = true
+max_distance = 50.0
+panning_strength = 0.75
 
 [node name="WaterPlane" parent="." instance=ExtResource("4_q6f3t")]
 transform = Transform3D(102.472, 0, 65.215, 0, 1, 0, -59.162, 0, 112.956, -46.922, 0.286158, -28.7707)

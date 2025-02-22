@@ -87,6 +87,8 @@ func _process(_delta: float) -> void:
 			signal_manager.unpause_game.emit()
 		else: # if game is currently  unpaused, pause it
 			signal_manager.pause_game.emit()
+	if Input.is_action_just_pressed("toggle_bar"): #if "menu" key is pressed, toggle pause menu
+		signal_manager.toggle_bar.emit()
 
 # smoothly moves the active camera towards staying upright
 func keepCam_Upright()-> void:
@@ -116,7 +118,7 @@ func change_cam_section(cam_id: int):
 		waterPlaneRef.visible = true
 		cam_Stern.make_current()
 		cam_Stern.global_rotation = cam_Stern_rot
-		rocking_ambi.volume_db = -5
+		rocking_ambi.volume_db = -15
 		print("cam changed to Stern")
 		previous_cam_id = 1
 		
@@ -172,7 +174,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
 		cam_Stern.make_current()
 		cam_Stern.global_rotation = cam_Stern_rot
-		rocking_ambi.volume_db = -5
+		rocking_ambi.volume_db = -15
 		controls_disabled = true
 
 
