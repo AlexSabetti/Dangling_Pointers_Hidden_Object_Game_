@@ -101,7 +101,7 @@ maxPitch = 1.05
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D"]
 stream = ExtResource("11_2kb14")
-volume_db = 5.0
+volume_db = 10.0
 
 [node name="SoundQueue2D2" parent="SP_WoodDrawer" instance=ExtResource("3_rhpdf")]
 count = 2
@@ -110,7 +110,7 @@ maxPitch = 1.05
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D2"]
 stream = ExtResource("12_fgq8a")
-volume_db = 5.0
+volume_db = 10.0
 
 [node name="SoundQueue2D3" parent="SP_WoodDrawer" instance=ExtResource("3_rhpdf")]
 count = 2
@@ -119,7 +119,7 @@ maxPitch = 1.05
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SP_WoodDrawer/SoundQueue2D3"]
 stream = ExtResource("13_67xlj")
-volume_db = 5.0
+volume_db = 10.0
 
 [node name="SQ_Scribble" parent="." instance=ExtResource("3_rhpdf")]
 count = 2
