@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=23 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
 [ext_resource type="Texture2D" uid="uid://ducijr4snm1wg" path="res://Resources/Textures/Sprites/Square1_a1.png" id="2_bub0a"]
@@ -41,6 +41,34 @@ texture = ExtResource("3_3t7yb")
 texture = ExtResource("3_bheg1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bbl2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6dgf"]
+texture = ExtResource("3_bheg1")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35ia2"]
+texture = ExtResource("2_bub0a")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3omxh"]
+texture = ExtResource("3_3t7yb")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sol5"]
+texture = ExtResource("3_bheg1")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
 
 [node name="ui_main_menu" type="CanvasLayer"]
 
@@ -214,8 +242,14 @@ metadata/_edit_lock_ = true
 [node name="btn_continue" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6bbl2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_q6dgf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_35ia2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3omxh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2sol5")
 disabled = true
 text = "  continue  "
 metadata/_edit_lock_ = true

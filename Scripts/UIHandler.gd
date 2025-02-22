@@ -144,6 +144,7 @@ func set_left_btn(isActive:bool, camNum:int, displayText:String):
 		lb_container.get_node("Btn_Left").mouse_filter = MOUSE_FILTER_STOP
 		# change text
 		lb_container.get_node("TextLabel").text = displayText
+		
 		# set camera number to use when pressed
 		lb_cam = camNum
 	else:
@@ -161,6 +162,7 @@ func set_right_btn(isActive:bool, camNum:int, displayText:String):
 		rb_container.get_node("Btn_Right").mouse_filter = MOUSE_FILTER_STOP
 		# change text
 		rb_container.get_node("TextLabel").text = displayText
+		
 		# set camera number to use when pressed
 		rb_cam = camNum
 	else:
