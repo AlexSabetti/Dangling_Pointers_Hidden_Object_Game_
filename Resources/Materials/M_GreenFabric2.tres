@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cbrpdt3aeak68"]
+
+[ext_resource type="Texture2D" uid="uid://bmglpl3fek11v" path="res://Resources/Textures/EB_GreenFabricTexture_a1.png" id="1_55rcn"]
+[ext_resource type="Texture2D" uid="uid://jonnfcqn8t53" path="res://Resources/Textures/bumpMaps/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg" id="2_62apk"]
+[ext_resource type="Texture2D" uid="uid://cjeyrhjbct1ks" path="res://Resources/Textures/normalMaps/everytexture.com-stock-fabric-texture-00026-normal-1024.jpg" id="3_tk5eh"]
+[ext_resource type="Texture2D" uid="uid://cfi7hid0i1en1" path="res://Resources/Textures/EB_PinkWoodTexture_a2.png" id="4_l1n72"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_55rcn")
+normal_scale = 0.5
+normal_texture = ExtResource("3_tk5eh")
+heightmap_texture = ExtResource("2_62apk")
+subsurf_scatter_strength = 1.0
+subsurf_scatter_texture = ExtResource("4_l1n72")
+uv1_scale = Vector3(4, 4, 4)

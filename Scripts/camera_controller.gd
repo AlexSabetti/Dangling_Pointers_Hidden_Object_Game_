@@ -124,7 +124,13 @@ func change_cam_section(cam_id: int):
 		
 		UI.set_left_btn(true, 3, "to helm")
 		UI.set_right_btn(true, 2, "to cabin")
-
+		
+		# show option to leave boat when on stern and game is won
+		if Global.gameWon:
+			UI.show_end_button(true)
+	else:
+		if Global.gameWon:
+			UI.show_end_button(false)
 
 	# For camera kitchen
 	if(cam_id == 2):

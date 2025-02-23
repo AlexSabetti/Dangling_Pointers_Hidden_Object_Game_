@@ -90,7 +90,7 @@ offset_left = -1148.0
 offset_bottom = 101.0
 grow_horizontal = 0
 theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = 164
+theme_override_constants/margin_top = 155
 theme_override_constants/margin_right = 180
 theme_override_constants/margin_bottom = 80
 
@@ -101,8 +101,9 @@ theme = SubResource("Theme_6nyy8")
 [node name="Label" type="Label" parent="main_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.350497, 0.243654, 0.169108, 1)
-theme_override_font_sizes/font_size = 42
-text = "Game Title Here"
+theme_override_colors/font_shadow_color = Color(0.204684, 0.126509, 0.138278, 1)
+theme_override_font_sizes/font_size = 64
+text = "Game Title"
 horizontal_alignment = 1
 
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
@@ -227,7 +228,7 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
-text = "It's an early sunday morning and you're already out on your dingy.
+text = "It's an early sunday morning and you're already out on your dinghy.
 
 Pushing through the morning mist, you stumble upon a small 
 forgotten fishing boat, anchored by the sandbar.
