@@ -503,15 +503,15 @@ surface_material_override/1 = ExtResource("7_8hxqg")
 surface_material_override/2 = ExtResource("23_h8d6i")
 
 [node name="Rope2" parent="EmptyBoat1_a4_GD" index="3"]
-transform = Transform3D(0.795198, -0.598108, 0.0996275, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986408, -2.67045, 9.13777, 0)
+transform = Transform3D(0.795198, -0.598108, 0.0996275, 0.606349, 0.784391, -0.130657, 1.78814e-07, 0.164308, 0.986407, -2.67045, 9.13777, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope" parent="EmptyBoat1_a4_GD" index="4"]
-transform = Transform3D(0.5, 0.866025, 0, -0.866026, 0.5, 0, 0, 0, 1, 7.138, 6.591, 0)
+transform = Transform3D(0.499998, 0.866026, 0, -0.866027, 0.499998, 0, 0, 0, 1, 7.138, 6.591, 0)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="Rope3" parent="EmptyBoat1_a4_GD" index="5"]
-transform = Transform3D(0.942372, 0.334531, 0.00493458, -0.334532, 0.942384, -0.000618229, -0.00485708, -0.00106817, 0.999988, 2.49929, 10.8328, -0.00255132)
+transform = Transform3D(0.942372, 0.334531, 0.00493458, -0.334532, 0.942384, -0.000618229, -0.00485709, -0.00106817, 0.999988, 2.49929, 10.8328, -0.00255132)
 surface_material_override/0 = ExtResource("2_m6xgg")
 
 [node name="HelmFurnature" parent="EmptyBoat1_a4_GD" index="6"]
@@ -519,6 +519,7 @@ surface_material_override/0 = ExtResource("6_3qo3t")
 surface_material_override/1 = ExtResource("10_1qhld")
 surface_material_override/2 = ExtResource("12_qapwe")
 surface_material_override/3 = ExtResource("2_y5rog")
+surface_material_override/4 = ExtResource("9_rntxu")
 
 [node name="KitchenFurnature" parent="EmptyBoat1_a4_GD" index="7"]
 surface_material_override/0 = ExtResource("6_3qo3t")
@@ -536,9 +537,10 @@ surface_material_override/2 = ExtResource("10_1qhld")
 surface_material_override/3 = ExtResource("3_leush")
 surface_material_override/4 = ExtResource("12_qapwe")
 surface_material_override/5 = ExtResource("2_y5rog")
+surface_material_override/6 = ExtResource("4_pey38")
 
 [node name="BunkLadder" parent="EmptyBoat1_a4_GD" index="9"]
-surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/0 = ExtResource("4_pey38")
 surface_material_override/1 = ExtResource("2_y5rog")
 surface_material_override/2 = ExtResource("2_y5rog")
 
@@ -947,6 +949,32 @@ surface_material_override/0 = ExtResource("24_y5pvy")
 surface_material_override/1 = ExtResource("10_1qhld")
 surface_material_override/2 = ExtResource("24_y5pvy")
 
+[node name="Rod1" parent="EmptyBoat1_a4_GD" index="90"]
+surface_material_override/0 = ExtResource("2_m6xgg")
+
+[node name="FireAxe" parent="EmptyBoat1_a4_GD" index="91"]
+surface_material_override/0 = ExtResource("24_y5pvy")
+surface_material_override/1 = ExtResource("21_33mjs")
+
+[node name="SternHook1" parent="EmptyBoat1_a4_GD" index="92"]
+surface_material_override/0 = ExtResource("12_qapwe")
+
+[node name="Plate2" parent="EmptyBoat1_a4_GD" index="93"]
+surface_material_override/0 = ExtResource("9_rntxu")
+
+[node name="SleepingBag" parent="EmptyBoat1_a4_GD" index="94"]
+surface_material_override/0 = ExtResource("2_y5rog")
+surface_material_override/1 = ExtResource("24_y5pvy")
+
+[node name="BackPack" parent="EmptyBoat1_a4_GD" index="95"]
+surface_material_override/0 = ExtResource("23_h8d6i")
+surface_material_override/1 = ExtResource("2_m6xgg")
+
+[node name="Torch1" parent="EmptyBoat1_a4_GD" index="96"]
+surface_material_override/0 = ExtResource("6_3qo3t")
+surface_material_override/1 = ExtResource("9_rntxu")
+surface_material_override/2 = ExtResource("2_m6xgg")
+
 [node name="KitchenBounceLight1" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96958, 3.07357, 0.126274)
 light_color = Color(0.815686, 0.686275, 0.447059, 1)
@@ -1198,14 +1226,14 @@ render_priority = 5
 texture = ExtResource("33_potu1")
 
 [node name="LifeRing2" type="Sprite3D" parent="."]
-transform = Transform3D(-1.15727e-08, 0.0397204, 0.284846, -1.11022e-16, 0.26766, -0.0422707, -0.264753, -1.73623e-09, -1.2451e-08, 4.01885, 3.02477, -0.714881)
+transform = Transform3D(-1.15727e-08, 0.0397204, 0.284846, -1.11022e-16, 0.26766, -0.0422707, -0.264753, -1.73623e-09, -1.2451e-08, 4.06142, 3.01845, -0.66685)
 shaded = true
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("33_potu1")
 
 [node name="Shirt1" type="Sprite3D" parent="."]
-transform = Transform3D(0.132463, -0.121875, -5.32731e-09, 0, -7.86805e-09, 0.18, -0.121875, -0.132463, -5.79016e-09, -2.15504, -0.346709, -0.648987)
+transform = Transform3D(0.132463, -0.121875, -5.32731e-09, 0, -7.86805e-09, 0.18, -0.121875, -0.132463, -5.79016e-09, -2.11534, -0.346709, -0.678044)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1213,7 +1241,7 @@ render_priority = 5
 texture = ExtResource("27_mm5og")
 
 [node name="Shirt3" type="Sprite3D" parent="."]
-transform = Transform3D(0.0834379, 0.159493, 9.03118e-09, 0.00505991, -0.00264707, 0.179909, 0.159413, -0.0833959, -0.00571049, -3.96109, -0.336021, 0.21149)
+transform = Transform3D(0.0834379, 0.159493, 9.03118e-09, 0.00505991, -0.00264707, 0.179909, 0.159413, -0.0833959, -0.00571049, -3.91875, -0.336999, 0.18067)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1221,7 +1249,7 @@ render_priority = 5
 texture = ExtResource("27_mm5og")
 
 [node name="Shirt2" type="Sprite3D" parent="."]
-transform = Transform3D(0.00748714, -0.179844, -7.86124e-09, 0, -7.86805e-09, 0.18, -0.179844, -0.00748714, -3.27273e-10, -2.59186, -0.340531, 0.243925)
+transform = Transform3D(0.0342251, -0.176716, -7.86124e-09, 1.17343e-09, -7.78006e-09, 0.18, -0.176716, -0.0342251, -3.27273e-10, -2.5914, -0.35572, 0.232937)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1247,7 +1275,7 @@ transform = Transform3D(1, -2.98023e-07, -1.23457e-13, 2.98023e-07, 1, 6.35048e-
 shape = SubResource("BoxShape3D_j7w24")
 
 [node name="Pants1" type="Sprite3D" parent="."]
-transform = Transform3D(-0.159493, 0.0834379, 3.64719e-09, 0, -7.86805e-09, 0.18, 0.0834379, 0.159493, 6.97167e-09, -2.73454, -0.323066, -0.301936)
+transform = Transform3D(-0.159493, 0.0834379, 3.64719e-09, 0, -7.86805e-09, 0.18, 0.0834379, 0.159493, 6.97167e-09, -2.76333, -0.318976, -0.313567)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1255,7 +1283,7 @@ render_priority = 5
 texture = ExtResource("29_jkhho")
 
 [node name="Pants2" type="Sprite3D" parent="."]
-transform = Transform3D(0.108379, 0.143715, 6.28197e-09, 0, -7.86805e-09, 0.18, 0.143715, -0.108379, -4.73742e-09, -3.18559, -0.356806, -0.759268)
+transform = Transform3D(0.108379, 0.143715, 6.28197e-09, 0, -7.86805e-09, 0.18, 0.143715, -0.108379, -4.73742e-09, -3.18559, -0.351434, -0.759268)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1271,7 +1299,7 @@ render_priority = 5
 texture = ExtResource("30_f45m2")
 
 [node name="Socks1" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0803389, 0.126672, -9.40252e-09, -0.00667805, -0.00423541, 0.149791, 0.126495, 0.0802271, 0.00790791, -2.51672, 0.479627, -1.44864)
+transform = Transform3D(-0.0802174, 0.126447, -0.008745, -0.0149042, 0.000867301, 0.149255, 0.125869, 0.0806879, 0.0121001, -2.54583, 0.493065, -1.42312)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1303,7 +1331,7 @@ render_priority = 5
 texture = ExtResource("37_gewee")
 
 [node name="Socks2" type="Sprite3D" parent="."]
-transform = Transform3D(0.143067, 0.0449436, -0.00344902, 0.00310653, 0.00161914, 0.149959, 0.0449686, -0.143099, 0.00061351, -2.37361, -0.344231, -0.782475)
+transform = Transform3D(0.143109, 0.0449436, -0.000107413, -0.000395918, 0.00161914, 0.149991, 0.044942, -0.143099, 0.00166338, -2.37361, -0.342126, -0.782452)
 shaded = true
 alpha_cut = 1
 texture_filter = 0
@@ -1311,7 +1339,7 @@ render_priority = 5
 texture = ExtResource("31_nwkei")
 
 [node name="Socks3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.132862, 0.0696151, 0.00118834, -0.000996223, 0.000659121, -0.149995, -0.0696181, -0.132866, -0.000121466, 3.24643, 1.66348, -0.427165)
+transform = Transform3D(-0.132862, 0.0696151, 0.00118834, -0.000996223, 0.000659121, -0.149995, -0.0696181, -0.132866, -0.000121466, 3.14658, 1.6627, -0.439861)
 shaded = true
 texture_filter = 0
 render_priority = 5

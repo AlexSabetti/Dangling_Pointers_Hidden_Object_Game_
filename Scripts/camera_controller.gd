@@ -91,6 +91,8 @@ func _process(_delta: float) -> void:
 		signal_manager.toggle_bar.emit()
 
 # smoothly moves the active camera towards staying upright
+# there is a weird bug if you stay on one camera for too long where the camera will start flipping over for some reason.
+# camera posiiton resets upon changing cams, so it can be fixed by swapping the camera, but is still a weird bug that might be worth fixing.
 func keepCam_Upright()-> void:
 	var currentCamPivot = get_viewport().get_camera_3d().get_parent_node_3d()
 	currentCamPivot.global_rotation = lerp(currentCamPivot.global_rotation, currentCamPivot.global_rotation + (boatRef.rotation * -0.125), 0.01)
