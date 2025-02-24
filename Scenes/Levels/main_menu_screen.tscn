@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://di5yopwk7dyhn"]
+[gd_scene load_steps=24 format=3 uid="uid://di5yopwk7dyhn"]
 
 [ext_resource type="Environment" uid="uid://si33i12chc48" path="res://Resources/Environments/Env_sunRise3.tres" id="1_j3g3g"]
 [ext_resource type="PackedScene" uid="uid://djh66mlci57qj" path="res://Scenes/boat_1.tscn" id="2_rjsud"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cg457s3jk4ebw" path="res://Scenes/UI/ui_main_menu.tscn" id="12_8amwl"]
 [ext_resource type="PlaneMesh" uid="uid://be74bylqmm3sc" path="res://Resources/Models/grass1c_mesh.tres" id="12_20v14"]
 [ext_resource type="AudioStream" uid="uid://y0kjctdr2kss" path="res://Resources/Sounds/Ambience/CicadaLoop1.wav" id="14_1f2s8"]
+[ext_resource type="Texture2D" uid="uid://bym81rw8bu30g" path="res://Resources/Textures/Sprites/Clam1_a1.png" id="16_dq0hq"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jaxq7"]
 
@@ -122,6 +123,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1017, 1.5323, -20.1666)
 stream = ExtResource("14_1f2s8")
 volume_db = -8.0
 autoplay = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.124101, 0.0342152, -0.0181189, 0.0129429, 0.020675, 0.127691, 0.0364891, -0.123701, 0.0163303, -18.8781, 0.450117, -16.2932)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("16_dq0hq")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.120361, 0.093411, -0.0140207, -0.0178861, -0.000239082, 0.151951, 0.0927485, 0.121175, 0.011108, -18.9449, 0.36872, -15.374)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("16_dq0hq")
 
 [editable path="WaterPlane"]
 [editable path="EB_SandBar1_a4_GD"]

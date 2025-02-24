@@ -12,6 +12,7 @@ var camControllerRef: CameraController
 @onready var rb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer
 @onready var lb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/LB_VBoxContainer
 @onready var blurbContainer := $Ingame_UI/TaskBar/MarginContainer/Panel2/MarginContainer/RichTextLabel
+@onready var blurbTimer := $BlurbTimer
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -23,6 +24,8 @@ var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
 var rng := RandomNumberGenerator.new()
 
 var signal_manager: SignalBus = Bus
+
+var blurb_text: String = ""
 
 # the cam to send player to when left button is pressed
 var lb_cam:int
@@ -95,9 +98,10 @@ func _update_requests(requests: Array):
 
 # updates the blurb text in the middle of the task bar
 func _update_blurb(blurbText: String):
-	var tween = create_tween()
-	tween.tween_property(blurbContainer, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0).from(Color(0.0,0.0,0.0,0.0))
-	blurbContainer.text = blurbText
+	blurbContainer.modulate = Color(0.0,0.0,0.0,0.0) # hide container
+	blurbContainer.text = "..." # empties out blurb to return scroll bar to top if there was one prior
+	blurbTimer.start() # short pause, but when timer is done, updatees blurb
+	blurb_text = blurbText
 
 # toggles the taskbar from view
 func _on_btn_toggle_bar_pressed() -> void:
@@ -111,7 +115,7 @@ func show_bar():
 	SoundManager2D.PlaySoundPool2D("SP_WoodDrawer")
 	# tweens between current position and on screen positon relative to the bar_pos node
 	var tween = create_tween()
-	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 128)
+	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y - 130)
 	tween.tween_property(inGame_UI, "position", pos, 0.3).set_trans(Tween.TRANS_SINE)
 	isTaskBarHidden = false
 	print("showing bar")
@@ -205,3 +209,10 @@ func _on_btn_right_pressed() -> void:
 func _on_btn_end_game_pressed() -> void:
 	fade_to_black()
 	pass # Replace with function body.
+
+# updates blurb when timer is done.
+# this is for the purpose of giving the text box enough time to reset the scroll bar to the top.
+func _on_blurb_timer_timeout() -> void:
+	var tween = create_tween()
+	tween.tween_property(blurbContainer, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0).from(Color(0.0,0.0,0.0,0.0))
+	blurbContainer.text = blurb_text

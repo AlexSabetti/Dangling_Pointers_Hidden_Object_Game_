@@ -37,4 +37,3 @@ func lower_progress_requirement():
 func finish_pickup():
 	get_parent().visible = false
 	queue_free()
-		
