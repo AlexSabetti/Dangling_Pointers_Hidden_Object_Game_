@@ -611,7 +611,7 @@ surface_material_override/1 = ExtResource("9_rntxu")
 script = ExtResource("18_4cqqd")
 object_name = "fishing rod"
 obj_id = 2
-obj_blurb = "It's a fishing rod, there appears to be some yellow paint on the tip. You remember seeing one outside that had some fish giblets still on it. What were they doing with this one?"
+obj_blurb = "A fishing rod hangs on the cabin wall. Its line has been cut, and scuffs of yellow paint can be found along its tip. You recall seeing a matching rod on the stern with fish giblets still on its hook. What were they doing with this one?"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/FishingRod1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0275881, 0.0106201, -0.249176)
@@ -726,7 +726,7 @@ surface_material_override/1 = ExtResource("24_y5pvy")
 script = ExtResource("18_4cqqd")
 object_name = "logbook"
 obj_id = 3
-obj_blurb = "It's the ships log book. Theres several entries going over certain fishing trips. Then it gets all unorganized and scattered, random gaps in words, until there's just empty pages. Or, at least, somewhat empty. There are indents in the the pages, some legible enough that you could recognize they were words. The writer was pressing too hard with their pen. Just thinking about it makes your head hurt.."
+obj_blurb = "It's the ships log book. Flipping through it's pages, the book details several fishing trips. Nothing seems out of the ordinary, but arriving at its most recent entries, something changes. The handwriting is different, its contents more primitive. Letters and words become unorganized and scattered as you near the final entry. Drifting apart until all that remains are vague indents in the paper. You feel a strain on your mind."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/LogBook/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153565, 0.0443726, 0.0548701)
@@ -751,7 +751,7 @@ surface_material_override/2 = ExtResource("24_y5pvy")
 script = ExtResource("18_4cqqd")
 object_name = "cassette tape"
 obj_id = 3
-obj_blurb = "Resting against a book, you find a cassete tape. Playing it on the neighboring boom box rewards you with sounds of screaming and guitar. An aquired taste."
+obj_blurb = "Resting against a book, you find a cassete tape labled \"M-Mix\". Playing it on the neighboring boom box rewards you with sounds of screaming and guitar. An aquired taste... This respite from reality is cut short, as the tape player soon crawls to a hault."
 progress_requirement = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/CassetteTape/StaticBody3D"]
@@ -793,7 +793,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0182568, 0.173882, 0.00386
 script = ExtResource("18_4cqqd")
 object_name = "spyglass"
 obj_id = 4
-obj_blurb = "Propped up by a table lamp, you spot a spy glass. The body is bent out of shape, with dust coating its lens. Well worn, but functional. There's a hand-shaped area that lacks dust, so it must have been picked up at least once recently."
+obj_blurb = "Propped up by a table lamp, you spot a spy glass. The body is bent out of shape, with small scratches etched into the lens. Well worn, but functional. Along its dusty sides, the faint inprint of a hand wraps around the grip. "
 progress_requirement = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Telescope/StaticBody3D"]
@@ -818,7 +818,7 @@ surface_material_override/2 = ExtResource("21_33mjs")
 script = ExtResource("18_4cqqd")
 object_name = "compass"
 obj_id = 3
-obj_blurb = "Resting on the floor is a broken compass. The needle seems to have forgotten where north is... Or perhaps its frantic spinning signifies something else entirely."
+obj_blurb = "Resting on the floor is a broken compass. The needle seems to have forgotten where north is, lightly trembling around the four cardinal directions in a rhythmic manner... It's trying to tell you something..."
 progress_requirement = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/Compass/StaticBody3D"]
@@ -929,7 +929,7 @@ transform = Transform3D(2.12132, -2.12132, 0, 2.12132, 2.12132, 0, 0, 0, 3, -0.1
 script = ExtResource("18_4cqqd")
 object_name = "boot"
 obj_id = 4
-obj_blurb = "A lonesome leather boot, sitting atop the bunkroom dresser. The right side of an incomplete pair. Perhaps only kept around in hope of its partners return."
+obj_blurb = "A lonesome leather boot, sitting atop the bunkroom dresser. The right side of an incomplete pair. Perhaps only kept around in the hope of its partners return."
 progress_requirement = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmptyBoat1_a4_GD/RightBoot1/StaticBody3D"]
@@ -1050,10 +1050,11 @@ omni_range = 3.53133
 [node name="FluorescentLightAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, -1.08184e-09, -7.27595e-12, 1.08184e-09, 1, -7.45058e-09, 7.27596e-12, 7.45058e-09, 1, -3.73028, 1.64069, -0.0197382)
 stream = ExtResource("16_sra5r")
-volume_db = -5.0
+volume_db = -7.5
 unit_size = 2.5
 autoplay = true
 max_distance = 5.0
+panning_strength = 0.5
 
 [node name="BoatCreakingAmbience1" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.447201, 5.17083, -2.51548)
@@ -1268,7 +1269,7 @@ texture = ExtResource("29_3tvuc")
 script = ExtResource("18_4cqqd")
 object_name = "polaroid photos"
 obj_id = 4
-obj_blurb = "Hidden amongst the mountain of dirty clothes is a collection of polaroid photos. One portrays a buoy. You recognize it as you ran into it one evening, but you could have sworn it had something etched into it. Another one is a picture of a fishing rod, but it's at an odd angle. Finally, a picture of the very boat you are on."
+obj_blurb = "Hidden amongst the mountain of dirty clothes is a collection of polaroid photos. One portrays a familiar buoy you've ran into before on prior trips. Another is of a fishing rod, taken at a strange angle. The final photo is of the very boat you are on, though the shot is blurry and out of focus..."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Photos1/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-07, -1.23457e-13, 2.98023e-07, 1, 6.35048e-14, -1.59872e-14, -8.88178e-16, 1, 0.0986328, 0.0413818, 0)
@@ -1361,6 +1362,7 @@ texture = ExtResource("29_7od5w")
 [node name="Curtain3" type="Sprite3D" parent="."]
 transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, -1.35788, 5.02392, -1.65552)
 shaded = true
+alpha_cut = 1
 texture_filter = 0
 render_priority = 5
 texture = ExtResource("30_3navf")
@@ -1426,7 +1428,7 @@ transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.2999
 script = ExtResource("18_4cqqd")
 object_name = "ship keys"
 obj_id = 2
-obj_blurb = "The ships keys are found hanging off a stick of drift wood."
+obj_blurb = "The ships keys hang from a stick of drift wood by the door.  It's uncommon of someone to leave their keys with the ship unattended..."
 progress_requirement = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShipKeys/StaticBody3D"]

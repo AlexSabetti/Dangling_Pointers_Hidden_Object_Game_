@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ol6sfwambpg"]
+
+[ext_resource type="Texture2D" uid="uid://ycefbhwjm3r0" path="res://Resources/Textures/Sprites/ScrolBar1_a1.png" id="1_gap0y"]
+[ext_resource type="Texture2D" uid="uid://bt2jli21clalw" path="res://Resources/Textures/Sprites/ScrolBar1_b1.png" id="2_uky4e"]
+[ext_resource type="Texture2D" uid="uid://c33fmew8vpqfo" path="res://Resources/Textures/Sprites/ScrolBar1_c1.png" id="3_tdv3p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wp8mj"]
+texture = ExtResource("1_gap0y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fytr2"]
+texture = ExtResource("2_uky4e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nx2hp"]
+texture = ExtResource("3_tdv3p")
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_wp8mj")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_fytr2")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_nx2hp")
