@@ -13,6 +13,7 @@ var camControllerRef: CameraController
 @onready var lb_container := $Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/LB_VBoxContainer
 @onready var blurbContainer := $Ingame_UI/TaskBar/MarginContainer/Panel2/MarginContainer/RichTextLabel
 @onready var blurbTimer := $BlurbTimer
+@onready var settingsMenu := $settings_menu
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -41,6 +42,7 @@ func _ready():
 	signal_manager.unpause_game.connect(respond_to_unpause)
 	signal_manager.toggle_bar.connect(_on_btn_toggle_bar_pressed)
 	pauseMenu.get_node("Resume").pressed.connect(_resume_pressed)
+	pauseMenu.get_node("Settings").pressed.connect(_settings_pressed)
 	pauseMenu.get_node("Exit").pressed.connect(_exit)
 	camControllerRef = $".."
 	
@@ -59,14 +61,20 @@ func respond_to_unpause():
 	isPaused = false
 	inGame_UI.show()
 	inGame_UI.mouse_filter = Control.MOUSE_FILTER_PASS
-
+	
 	pauseMenu.hide()
 	pauseMenu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	if !settingsMenu.is_hidden:
+		settingsMenu.hide_settings_menu()
 
 
 # This is only to make sure everything reacts to an unpause at the same time
 func _resume_pressed():
 	signal_manager.emit_signal("unpause_game")
+
+func _settings_pressed():
+	settingsMenu.toggle_settings_menu()
 
 func _exit():
 	get_tree().quit()

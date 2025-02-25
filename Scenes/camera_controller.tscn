@@ -10,7 +10,7 @@ script = ExtResource("1_yggcv")
 transform = Transform3D(1, 1.50294e-10, -7.27596e-12, 1.50294e-10, 1, 0, 7.27596e-12, 1.86265e-09, 1, 8.19411, 3.25859, 2.08572)
 
 [node name="Camera3D_Stern" type="Camera3D" parent="Pivot_Stern"]
-transform = Transform3D(0.5, -3.15367e-10, 0.866026, -1.86265e-09, 1, 9.31323e-10, -0.866025, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.589478, -3.15367e-10, 0.807785, -1.83443e-09, 1, 9.12956e-10, -0.807784, 0, 0.589478, 0, 0, 0)
 current = true
 size = 5.676
 

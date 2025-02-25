@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=24 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
 [ext_resource type="Texture2D" uid="uid://ducijr4snm1wg" path="res://Resources/Textures/Sprites/Square1_a1.png" id="2_bub0a"]
 [ext_resource type="Texture2D" uid="uid://5vtdi2syeyvh" path="res://Resources/Textures/Sprites/Square1_c1.png" id="3_3t7yb"]
 [ext_resource type="Texture2D" uid="uid://fccfq1p3jv6n" path="res://Resources/Textures/Sprites/Square1_b1.png" id="3_bheg1"]
+[ext_resource type="PackedScene" uid="uid://oy11ycs3g0j5" path="res://Scenes/UI/ui_settings_menu.tscn" id="5_rubur"]
 
 [sub_resource type="Theme" id="Theme_6nyy8"]
 
@@ -139,55 +140,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_lda56")
 theme_override_styles/normal = SubResource("StyleBoxTexture_342l7")
 text = "Exit"
 
-[node name="settings_menu" type="Control" parent="main_menu"]
-visible = false
+[node name="settings_menu" parent="main_menu" instance=ExtResource("5_rubur")]
 layout_mode = 1
-anchor_left = 0.003
-anchor_top = 0.549
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.456
-offset_top = 0.247986
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel2" type="Panel" parent="main_menu/settings_menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.0
-
-[node name="MarginContainer" type="MarginContainer" parent="main_menu/settings_menu/Panel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="main_menu/settings_menu/Panel2/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Settings"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="HSlider" type="HSlider" parent="main_menu/settings_menu/Panel2/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="FadeToBlack" type="ColorRect" parent="main_menu"]
 layout_mode = 1

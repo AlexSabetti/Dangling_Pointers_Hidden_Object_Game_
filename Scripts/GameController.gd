@@ -106,4 +106,3 @@ func toggle_pause_menu() -> void:
 func win_game() -> void:
 	print("you found everything.")
 	Global.gameWon = true
-	pass

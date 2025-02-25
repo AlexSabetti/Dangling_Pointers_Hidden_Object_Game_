@@ -1269,7 +1269,7 @@ texture = ExtResource("29_3tvuc")
 script = ExtResource("18_4cqqd")
 object_name = "polaroid photos"
 obj_id = 4
-obj_blurb = "Hidden amongst the mountain of dirty clothes is a collection of polaroid photos. One portrays a familiar buoy you've ran into before on prior trips. Another is of a fishing rod, taken at a strange angle. The final photo is of the very boat you are on, though the shot is blurry and out of focus..."
+obj_blurb = "Hidden amongst the mountain of dirty clothes is a collection of polaroid photos. One portrays a familiar buoy you've ran into before on prior trips. Another is of a fishing rod, taken at a strange angle. The final photo is of the very boat you are on, though the shot is blurry and out of focus. The crew is absent in every image..."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Photos1/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-07, -1.23457e-13, 2.98023e-07, 1, 6.35048e-14, -1.59872e-14, -8.88178e-16, 1, 0.0986328, 0.0413818, 0)
@@ -1428,7 +1428,7 @@ transform = Transform3D(-0.0920938, 0.30909, 0.946563, 0.100996, 0.9486, -0.2999
 script = ExtResource("18_4cqqd")
 object_name = "ship keys"
 obj_id = 2
-obj_blurb = "The ships keys hang from a stick of drift wood by the door.  It's uncommon of someone to leave their keys with the ship unattended..."
+obj_blurb = "The ships keys hang from a stick of drift wood by the door.  It's uncommon of someone to leave their keys with the ship unattended. Could the crew have left in a hurry? The cabin is a mess, though nothing here indicates a struggle nor panic..."
 progress_requirement = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShipKeys/StaticBody3D"]

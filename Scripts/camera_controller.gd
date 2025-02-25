@@ -3,7 +3,7 @@ extends Node3D
 # controlls the active camera and changing camera position
 class_name CameraController
 
-@export var enableCamWobble = true
+#@export var enableCamWobble = true
 @export var waterPlaneRef:MeshInstance3D
 var boatRef
 
@@ -66,8 +66,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if enableCamWobble:
+	if Global.global_camera_wobble:
 		keepCam_Upright()
+	else:
+		get_viewport().get_camera_3d().get_parent_node_3d().rotation = Vector3.ZERO
+		
 	if Input.is_action_just_pressed("section_back") and !controls_disabled and !isChangingCam: #if Input.is_action_just_pressed("section_back") and !controls_disabled: <- re-add this once you setup the keys in settings
 		UI._on_btn_left_pressed()
 		#redirect(-1)
@@ -117,7 +120,7 @@ func change_cam_section(cam_id: int):
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
 		waterPlaneRef.visible = true
 		cam_Stern.make_current()
-		cam_Stern.global_rotation = cam_Stern_rot
+		#cam_Stern.global_rotation = cam_Stern_rot
 		rocking_ambi.volume_db = -15
 		print("cam changed to Stern")
 		previous_cam_id = 1
@@ -137,7 +140,7 @@ func change_cam_section(cam_id: int):
 		waterPlaneRef.visible = true
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.8)
 		cam_Kitchen.make_current()
-		cam_Kitchen.global_rotation = cam_Kitchen_rot
+		#cam_Kitchen.global_rotation = cam_Kitchen_rot
 		rocking_ambi.volume_db = -80
 		print("cam changed to Kitchen")
 		previous_cam_id = 2
@@ -150,7 +153,7 @@ func change_cam_section(cam_id: int):
 		waterPlaneRef.visible = true
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.9)
 		cam_Helm.make_current()
-		cam_Helm.global_rotation = cam_Helm_rot
+		#cam_Helm.global_rotation = cam_Helm_rot
 		rocking_ambi.volume_db = -80
 		print("cam changed to Helm")
 		previous_cam_id = 3
@@ -163,7 +166,7 @@ func change_cam_section(cam_id: int):
 		waterPlaneRef.visible = false
 		get_world_3d().environment.set_ambient_light_sky_contribution(0.4)
 		cam_Bedroom.make_current()
-		cam_Bedroom.global_rotation = cam_Bedroom_rot
+		#cam_Bedroom.global_rotation = cam_Bedroom_rot
 		rocking_ambi.volume_db = -80
 		print("cam changed to Bedroom")
 		previous_cam_id = 4
@@ -179,7 +182,7 @@ func change_cam_section(cam_id: int):
 		waterPlaneRef.visible = true
 		get_world_3d().environment.set_ambient_light_sky_contribution(1.0)
 		cam_Stern.make_current()
-		cam_Stern.global_rotation = cam_Stern_rot
+		#cam_Stern.global_rotation = cam_Stern_rot
 		rocking_ambi.volume_db = -15
 		controls_disabled = true
 

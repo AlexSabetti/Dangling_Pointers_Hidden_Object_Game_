@@ -21,6 +21,9 @@ func _process(_delta: float) -> void:
 
 # starts the game
 func startGame() -> void:
+	if !$settings_menu.is_hidden:
+		$settings_menu.hide_settings_menu()
+	
 	var tween = create_tween()
 	#FadeTimer.start()
 	# fade to black
@@ -31,7 +34,7 @@ func startGame() -> void:
 
 # toggles the settings menu (if one gets added anyway, this is low priority)
 func toggleSettings() -> void:
-	pass
+	$settings_menu.toggle_settings_menu()
 
 # exits and closes the game
 func exitGame() -> void:
