@@ -16,3 +16,4 @@ fog_light_energy = 1.56
 fog_sun_scatter = 0.5
 fog_density = 1.0
 fog_depth_curve = 1.31951
+adjustment_enabled = true
