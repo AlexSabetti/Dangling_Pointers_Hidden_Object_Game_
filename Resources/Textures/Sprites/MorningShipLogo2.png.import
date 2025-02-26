@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cll1obbjtgax4"
-path="res://.godot/imported/MorningShipLogo2.png-072e20bc9bde4b51ac9ee2ed3e03c4c6.ctex"
+path="res://.godot/imported/MorningShipLogo2.png-8a14bd8d57cc565421a3f371b5ccb851.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Textures/MorningShipLogo2.png"
-dest_files=["res://.godot/imported/MorningShipLogo2.png-072e20bc9bde4b51ac9ee2ed3e03c4c6.ctex"]
+source_file="res://Resources/Textures/Sprites/MorningShipLogo2.png"
+dest_files=["res://.godot/imported/MorningShipLogo2.png-8a14bd8d57cc565421a3f371b5ccb851.ctex"]
 
 [params]
 

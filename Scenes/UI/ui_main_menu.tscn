@@ -112,7 +112,6 @@ theme_override_colors/font_color = Color(0.350497, 0.243654, 0.169108, 1)
 theme_override_colors/font_shadow_color = Color(0.204684, 0.126509, 0.138278, 1)
 theme_override_font_sizes/font_size = 64
 text = "Morning Ship"
-
 horizontal_alignment = 1
 
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]

@@ -251,5 +251,3 @@ func _on_continue_button_pressed() -> void:
 	FadeTimer.start()
 	tween.tween_property($VBoxContainer, "modulate", Color.TRANSPARENT, 1.0).from(Color.WHITE)
 	
-
-

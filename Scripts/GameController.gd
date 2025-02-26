@@ -18,7 +18,7 @@ func _ready():
 	
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") && !UI.settings_locked:
 		toggle_pause_menu()
 	if event is InputEventMouseMotion:
 		mouse = event.position
@@ -86,7 +86,7 @@ func mark_off(obj: ClickableObject):
 			
 		UI._update_requests(requests)
 	else: # if no objects are left, win game
-		UI._update_requests([""])
+		UI._update_requests(["- leave ship"])
 		win_game()
 		
 	obj.finish_pickup()

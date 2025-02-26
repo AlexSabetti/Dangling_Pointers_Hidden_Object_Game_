@@ -14,6 +14,7 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.5).from(fadeBlackColor)
 	if Global.gameWon:
+		$MarginContainer/VBoxContainer/Title.texture = load("res://Resources/Textures/Sprites/MorningShipLogo2.png")
 		$MarginContainer/VBoxContainer/Label.text = "Mourning Ship"
 
 
