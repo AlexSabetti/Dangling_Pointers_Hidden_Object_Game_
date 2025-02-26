@@ -303,7 +303,7 @@ fit_content = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 8
 
 [node name="Panel2" type="Panel" parent="Ingame_UI/TaskBar/MarginContainer"]
 layout_mode = 2
@@ -329,7 +329,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 42
 

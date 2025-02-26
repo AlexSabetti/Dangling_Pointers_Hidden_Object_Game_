@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cg457s3jk4ebw"]
+[gd_scene load_steps=25 format=3 uid="uid://cg457s3jk4ebw"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_t1gm4"]
 [ext_resource type="Texture2D" uid="uid://ducijr4snm1wg" path="res://Resources/Textures/Sprites/Square1_a1.png" id="2_bub0a"]
+[ext_resource type="Texture2D" uid="uid://csoo82faoooqm" path="res://Resources/Textures/Sprites/MorningShipLogo1_a2.png" id="2_mlr7t"]
 [ext_resource type="Texture2D" uid="uid://5vtdi2syeyvh" path="res://Resources/Textures/Sprites/Square1_c1.png" id="3_3t7yb"]
 [ext_resource type="Texture2D" uid="uid://fccfq1p3jv6n" path="res://Resources/Textures/Sprites/Square1_b1.png" id="3_bheg1"]
 [ext_resource type="PackedScene" uid="uid://oy11ycs3g0j5" path="res://Scenes/UI/ui_settings_menu.tscn" id="5_rubur"]
@@ -90,25 +91,34 @@ anchor_right = 1.0
 offset_left = -1148.0
 offset_bottom = 101.0
 grow_horizontal = 0
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = 155
-theme_override_constants/margin_right = 180
+theme_override_constants/margin_left = 655
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 220
 theme_override_constants/margin_bottom = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main_menu/MarginContainer"]
 layout_mode = 2
 theme = SubResource("Theme_6nyy8")
 
+[node name="Title" type="TextureRect" parent="main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_mlr7t")
+expand_mode = 5
+
 [node name="Label" type="Label" parent="main_menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.350497, 0.243654, 0.169108, 1)
 theme_override_colors/font_shadow_color = Color(0.204684, 0.126509, 0.138278, 1)
 theme_override_font_sizes/font_size = 64
 text = "Morning Ship"
+
 horizontal_alignment = 1
 
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745757, 0.671712, 0.509469, 1)
@@ -119,7 +129,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6l1uv")
 text = "Begin"
 
 [node name="Btn_Settings" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
@@ -130,7 +142,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_y6om3")
 text = "Settings"
 
 [node name="Btn_Exit" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
