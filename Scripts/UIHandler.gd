@@ -217,8 +217,7 @@ func _on_btn_right_pressed() -> void:
 
 # ends the game
 func _on_btn_end_game_pressed() -> void:
-	fade_to_black()
-	pass # Replace with function body.
+	endGame()
 
 # updates blurb when timer is done.
 # this is for the purpose of giving the text box enough time to reset the scroll bar to the top.

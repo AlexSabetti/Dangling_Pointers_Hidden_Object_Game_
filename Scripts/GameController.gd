@@ -107,4 +107,4 @@ func win_game() -> void:
 	print("you found everything.")
 	
 	Global.gameWon = true
-	UI.endGame()
+	
