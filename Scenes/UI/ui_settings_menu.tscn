@@ -9,25 +9,23 @@ texture = ExtResource("1_l2fr7")
 
 [node name="settings_menu" type="Control"]
 layout_mode = 3
-anchor_left = 0.003
-anchor_top = 0.549
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.456
-offset_top = 0.247986
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_6gxmi")
 
 [node name="settings" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchor_top = 0.634
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 62.0
-offset_bottom = 62.0
+offset_top = 0.167999
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="settings_panel" type="Panel" parent="settings"]
 layout_mode = 1
