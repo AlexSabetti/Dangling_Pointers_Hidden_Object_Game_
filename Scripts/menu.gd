@@ -13,6 +13,9 @@ func _ready() -> void:
 	# fade in from black
 	var tween = create_tween()
 	tween.tween_property(FadeToBlack, "color", fadeTransColor, 1.5).from(fadeBlackColor)
+	if Global.gameWon:
+		$MarginContainer/VBoxContainer/Label.text = "Mourning Ship"
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

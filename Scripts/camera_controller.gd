@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 		#FadeTimer.start()
 		#playStepSound()
 		#isChangingCam = true
-	if Input.is_action_just_pressed("menu"): #if "menu" key is pressed, toggle pause menu
+	if Input.is_action_just_pressed("menu") and !UI.settings_locked: #if "menu" key is pressed, toggle pause menu
 		if UI.isPaused: # if game is already paused, unpause it
 			signal_manager.unpause_game.emit()
 		else: # if game is currently  unpaused, pause it

@@ -105,4 +105,6 @@ func toggle_pause_menu() -> void:
 # function for when the player finds everything
 func win_game() -> void:
 	print("you found everything.")
+	
 	Global.gameWon = true
+	UI.endGame()
