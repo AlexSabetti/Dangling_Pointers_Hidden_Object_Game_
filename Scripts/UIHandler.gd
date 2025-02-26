@@ -14,6 +14,7 @@ var camControllerRef: CameraController
 @onready var blurbContainer := $Ingame_UI/TaskBar/MarginContainer/Panel2/MarginContainer/RichTextLabel
 @onready var blurbTimer := $BlurbTimer
 @onready var settingsMenu := $settings_menu
+@onready var FadeTimer : Timer = $FadeTimer
 
 var fadeBlackColor : Color = Color(0.08,0.02,0.04,1.0)
 var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
@@ -22,6 +23,7 @@ var fadeTransColor : Color = Color(0.08,0.02,0.04,0.0)
 # @onready var request_text_b: RichTextLabel = $Ingame_UI/Requests/request_text_b
 # @onready var request_text_c: RichTextLabel = $Ingame_UI/Requests/request_text_c
 
+var settings_locked: bool = false 
 var rng := RandomNumberGenerator.new()
 
 var signal_manager: SignalBus = Bus
@@ -215,8 +217,7 @@ func _on_btn_right_pressed() -> void:
 
 # ends the game
 func _on_btn_end_game_pressed() -> void:
-	fade_to_black()
-	pass # Replace with function body.
+	endGame()
 
 # updates blurb when timer is done.
 # this is for the purpose of giving the text box enough time to reset the scroll bar to the top.
@@ -224,3 +225,31 @@ func _on_blurb_timer_timeout() -> void:
 	var tween = create_tween()
 	tween.tween_property(blurbContainer, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0).from(Color(0.0,0.0,0.0,0.0))
 	blurbContainer.text = blurb_text
+
+func endGame():
+	inGame_UI.hide()
+	if !settingsMenu.hidden:
+		settingsMenu.hide_settings_menu()
+	
+	var tween = create_tween()
+	#FadeTimer.start()
+	# fade to black
+	tween.tween_property(FadeToBlack, "color", fadeBlackColor, 1.0)
+	tween.chain().tween_property($VBoxContainer, "modulate", Color.WHITE, 1.0).from(Color.TRANSPARENT)
+	$VBoxContainer/btn_continue.disabled = false
+	$FadeToBlack.mouse_filter = MOUSE_FILTER_STOP
+	settings_locked = true
+
+func _on_fade_timer_timeout() -> void:
+	# change level to game level
+	get_tree().change_scene_to_file("res://Scenes/Levels/main_menu_screen.tscn")
+
+func _on_continue_button_pressed() -> void:
+	SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
+	$VBoxContainer/btn_continue.disabled = true
+	var tween = create_tween()
+	FadeTimer.start()
+	tween.tween_property($VBoxContainer, "modulate", Color.TRANSPARENT, 1.0).from(Color.WHITE)
+	
+
+

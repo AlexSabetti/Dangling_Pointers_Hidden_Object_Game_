@@ -111,7 +111,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.350497, 0.243654, 0.169108, 1)
 theme_override_colors/font_shadow_color = Color(0.204684, 0.126509, 0.138278, 1)
 theme_override_font_sizes/font_size = 64
-text = "hidden object game"
+text = "Morning Ship"
+
 horizontal_alignment = 1
 
 [node name="Btn_Start" type="Button" parent="main_menu/MarginContainer/VBoxContainer"]
@@ -200,9 +201,11 @@ text = "It's an early sunday morning and you're already out on your dinghy.
 Pushing through the morning mist, you stumble upon a small 
 forgotten fishing boat, anchored by the sandbar.
 
-Any atempts to contact her crew are met with silence. 
+Any atempts to contact her crew are met with silence.  
 
-You decide to take a closer look."
+You know a friend of yours is out on the waters, so you give them your location.
+
+In the meantime, you decide to take a closer look."
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true

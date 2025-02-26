@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cw83dccua6vux"]
+[gd_scene load_steps=41 format=3 uid="uid://cw83dccua6vux"]
 
 [ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="1_coxev"]
 [ext_resource type="Texture2D" uid="uid://e0254uqt5s6x" path="res://Resources/Textures/Sprites/LeftArrow1_b1.png" id="2_iow18"]
@@ -77,6 +77,36 @@ texture_margin_bottom = 4.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0vc5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1n7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgyam"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ixy2"]
+texture = ExtResource("3_54dg7")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uactg"]
+texture = ExtResource("2_l2gvk")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7i3v"]
+texture = ExtResource("3_lblhk")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxggp"]
+texture = ExtResource("3_54dg7")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
 
 [node name="ui_hud" type="Control"]
 layout_mode = 3
@@ -395,6 +425,66 @@ grow_vertical = 0
 wait_time = 0.1
 one_shot = true
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 128
+metadata/_edit_lock_ = true
+
+[node name="BlurbLabel" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+text = "You've gathered everything of importance and interest. It's time to take the evidence back to the ship.
+
+As you make your way there, however, you're suddenly hit with a massive headache.
+
+It's so bad that you lose your footing and begin to stumble about blindly, hand pressed into your temple. 
+
+A horn pierces through the pain and you look up over the railing of your ship.
+
+You see your friend's grey boat off in the distance, approaching at a decent speed. The closer they get the better you feel.
+
+Your friend pulls alongside you next to the sandbar. after some small talk he takes some photos of the boat.
+
+Now, the two of you are off to see the Coast Guard. You can only wonder what they'll make of this."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="btn_continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 0.819608, 0.682353, 1)
+theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vgyam")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6ixy2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uactg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u7i3v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bxggp")
+disabled = true
+text = "  continue  "
+metadata/_edit_lock_ = true
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 1.1
+one_shot = true
+
 [connection signal="mouse_entered" from="PauseMenu/Resume" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="PauseMenu/Settings" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="PauseMenu/Exit" to="." method="_on_btn_mouse_entered"]
@@ -407,3 +497,5 @@ one_shot = true
 [connection signal="mouse_entered" from="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer/Btn_Right" to="." method="_on_btn_mouse_entered"]
 [connection signal="pressed" from="Ingame_UI/TaskBar/Panel3/MarginContainer/HBoxContainer/RB_VBoxContainer/Btn_Right" to="." method="_on_btn_right_pressed"]
 [connection signal="timeout" from="BlurbTimer" to="." method="_on_blurb_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/btn_continue" to="." method="_on_continue_button_pressed"]
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
