@@ -449,17 +449,17 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.745098, 0.670588, 0.509804, 1)
-text = "You've gathered everything of importance and interest. It's time to take the evidence back to the ship.
+text = "Deciding that you've seen enough, you make your way back to the dinghy.
 
-As you make your way there, however, you're suddenly hit with a massive headache.
+As you climb aboard, however, you're suddenly hit with a massive headache.
 
-It's so bad that you lose your footing and begin to stumble about blindly, hand pressed into your temple. 
+You lose your footing, stumbling about blindly, hand pressed into your temple. 
 
-A horn pierces through the pain and you look up over the railing of your ship.
+A horn pierces through the pain and you look up over the side of your boat.
 
-You see your friend's grey boat off in the distance, approaching at a decent speed. The closer they get the better you feel.
+It's your friend's grey ship approaching from the west. As they draw near, the migraine begins to fade.
 
-Your friend pulls alongside you next to the sandbar. after some small talk he takes some photos of the boat.
+Your friend pulls up alongside the sandbar. After some small talk he takes some photos of the boat.
 
 Now, the two of you are off to see the Coast Guard. You can only wonder what they'll make of this."
 horizontal_alignment = 1

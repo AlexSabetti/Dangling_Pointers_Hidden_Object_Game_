@@ -12,7 +12,6 @@ var signal_manager: SignalBus = Bus
 
 var paused: bool = false
 func _ready():
-	
 	signal_manager.emit_signal("camera_changed", 1)
 	UI._update_requests(["- find " + progress_order[0], "- find " + progress_order[1], "- find " + progress_order[2]])
 	

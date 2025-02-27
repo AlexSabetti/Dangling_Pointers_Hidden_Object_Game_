@@ -40,6 +40,7 @@ var isTaskBarHidden: bool = false
 # var isInMainMenu: bool = false
 
 func _ready():
+	Global.gameWon = false
 	signal_manager.pause_game.connect(respond_to_pause)
 	signal_manager.unpause_game.connect(respond_to_unpause)
 	signal_manager.toggle_bar.connect(_on_btn_toggle_bar_pressed)
