@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0erxw4grfilb"
 path.s3tc="res://.godot/imported/EB_PinkWoodTexture_b1.png-0e38a1d2784e1b399c004beb423c0456.s3tc.ctex"
+path.etc2="res://.godot/imported/EB_PinkWoodTexture_b1.png-0e38a1d2784e1b399c004beb423c0456.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/EB_PinkWoodTexture_b1.png"
-dest_files=["res://.godot/imported/EB_PinkWoodTexture_b1.png-0e38a1d2784e1b399c004beb423c0456.s3tc.ctex"]
+dest_files=["res://.godot/imported/EB_PinkWoodTexture_b1.png-0e38a1d2784e1b399c004beb423c0456.s3tc.ctex", "res://.godot/imported/EB_PinkWoodTexture_b1.png-0e38a1d2784e1b399c004beb423c0456.etc2.ctex"]
 
 [params]
 

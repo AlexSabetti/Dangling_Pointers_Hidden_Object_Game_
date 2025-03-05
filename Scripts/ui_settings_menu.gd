@@ -24,7 +24,7 @@ func _ready() -> void:
 	brightness_number.text = str(brightness_slider.value * 100) + "%"
 	
 	if is_hidden:
-		settings_UI.set_position(Vector2(barPos.position.x, barPos.position.y))
+		settings_UI.set_position(Vector2(barPos.position.x, barPos.position.y + 32))
 	else:
 		show_settings_menu()
 
@@ -40,7 +40,7 @@ func hide_settings_menu() -> void:
 	SoundManager2D.PlaySoundPool2D("SP_WoodDrawer")
 	# tweens between current position and off screen positon relative to the bar_pos node
 	var tween = create_tween()
-	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y)
+	var pos:Vector2 = Vector2(barPos.position.x, barPos.position.y + 32)
 	tween.tween_property(settings_UI, "position", pos, 0.3).set_trans(Tween.TRANS_SINE)
 	is_hidden = true
 	print("hiding settings")

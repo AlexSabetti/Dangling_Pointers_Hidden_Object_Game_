@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://75ho4po3s035"
 path.s3tc="res://.godot/imported/CabinetLines3_a1.png-785dd52fca00f3002b545a9aa118c815.s3tc.ctex"
+path.etc2="res://.godot/imported/CabinetLines3_a1.png-785dd52fca00f3002b545a9aa118c815.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/CabinetLines3_a1.png"
-dest_files=["res://.godot/imported/CabinetLines3_a1.png-785dd52fca00f3002b545a9aa118c815.s3tc.ctex"]
+dest_files=["res://.godot/imported/CabinetLines3_a1.png-785dd52fca00f3002b545a9aa118c815.s3tc.ctex", "res://.godot/imported/CabinetLines3_a1.png-785dd52fca00f3002b545a9aa118c815.etc2.ctex"]
 
 [params]
 

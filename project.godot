@@ -25,7 +25,7 @@ SoundManager2D="*res://Systems/soundManagement/SoundManager2D.tscn"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="ignore"
 mouse_cursor/custom_image="res://Resources/Textures/Sprites/PointerArrow1_a1.png"
 mouse_cursor/custom_image_hotspot=Vector2(20, 8)
 
@@ -108,4 +108,5 @@ toggle_bar={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/use_taa=true

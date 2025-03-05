@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c17skghi0j5i1"
 path.s3tc="res://.godot/imported/Reeds1_d1.png-015e0229e3aa80604ae64a822ffae77e.s3tc.ctex"
+path.etc2="res://.godot/imported/Reeds1_d1.png-015e0229e3aa80604ae64a822ffae77e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/Reeds1_d1.png"
-dest_files=["res://.godot/imported/Reeds1_d1.png-015e0229e3aa80604ae64a822ffae77e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Reeds1_d1.png-015e0229e3aa80604ae64a822ffae77e.s3tc.ctex", "res://.godot/imported/Reeds1_d1.png-015e0229e3aa80604ae64a822ffae77e.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0o3nt4xdj3xe"
 path.s3tc="res://.godot/imported/LifeRing_a1.png-10014d0144b77d51417d34c56f54f1b7.s3tc.ctex"
+path.etc2="res://.godot/imported/LifeRing_a1.png-10014d0144b77d51417d34c56f54f1b7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/LifeRing_a1.png"
-dest_files=["res://.godot/imported/LifeRing_a1.png-10014d0144b77d51417d34c56f54f1b7.s3tc.ctex"]
+dest_files=["res://.godot/imported/LifeRing_a1.png-10014d0144b77d51417d34c56f54f1b7.s3tc.ctex", "res://.godot/imported/LifeRing_a1.png-10014d0144b77d51417d34c56f54f1b7.etc2.ctex"]
 
 [params]
 

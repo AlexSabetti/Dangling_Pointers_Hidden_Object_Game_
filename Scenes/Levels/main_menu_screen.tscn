@@ -68,6 +68,15 @@ light_volumetric_fog_energy = 16.0
 light_angular_distance = 3.18
 shadow_enabled = true
 
+[node name="SunLight2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.353553, -0.841506, -0.408494, -0.928023, 0.260755, 0.266046, -0.117362, 0.473153, -0.873128, 0, 15, 0)
+visible = false
+light_color = Color(0.729412, 0.607843, 0.313726, 1)
+light_energy = 1.75
+light_volumetric_fog_energy = 16.0
+light_angular_distance = 3.18
+shadow_enabled = true
+
 [node name="Boat" parent="." instance=ExtResource("2_rjsud")]
 
 [node name="OceanAmbience1" type="AudioStreamPlayer3D" parent="."]

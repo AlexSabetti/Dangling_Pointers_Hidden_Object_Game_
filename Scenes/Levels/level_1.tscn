@@ -96,6 +96,17 @@ light_angular_distance = 3.18
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 3.0
+
+[node name="SunLight2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.353553, -0.841506, -0.408494, -0.928023, 0.260755, 0.266046, -0.117362, 0.473153, -0.873128, 0, 15, 0)
+visible = false
+light_color = Color(0.695006, 0.617956, 0.397023, 1)
+light_energy = 1.75
+light_volumetric_fog_energy = 16.0
+light_angular_distance = 3.18
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.0
 shadow_blur = 0.8
 
 [node name="Boat" parent="." instance=ExtResource("2_yfk1g")]

@@ -202,7 +202,7 @@ func _on_btn_mouse_entered() -> void:
 
 # when left button is pressed
 func _on_btn_left_pressed() -> void:
-	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
+	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam and !lb_container.get_node("Btn_Left").disabled:
 		SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 		set_left_btn(false, 0, "")
 		set_right_btn(false, 0, "")
@@ -210,7 +210,7 @@ func _on_btn_left_pressed() -> void:
 
 # when right button is pressed
 func _on_btn_right_pressed() -> void:
-	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam:
+	if !camControllerRef.controls_disabled and !camControllerRef.isChangingCam and !rb_container.get_node("Btn_Right").disabled:
 		SoundManager2D.PlaySoundQueue2D("SQ_Tick2")
 		set_left_btn(false, 0, "")
 		set_right_btn(false, 0, "")

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://g0x1lph5busu"
 path.s3tc="res://.godot/imported/PaperSheet2_a1.png-9c8dfc94b8f610de768b76d69b2044cf.s3tc.ctex"
+path.etc2="res://.godot/imported/PaperSheet2_a1.png-9c8dfc94b8f610de768b76d69b2044cf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/PaperSheet2_a1.png"
-dest_files=["res://.godot/imported/PaperSheet2_a1.png-9c8dfc94b8f610de768b76d69b2044cf.s3tc.ctex"]
+dest_files=["res://.godot/imported/PaperSheet2_a1.png-9c8dfc94b8f610de768b76d69b2044cf.s3tc.ctex", "res://.godot/imported/PaperSheet2_a1.png-9c8dfc94b8f610de768b76d69b2044cf.etc2.ctex"]
 
 [params]
 

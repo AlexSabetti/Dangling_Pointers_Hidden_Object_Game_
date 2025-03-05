@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp86olg05lmx5"
 path.s3tc="res://.godot/imported/WallFish1_a1.png-3568ed4dd09ebd5488a4c38c76b16228.s3tc.ctex"
+path.etc2="res://.godot/imported/WallFish1_a1.png-3568ed4dd09ebd5488a4c38c76b16228.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/WallFish1_a1.png"
-dest_files=["res://.godot/imported/WallFish1_a1.png-3568ed4dd09ebd5488a4c38c76b16228.s3tc.ctex"]
+dest_files=["res://.godot/imported/WallFish1_a1.png-3568ed4dd09ebd5488a4c38c76b16228.s3tc.ctex", "res://.godot/imported/WallFish1_a1.png-3568ed4dd09ebd5488a4c38c76b16228.etc2.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Sky" load_steps=2 format=3 uid="uid://u6flupn4aa3s"]
 
-[ext_resource type="Material" uid="uid://faulf5vkwyb" path="res://Resources/Environments/M_SunSetSky3_1.tres" id="1_nxsuh"]
+[ext_resource type="Material" uid="uid://dsvwsapdd8rru" path="res://Resources/Environments/M_SunSetSky3_2.tres" id="1_ppkab"]
 
 [resource]
-sky_material = ExtResource("1_nxsuh")
+sky_material = ExtResource("1_ppkab")

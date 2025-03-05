@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://w7n3pngd4j0g"
 path.s3tc="res://.godot/imported/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg-552c0a31a47d69f2ddd7fea9a9f7f0f6.s3tc.ctex"
+path.etc2="res://.godot/imported/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg-552c0a31a47d69f2ddd7fea9a9f7f0f6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/normalMaps/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg"
-dest_files=["res://.godot/imported/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg-552c0a31a47d69f2ddd7fea9a9f7f0f6.s3tc.ctex"]
+dest_files=["res://.godot/imported/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg-552c0a31a47d69f2ddd7fea9a9f7f0f6.s3tc.ctex", "res://.godot/imported/everytexture.com-stock-pavement-texture-00062-normal-512-rotated90d.jpg-552c0a31a47d69f2ddd7fea9a9f7f0f6.etc2.ctex"]
 
 [params]
 

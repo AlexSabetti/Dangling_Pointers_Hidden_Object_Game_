@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ma84p86of2j0"
 path.s3tc="res://.godot/imported/EB_TanWoodTexture_a1.png-6ecc0acb481535bf82086e1c9cbc6d32.s3tc.ctex"
+path.etc2="res://.godot/imported/EB_TanWoodTexture_a1.png-6ecc0acb481535bf82086e1c9cbc6d32.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/EB_TanWoodTexture_a1.png"
-dest_files=["res://.godot/imported/EB_TanWoodTexture_a1.png-6ecc0acb481535bf82086e1c9cbc6d32.s3tc.ctex"]
+dest_files=["res://.godot/imported/EB_TanWoodTexture_a1.png-6ecc0acb481535bf82086e1c9cbc6d32.s3tc.ctex", "res://.godot/imported/EB_TanWoodTexture_a1.png-6ecc0acb481535bf82086e1c9cbc6d32.etc2.ctex"]
 
 [params]
 

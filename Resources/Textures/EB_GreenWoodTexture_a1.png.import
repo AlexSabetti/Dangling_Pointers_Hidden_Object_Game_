@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://qlv4qg6t8iba"
 path.s3tc="res://.godot/imported/EB_GreenWoodTexture_a1.png-3391e78d48a7eccbce5b4cf8b2aa6f13.s3tc.ctex"
+path.etc2="res://.godot/imported/EB_GreenWoodTexture_a1.png-3391e78d48a7eccbce5b4cf8b2aa6f13.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/EB_GreenWoodTexture_a1.png"
-dest_files=["res://.godot/imported/EB_GreenWoodTexture_a1.png-3391e78d48a7eccbce5b4cf8b2aa6f13.s3tc.ctex"]
+dest_files=["res://.godot/imported/EB_GreenWoodTexture_a1.png-3391e78d48a7eccbce5b4cf8b2aa6f13.s3tc.ctex", "res://.godot/imported/EB_GreenWoodTexture_a1.png-3391e78d48a7eccbce5b4cf8b2aa6f13.etc2.ctex"]
 
 [params]
 

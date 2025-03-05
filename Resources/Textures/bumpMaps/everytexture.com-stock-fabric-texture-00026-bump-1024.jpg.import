@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://jonnfcqn8t53"
 path.s3tc="res://.godot/imported/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg-25cb21fbf72793ced2f9d2cd35a76920.s3tc.ctex"
+path.etc2="res://.godot/imported/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg-25cb21fbf72793ced2f9d2cd35a76920.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/bumpMaps/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg"
-dest_files=["res://.godot/imported/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg-25cb21fbf72793ced2f9d2cd35a76920.s3tc.ctex"]
+dest_files=["res://.godot/imported/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg-25cb21fbf72793ced2f9d2cd35a76920.s3tc.ctex", "res://.godot/imported/everytexture.com-stock-fabric-texture-00026-bump-1024.jpg-25cb21fbf72793ced2f9d2cd35a76920.etc2.ctex"]
 
 [params]
 

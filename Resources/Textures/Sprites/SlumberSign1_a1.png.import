@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cln462utovn8e"
 path.s3tc="res://.godot/imported/SlumberSign1_a1.png-1bcea2338dc88768e39414ab5ba31fcc.s3tc.ctex"
+path.etc2="res://.godot/imported/SlumberSign1_a1.png-1bcea2338dc88768e39414ab5ba31fcc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sprites/SlumberSign1_a1.png"
-dest_files=["res://.godot/imported/SlumberSign1_a1.png-1bcea2338dc88768e39414ab5ba31fcc.s3tc.ctex"]
+dest_files=["res://.godot/imported/SlumberSign1_a1.png-1bcea2338dc88768e39414ab5ba31fcc.s3tc.ctex", "res://.godot/imported/SlumberSign1_a1.png-1bcea2338dc88768e39414ab5ba31fcc.etc2.ctex"]
 
 [params]
 
